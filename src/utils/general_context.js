@@ -36,7 +36,7 @@ export const GeneralContextProvider = (props) => {
         activeNavItem,
         navButtonHandler,
         navActiveItemHandler,
-        screenSize,
+        
       }}
     >
       {props.children}
