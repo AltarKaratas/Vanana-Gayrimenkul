@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import generalContext from "@/utils/general_context";
-import { useContext, useState, useEffect } from "react";
+
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import GridElement from "@/components/GridElement";
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const advantages = [
   {
@@ -36,7 +36,7 @@ const advantages = [
 ];
 
 export default function Page() {
-  const generalCtx = useContext(generalContext);
+  const screenSize = useScreenSize();
 
   return (
     <main className="overflow-x-hidden bg-black">
@@ -73,7 +73,7 @@ export default function Page() {
           Adımlarınızı bizimle atın
         </h3>
       </div>
-      {generalCtx.screenSize.width <= 1024 ? (
+      {screenSize.width <= 1024 ? (
         <div className="flex flex-col gap-40 w-full pt-20 pb-80">
           <div className="flex flex-col items-end gap-16 ">
             <div className="w-full pl-8">
@@ -295,7 +295,7 @@ export default function Page() {
           className="relative z-10 overflow-visible"
           options={{
             type: "loop",
-            width: `${generalCtx.screenSize.width <= 768 ? "752px" : "1656px"}`,
+            width: `${screenSize.width <= 768 ? "752px" : "1656px"}`,
             gap: "16px",
             autoWidth: true,
             snap: true,
@@ -327,18 +327,16 @@ export default function Page() {
         </Splide>
       </section>
       <section className="w-full h-min  px-8 py-10 lg:px-20 lg:py-20">
-     
-          <h1 className="text-white text-3xl md:text-4xl lg:text-7xl font-semibold ">
-            Referanslarımız
-          </h1>
-       
+        <h1 className="text-white text-3xl md:text-4xl lg:text-7xl font-semibold ">
+          Referanslarımız
+        </h1>
+
         <div className="w-full h-min grid grid-flow-row  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16  relative shadow-inner py-8 md:py-16">
-         <GridElement />
-         <GridElement />
-         <GridElement />
-         <GridElement />
-         <GridElement />
-          
+          <GridElement />
+          <GridElement />
+          <GridElement />
+          <GridElement />
+          <GridElement />
         </div>
       </section>
     </main>
