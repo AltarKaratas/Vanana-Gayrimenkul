@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import generalContext from "@/utils/general_context";
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const images = [
   {
@@ -30,7 +31,8 @@ const images = [
 ];
 
 const DragSlider = (props) => {
-  const generalCtx = useContext(generalContext);
+  const screenSize = useScreenSize();
+  
 
   return (
     <div className="relative w-[90vw] mx-4 sm:mx-8 lg:mx-20 my-20 z-10">
@@ -42,7 +44,7 @@ const DragSlider = (props) => {
         </h1>
         <Image
           src="/carouselLines.svg"
-          width={generalCtx.screenSize.width / 4}
+          width={screenSize.width / 4}
           height={154}
           alt="lines"
           className=""
@@ -79,7 +81,7 @@ const DragSlider = (props) => {
                   <Link href={`/Projeler/${index}`} className=" text-white">
                     <Image
                       src="/arrow.svg"
-                      width={generalCtx.screenSize.width < 768 ? 36 : 64}
+                      width={screenSize.width < 768 ? 36 : 64}
                       height={2}
                       className="right-0 z-10 self-center hover:scale-125"
                     />

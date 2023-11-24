@@ -2,8 +2,9 @@
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState,useContext } from "react";
-import GeneralContext from "@/utils/general_context";
+import { useState } from "react";
+
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 function GridItem(props) {
   const [mouseHovered, setMouseHovered] = useState(false);
@@ -62,7 +63,8 @@ function GridItem(props) {
 }
 
 export default function Page() {
-  const generalCtx = useContext(GeneralContext);
+  const screenSize = useScreenSize()
+
 
   return (
     <section className="relative w-full h-min px-8 lg:px-20 mt-16 lg:mt-20 pb-8 bg-light_black">
@@ -87,7 +89,7 @@ export default function Page() {
         <Image
             src="/VectorArrowDown.svg"
             alt="VANANA"
-            width={generalCtx.screenSize.width > 1024 ? 96 : 64}
+            width={screenSize.width > 1024 ? 96 : 64}
             height={350}
             className="relative -rotate-90"
           />

@@ -1,15 +1,12 @@
 "use client";
 import Image from "next/image";
-import { Wrapper } from "@googlemaps/react-wrapper";
 import Maps from "@/components/Maps";
-import GeneralContext from "@/utils/general_context";
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Script from 'next/script'
-
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 export default function Page(props) {
-  const generalCtx = useContext(GeneralContext);
+  const screenSize = useScreenSize();
   const {
     register,
     handleSubmit,
@@ -65,8 +62,8 @@ export default function Page(props) {
       <div className="px-4 sm:px-8 lg:px-10 py-20 lg:py-40 flex flex-col justify-center xl:flex-row xl:items-center bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
         <div className="w-full xl:w-1/2">
           <Maps
-            width={generalCtx.screenSize.width < 768 ? "320" : "640"}
-            height={generalCtx.screenSize.width < 1024 ? "360" : "640"}
+            width={screenSize.width < 768 ? "320" : "640"}
+            height={screenSize.width < 1024 ? "360" : "640"}
           />
         </div>
         <div className="w-full xl:w-1/2 h-full py-8 self-start flex flex-col gap-8">

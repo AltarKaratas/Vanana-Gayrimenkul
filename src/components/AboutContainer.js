@@ -3,15 +3,17 @@ import Image from "next/image";
 import { useRef, useContext } from "react";
 import { useIsVisible } from "@/utils/hooks/useIsVisible";
 import generalContext from "@/utils/general_context";
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const AboutContainer = (props) => {
   const ref1 = useRef();
   const isVisible = useIsVisible(ref1);
-  const generalCtx = useContext(generalContext);
+  const screenSize = useScreenSize()
+
 
   return (
     <>
-      {generalCtx.screenSize.width >= 1024 ? (
+      {screenSize.width >= 1024 ? (
         <div
           className={`${
             props.direction === "right" ? "justify-end" : "justify-start"

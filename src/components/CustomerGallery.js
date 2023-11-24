@@ -1,17 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
-import { useContext } from "react";
-
-import generalContext from "@/utils/general_context";
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const CustomerGallery = (props) => {
-  const generalCtx = useContext(generalContext);
+  const screenSize = useScreenSize()
+
 
   return (
     <>
-      {generalCtx.screenSize.width < 1024 ? (
+      {screenSize.width < 1024 ? (
         <section className="w-[100%] h-min mx-auto py-40 flex flex-col relative bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
           <div className="w-3/4 h-[180px] sm:h-[360px] flex justify-center items-center relative">
             <div
@@ -20,7 +18,7 @@ const CustomerGallery = (props) => {
             <div className={`absolute top-0 right-0 shadow-xl`}>
               <Image
                 src="/4.jpg"
-                width={generalCtx.screenSize.width / 2}
+                width={screenSize.width / 2}
                 height={1}
                 objectFit="cover"
               />
@@ -28,7 +26,7 @@ const CustomerGallery = (props) => {
             <div className={`absolute top-2 right-2 shadow-xl`}>
               <Image
                 src="/3.jpg"
-                width={generalCtx.screenSize.width / 2}
+                width={screenSize.width / 2}
                 height={1}
                 objectFit="cover"
               />
@@ -36,7 +34,7 @@ const CustomerGallery = (props) => {
             <div className={` absolute top-4 right-4 shadow-xl`}>
               <Image
                 src="/1.jpg"
-                width={generalCtx.screenSize.width / 2}
+                width={screenSize.width / 2}
                 height={1}
                 objectFit="cover"
               />
@@ -44,7 +42,7 @@ const CustomerGallery = (props) => {
             <div className={` absolute top-6 right-6 shadow-xl`}>
               <Image
                 src="/3.jpg"
-                width={generalCtx.screenSize.width / 2}
+                width={screenSize.width / 2}
                 height={1}
                 objectFit="cover"
               />
@@ -75,7 +73,7 @@ const CustomerGallery = (props) => {
             <div className={`absolute top-0 right-0 shadow-xl`}>
               <Image
                 src="/4.jpg"
-                width={generalCtx.screenSize.width / 3}
+                width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
               />
@@ -83,7 +81,7 @@ const CustomerGallery = (props) => {
             <div className={`absolute top-8 right-8 shadow-xl`}>
               <Image
                 src="/3.jpg"
-                width={generalCtx.screenSize.width / 3}
+                width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
               />
@@ -91,7 +89,7 @@ const CustomerGallery = (props) => {
             <div className={` absolute top-16 right-16 shadow-xl`}>
               <Image
                 src="/1.jpg"
-                width={generalCtx.screenSize.width / 3}
+                width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
               />
@@ -99,7 +97,7 @@ const CustomerGallery = (props) => {
             <div className={` absolute top-24 right-24 shadow-xl`}>
               <Image
                 src="/3.jpg"
-                width={generalCtx.screenSize.width / 3}
+                width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
               />

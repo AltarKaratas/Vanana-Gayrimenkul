@@ -12,7 +12,7 @@ import Link from "next/link";
 const navLinks = ["Hakkımızda", "Projeler", "İletişim", "Galeri"];
 
 const Navbar = () => {
-  const generalCtx = useContext(generalContext);
+  const screenSize = useScreenSize()
 
   return (
     <nav className="fixed w-full z-40 top-0 h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A] border-b-thin border-dark_gray">
@@ -22,8 +22,8 @@ const Navbar = () => {
             <Popover.Button className="h-full w-full flex justify-center items-center">
               <Image
                 src={`${open ? "/close.svg" : "/MenuBar.svg"}`}
-                width={generalCtx.screenSize.width < 1024 ? 16 : 24}
-                height={generalCtx.screenSize.width < 1024 ? 12 : 18}
+                width={screenSize.width < 1024 ? 16 : 24}
+                height={screenSize.width < 1024 ? 12 : 18}
                 alt="Close"
               />
             </Popover.Button>
@@ -37,12 +37,12 @@ const Navbar = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
               className={`absolute ${
-                generalCtx.screenSize.width < 1024 ? "top-16" : "top-20"
+                screenSize.width < 1024 ? "top-16" : "top-20"
               } left-0`}
             >
               <Popover.Panel
                 className={`w-full fixed flex justify-between ${
-                  generalCtx.screenSize.width < 1024
+                  screenSize.width < 1024
                     ? "top-16 h-[calc(100dvh-64px)]"
                     : "top-20 h-[calc(100dvh-80px)]"
                 } bg-light_black`}
@@ -56,8 +56,8 @@ const Navbar = () => {
         <Image
           src="/VananaLogo.svg"
           alt="Vanana"
-          width={generalCtx.screenSize.width < 1024 ? 30 : 45}
-          height={generalCtx.screenSize.width < 1024 ? 22.55 : 33.75}
+          width={screenSize.width < 1024 ? 30 : 45}
+          height={screenSize.width < 1024 ? 22.55 : 33.75}
         />
       </Link>
 
@@ -65,8 +65,8 @@ const Navbar = () => {
         <Image
           src="/en-flag.png"
           alt="Language"
-          width={generalCtx.screenSize.width < 1024 ? 16 : 27}
-          height={generalCtx.screenSize.width < 1024 ? 11.85 : 20}
+          width={screenSize.width < 1024 ? 16 : 27}
+          height={screenSize.width < 1024 ? 11.85 : 20}
         />
       </div>
     </nav>

@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import GeneralContext from "@/utils/general_context";
-import { Transition } from "@headlessui/react";
+import React from "react";
+
 import Image from "next/image";
 
 import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const Landing = (props) => {
-  const generalCtx = useContext(GeneralContext);
+  const screenSize = useScreenSize()
+
 
   let trigger = "relative h-[calc(100vh-80px)]  flex flex-col justify-end";
 
-  if (generalCtx.screenSize.width < 1024)
+  if (screenSize.width < 1024)
     trigger = "relative h-[70vh]  flex flex-col justify-end";
 
   return (
@@ -18,13 +18,13 @@ const Landing = (props) => {
       <div className="absolute pt-16 md:pt-20 z-[5] w-full flex flex-col">
         <Image
           src="/backgroundImage.svg"
-          width={generalCtx.screenSize.width < 769 ? 200 : 500}
+          width={screenSize.width < 769 ? 200 : 500}
           height={500}
           className="self-end"
         />
         <Image
           src="/backgroundImage.svg"
-          width={generalCtx.screenSize.width < 769 ? 200 : 500}
+          width={screenSize.width < 769 ? 200 : 500}
           height={500}
           className="self-start"
         />
@@ -43,7 +43,7 @@ const Landing = (props) => {
 
       <div
         className={`${
-          generalCtx.screenSize.width < 1024
+          screenSize.width < 1024
             ? "relative h-[70vh]  flex flex-col justify-end"
             : "relative h-[calc(100vh-80px)]  flex flex-col justify-end"
         } `}
@@ -70,7 +70,7 @@ const Landing = (props) => {
                 />
               </div>
             </div>
-            {generalCtx.screenSize.width < 769 ? (
+            {screenSize.width < 769 ? (
               <div className="relative visible md:invisible py-6 px-6">
                 <h1 className="text-white text-[24px]">
                   Konut ve Kurumsal Emlak Satışında{" "}
@@ -84,7 +84,7 @@ const Landing = (props) => {
                 <Image
                   src="/VectorArrowDown.svg"
                   alt="VANANA"
-                  width={generalCtx.screenSize.width > 768 ? 96 : 64}
+                  width={screenSize.width > 768 ? 96 : 64}
                   height={350}
                   className="animate-[bounce_3s_ease-in-out_infinite]  relative z-20"
                 />

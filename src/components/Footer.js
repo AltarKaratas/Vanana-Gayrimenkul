@@ -3,23 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useContext } from "react";
-
-import generalContext from "@/utils/general_context";
+import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const navLinks = ["Hakkimizda", "Projeler", "Iletisim", "Galeri"];
 
 const Footer = (props) => {
-  const generalCtx = useContext(generalContext);
+  const screenSize = useScreenSize();
 
   return (
     <nav className="relative h-min flex flex-col p-8 sm:p-10 md:p-20 pb-4 sm:pb-5 md:pb-10 bg-black">
-      {generalCtx.screenSize.width < 768 ? (
+      {screenSize.width < 768 ? (
         <div className="w-full h-full flex-col">
           <Image
             src="/Landing Vanana Text.svg"
             alt="V"
-            width={generalCtx.screenSize.width < 1280 ? 160 : 320}
+            width={screenSize.width < 1280 ? 160 : 320}
             height={64}
           />
           <div className="w-full md:w-[160px] flex justify-between">
@@ -51,7 +49,7 @@ const Footer = (props) => {
             <Image
               src="/Landing Vanana Text.svg"
               alt="V"
-              width={generalCtx.screenSize.width < 1280 ? 160 : 320}
+              width={screenSize.width < 1280 ? 160 : 320}
               height={64}
               className="lg:pb-2"
             />
@@ -78,19 +76,19 @@ const Footer = (props) => {
               <Image
                 src="/facebook.svg"
                 alt="FB"
-                width={generalCtx.screenSize.width < 1024 ? 24 : 32}
+                width={screenSize.width < 1024 ? 24 : 32}
                 height={32}
               />
               <Image
                 src="/instagram.svg"
                 alt="I"
-                width={generalCtx.screenSize.width < 1024 ? 36 : 48}
+                width={screenSize.width < 1024 ? 36 : 48}
                 height={32}
               />
               <Image
                 src="/linkedin.svg"
                 alt="Li"
-                width={generalCtx.screenSize.width < 1024 ? 24 : 32}
+                width={screenSize.width < 1024 ? 24 : 32}
                 height={32}
               />
             </div>
