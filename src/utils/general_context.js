@@ -7,30 +7,29 @@ const GeneralContext = React.createContext({
   isNavOpen: false,
   navButtonHandler: () => {},
   navActiveItemHandler: () => {},
-  screenSize:{},
+  screenSize: {},
 });
+
+function getWindowSize() {
+  const { innerWidth, innerHeight } = window;
+  return { innerWidth, innerHeight };
+}
 
 export const GeneralContextProvider = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState(1);
-  const [screenSize,setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-})
+  const [screenSize, setScreenSize] = useState(getWindowSize());
 
-useEffect(() => {
-  const handleResize = () => {
-      setScreenSize({
-          width:window.innerWidth,
-          height:window.innerHeight,
-      });
-  }
-  window.addEventListener("resize",handleResize);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(getWindowSize());
+    };
+    window.addEventListener("resize", handleResize);
 
-  return () => {
-      window.removeEventListener("resize",handleResize);
-  }
-},[])
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const navButtonHandler = (e) => {
     setIsNavOpen((prevState) => {
@@ -47,10 +46,10 @@ useEffect(() => {
     <GeneralContext.Provider
       value={{
         isNavOpen,
-        activeNavItem, 
+        activeNavItem,
         navButtonHandler,
         navActiveItemHandler,
-        screenSize
+        screenSize,
       }}
     >
       {props.children}
