@@ -3,7 +3,6 @@
 import { Inter } from "next/font/google";
 import { Archivo } from "next/font/google";
 
-import { GeneralContextProvider } from "../utils/general_context";
 import Landing from "@/components/Landing";
 import Vanana from "@/components/Vanana";
 import About from "@/components/About";
@@ -24,7 +23,6 @@ export const inter = Inter({
 
 export default function Home() {
   return (
-    <GeneralContextProvider>
       <main
         className={`${archivo.variable} ${inter.variable} font-sans h-min bg-black contrast-[0.95] antialiased scroll-smooth`}
       >
@@ -34,6 +32,5 @@ export default function Home() {
         <DragSlider />
         <CustomerGallery />
       </main>
-    </GeneralContextProvider>
   );
 }
