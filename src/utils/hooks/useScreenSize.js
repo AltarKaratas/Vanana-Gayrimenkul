@@ -5,7 +5,7 @@ const useScreenSize = () => {
     width:0,
     height: 0,
   });
-  console.log(window);
+
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== undefined) {
@@ -15,7 +15,7 @@ const useScreenSize = () => {
         });
       }
     };
-    window.addEventListener("resize", handleResize);
+    if(typeof window !== undefined) window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
