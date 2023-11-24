@@ -15,7 +15,7 @@ function GridItem(props) {
       onMouseLeave={() => setTimeout(() => setMouseHovered(false), 1500)}
     >
       <Image
-        src="/FarasHighHill.jpg"
+        src="/FarasHighHill.webp"
         alt=""
         fill
         objectFit="cover"

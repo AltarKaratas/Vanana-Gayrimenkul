@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Vanana = (props) => {
   return (
-    <section className="relative flex flex-col w-full h-min px-10 md:px-20 lg:px-40">
+    <section className="relative flex flex-col w-full h-min px-10 md:px-20 lg:px-40 py-20 lg:py-40">
       <Image
         src="/GrayLines.svg"
         alt="lines"

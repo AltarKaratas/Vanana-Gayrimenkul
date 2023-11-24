@@ -15,18 +15,18 @@ const Landing = (props) => {
 
   return (
     <section>
-      <div className="absolute z-[5] w-full flex flex-col items-center  ">
+      <div className="absolute pt-16 md:pt-20 z-[5] w-full flex flex-col">
         <Image
           src="/backgroundImage.svg"
           width={generalCtx.screenSize.width < 769 ? 200 : 500}
           height={500}
-          className="self-end sm:self-center sm:translate-x-[40%]"
+          className="self-end"
         />
         <Image
           src="/backgroundImage.svg"
           width={generalCtx.screenSize.width < 769 ? 200 : 500}
           height={500}
-          className="self-start sm:self-center sm:-translate-x-[60%]"
+          className="self-start"
         />
       </div>
       <div className="absolute top-[20vh] lg:top-[15vh] z-20 w-full flex justify-center ">
@@ -55,6 +55,7 @@ const Landing = (props) => {
                 src="/ArpKuleBulut.svg"
                 alt=""
                 fill={true}
+                sizes=""
                 className="z-10 opacity-100 saturate-[85%]"
                 objectFit="cover"
               />
@@ -69,7 +70,7 @@ const Landing = (props) => {
                 />
               </div>
             </div>
-            {generalCtx.screenSize.width < 769 && (
+            {generalCtx.screenSize.width < 769 ? (
               <div className="relative visible md:invisible py-6 px-6">
                 <h1 className="text-white text-[24px]">
                   Konut ve Kurumsal Emlak Satışında{" "}
@@ -78,21 +79,24 @@ const Landing = (props) => {
                   </h1>
                 </h1>
               </div>
+            ) : (
+              <div className="absolute z-40 h-[50vh] md:h-[60dvh] lg:h-[70vh] w-full flex justify-between items-end px-8 md:px-10 lg:px-20">
+                <Image
+                  src="/VectorArrowDown.svg"
+                  alt="VANANA"
+                  width={generalCtx.screenSize.width > 768 ? 96 : 64}
+                  height={350}
+                  className="animate-[bounce_3s_ease-in-out_infinite]  relative z-20"
+                />
+                <h1 className="text-white text-right md:text-4xl xl:text-4xl md:w-[280px] lg:w-[300px] xl:w-[320px] relative invisible md:visible">
+                  Konut ve Kurumsal Emlak Satışında{" "}
+                  <span className="text-[#A59564] font-semibold ">
+                    Uzman İsim
+                  </span>
+                </h1>
+              </div>
             )}
-            <div className="absolute z-40 h-[50vh] md:h-[60dvh] lg:h-[70vh] w-full">
-              <h1 className="text-white text-right md:text-4xl xl:text-4xl md:w-[280px] lg:w-[300px] xl:w-[320px] absolute invisible md:visible md:bottom-[5%] md:right-[5%] lg:bottom-[5%] lg:right-[5%]">
-                Konut ve Kurumsal Emlak Satışında{" "}
-                <h1 className="text-[#A59564] font-semibold ">Uzman İsim</h1>
-              </h1>
-            </div>
           </div>
-          <Image
-            src="/VectorArrowDown.svg"
-            alt="VANANA"
-            width={generalCtx.screenSize.width > 768 ? 96 : 64}
-            height={350}
-            className="animate-[bounce_3s_ease-in-out_infinite]  absolute z-20 bottom-[30%] right-[7%] md:bottom-[5%] md:left-[5%]"
-          />
         </div>
       </div>
     </section>

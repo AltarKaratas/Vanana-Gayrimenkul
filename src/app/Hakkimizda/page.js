@@ -79,7 +79,7 @@ export default function Page() {
             <div className="w-full pl-8">
               <div className="w-full h-[360px] relative">
                 <Image
-                  src="/Plan.jpg"
+                  src="/Plan.webp"
                   fill={true}
                   objectFit="cover"
                   alt=""
@@ -128,7 +128,7 @@ export default function Page() {
                 <h1 className="text-5xl md:text-7xl text-white">Ve Tanıtım</h1>
               </div>
               <p className="text-xl md:text-2xl text-white ">
-                Ankara'da bulunan emlak danışmanlık firmamız, geniş bir portföyü
+                Ankara`da bulunan emlak danışmanlık firmamız, geniş bir portföyü
                 kapsayan mülklerin satışında uzmanız. Etkin pazarlama ile
                 mülklerinizin hedef müşteriye ulaşmasını sağlıyoruz.
               </p>
@@ -232,7 +232,7 @@ export default function Page() {
                   </h1>
                 </div>
                 <p className="text-xl md:text-2xl text-white ">
-                  Ankara'da bulunan emlak danışmanlık firmamız, geniş bir
+                  Ankara`da bulunan emlak danışmanlık firmamız, geniş bir
                   portföyü kapsayan mülklerin satışında uzmanız. Etkin pazarlama
                   ile mülklerinizin hedef müşteriye ulaşmasını sağlıyoruz.
                 </p>

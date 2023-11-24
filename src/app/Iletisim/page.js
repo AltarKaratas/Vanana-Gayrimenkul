@@ -5,6 +5,8 @@ import Maps from "@/components/Maps";
 import GeneralContext from "@/utils/general_context";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import Script from 'next/script'
+
 
 export default function Page(props) {
   const generalCtx = useContext(GeneralContext);
@@ -32,9 +34,7 @@ export default function Page(props) {
     if (window.Email)
       window.Email.send(smtpConfig).then((message) => alert(message));
   };
-  const onError = (data) => {
-    console.log("zürten data");
-  };
+  
   const validEmail = new RegExp(
     /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
   );
@@ -46,9 +46,10 @@ export default function Page(props) {
 
   return (
     <div className="overflow-x-hidden bg-black">
+       <Script src="https://smtpjs.com/v3/smtp.js" />
       <div className="relative h-[600px] w-full bg-black flex justify-center items-center">
         <Image
-          src="/ankara.jpg"
+          src="/ankara.webp"
           alt=""
           fill={true}
           objectFit="cover"
