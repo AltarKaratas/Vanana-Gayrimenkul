@@ -21,9 +21,9 @@ const CustomerGallery = (props) => {
         </div>
       </div>
       {screenSize.width < 1024 ? (
-        <section className="w-[100%] h-min mx-auto py-40 flex flex-col relative bg-gradient-to-t from-beige via-black to-black">
-          <div className="w-3/4 h-[180px] sm:h-[360px] relative">
-            <div className={`absolute self-end top-0 right-0 shadow-xl`}>
+        <section className="w-[100%] h-min  py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-black to-black">
+          <div className="w-1/2 h-min relative">
+            <div className="relative  top-0 left-0 shadow-xl">
               <Image
                 src="/4.jpg"
                 width={screenSize.width / 2}
@@ -31,40 +31,15 @@ const CustomerGallery = (props) => {
                 objectFit="cover"
               />
             </div>
-            <div className={`absolute top-2 right-2 shadow-xl`}>
-              <Image
-                src="/3.jpg"
-                width={screenSize.width / 2}
-                height={1}
-                objectFit="cover"
-              />
-            </div>
-            <div className={` absolute top-4 right-4 shadow-xl`}>
-              <Image
-                src="/1.jpg"
-                width={screenSize.width / 2}
-                height={1}
-                objectFit="cover"
-              />
-            </div>
-            <div className={` absolute top-6 right-6 shadow-xl`}>
-              <Image
-                src="/3.jpg"
-                width={screenSize.width / 2}
-                height={1}
-                objectFit="cover"
-              />
-            </div>
+            
           </div>
-          <div className="w-full flex flex-col justify-center items-center gap-8 relative">
-            <h1 className="text-white text-2xl md:text-4xl border-b-4 border-gold">
+          <div className="w-full relative px-8 sm:px-12">
+            <h1 className="text-white text-2xl md:text-4xl border-b-4 border-gold mb-8">
               Müşteri
-              <br />
               odaklı
-              <br />
               çalışıyoruz
             </h1>
-            <p className="flex justify-center mx-8 sm:mx-12 text-white  font-light">
+            <p className="flex justify-center text-white  font-light">
               Önceki satışlarımız ve memnun müşterilerimiz, işimizin temelini
               oluşturan referanslarımızdır. Siz de bu memnuniyete şahit olmak
               ister misiniz?
@@ -107,7 +82,7 @@ const CustomerGallery = (props) => {
               />
             </div>
           </div>
-          <div className="w-1/2 flex flex-col gap-8  pl-20 pr-60 justify-center items-start relative ">
+          <div className="w-1/2 flex flex-col gap-8  pl-10 pr-32 xl:pl-20 xl:pr-60 justify-center items-start relative ">
             <h1 className="relative  leading-snug text-white text-7xl border-b-4 border-gold">
               Müşteri
               <br />
@@ -123,16 +98,10 @@ const CustomerGallery = (props) => {
             <div className="flex w-full justify-end">
               <Link
                 href="/Gallery"
-                className="text-2xl font-light text-white flex items-center gap-4 "
+                className="font-inter text-2xl text-white flex items-center border-b border-white border-spacing-4npm"
               >
                 Galeriye Git
-                <Image
-                  src="/VectorArrowDown.svg"
-                  alt="VANANA"
-                  width={screenSize.width > 1024 ? 64 : 48}
-                  height={350}
-                  className="relative -rotate-90 hover:scale-110"
-                />
+                
               </Link>
             </div>
           </div>

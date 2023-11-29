@@ -51,7 +51,7 @@ const DragSlider = (props) => {
         <div className="self-end flex justify-end mb-2 sm:mb-4 md:mb-8">
           <Link
             href="/Projeler"
-            className="inline w-2/3 sm:w-full text-white text-base md:text-[18px] leading-tight lg:text-2xl border-b border-white"
+            className="font-inter w-2/3 sm:w-full text-white text-base md:text-[18px] leading-tight lg:text-2xl border-b border-white"
           >
             Tüm projeleri görüntüle
           </Link>

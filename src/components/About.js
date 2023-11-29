@@ -9,7 +9,7 @@ const About = () => {
   const ref1 = useRef();
   const isVisible = useIsVisible(ref1);
   return (
-    <section className="h-min w-full ">
+    <section id="scrollPoint" className="h-min w-full ">
       <div className="w-full h-[160px] sm:h-[240px] md:h-[320px] lg:h-[440px]  relative flex ">
         <Image
           src="/VectorLines.svg"
