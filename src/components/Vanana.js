@@ -1,42 +1,31 @@
+import useScreenSize from "@/utils/hooks/useScreenSize";
 import Image from "next/image";
 import Link from "next/link";
 
 const Vanana = (props) => {
+  const screenSize = useScreenSize();
   return (
-    <section className="relative flex flex-col w-full h-min px-10 md:px-20 lg:px-40 py-20 lg:py-40">
-      <Image
-        src="/GrayLines.svg"
-        alt="lines"
-        fill={true}
-        objectFit="cover"
-        className="z-0"
-      />
+    <section className="relative flex flex-col justify-center items-center z-20 w-full h-[540px] sm:h-[640px] lg:h-[800px]  bg-black overflow-visible">
+      <div className="w-full lg:w-2/3 px-4 flex flex-col h-min text-2xl md:text-4xl text-center leading-relaxed z-30">
+        <span className="text-[#706338] ">Vanana Gayrimenkul Danışmanlık </span>
+        <span className="text-white">
+          olarak profesyonel ekibimizle, inşaat firmalaranın ve müteahhitlerin
+          hedeflerini anlayarak, gayrimenkul satışında her aşamada yardımcı
+          olmak için buradayız.
+        </span>
+      </div>
 
-      <div className="relative z-10 flex items-center h-min mt-40 xl:mt-60 mb-40 overflow-visible">
-        <div className="absolute z-10 -bottom-8 sm:-bottom-16 lg:bottom-0 right-0  h-[132.35px] md:h-[183.8px] lg:h-[251px] w-[180px]  md:w-[250px]  lg:w-[342px] overflow-visible">
-          <Image src="/VananaLogo.svg" alt="V" fill={true} objectFit="cover" />
-        </div>
-        <div className="absolute -bottom-8 sm:-bottom-16 lg:bottom-0 right-0 z-10 h-[177.7px] w-[240px] md:w-[360px] md:h-[266.6px] lg:h-[427px] lg:w-[580px] ">
+      <div className="absolute w-full -bottom-12 md:-bottom-20 xl:-bottom-24 flex  justify-end px-16 sm:px-32 md:px-40 lg:px-60 xl:px-80  items-end">
+        <div className="relative  w-[140px] md:w-[180px] lg:w-[240px] xl:w-[320px] h-[105px] md:h-[135px] lg:h-[180px] xl:h-[240px] ">
           <Image
-            src="/Logovananagray.svg"
+            src="/VananaLogo.svg"
             alt="V"
-            fill={true}
-            objectFit="cover"
-          />
-        </div>
-
-        <div className="lg:mx-20 xl:mx-40 my-20 lg:my-40 z-20 text-2xl md:text-4xl text-center">
-          <span className="text-[#706338] drop-shadow-md">
-            Vanana Gayrimenkul Danışmanlık{" "}
-          </span>
-          <span className="text-white drop-shadow-md">
-            olarak profesyonel ekibimizle, inşaat firmalaranın ve müteahhitlerin
-            hedeflerini anlayarak, gayrimenkul satışında her aşamada yardımcı
-            olmak için buradayız.
-          </span>
+            fill
+            className="absolute"
+          /> 
+          <Image src="/Logovananagray.svg" alt="V" fill className="absolute ml-2 mt-2" />
         </div>
       </div>
-      
     </section>
   );
 };

@@ -15,7 +15,7 @@ const Navbar = () => {
   const screenSize = useScreenSize()
 
   return (
-    <nav className="fixed w-full z-40 top-0 h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A] border-b-thin border-dark_gray">
+    <nav className="fixed w-full z-[9999] top-0 h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A] border-b-thin border-dark_gray">
       <Popover className="h-full w-16 lg:w-20 xl:w-40 flex items-center justify-center border-r-thin border-dark_gray">
         {({ open }) => (
           <>

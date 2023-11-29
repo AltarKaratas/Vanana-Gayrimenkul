@@ -77,6 +77,12 @@ export default function Page(props) {
             <h1 className="text-white font-bold text-4xl lg:5xl">E-Mail</h1>
             <p className="text-white text-xl">turgay@vanana.com.tr</p>
           </div>
+          <div className="flex flex-col gap-4">
+            <h1 className="text-white font-bold text-4xl lg:5xl">Telefon</h1>
+            <p className="text-white text-xl">
+            +90(312) 222 72 72
+            </p>
+          </div>
         </div>
       </div>
 
