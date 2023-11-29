@@ -34,7 +34,7 @@ const DragSlider = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="relative w-full h-[580px] sm:h-[600px] md:h-[800px] lg:h-[880px] xl:h-[900px] z-10 bg-[#121212] py-40 flex-col items-center justify-end">
+    <section className="relative w-full h-[580px] sm:h-[600px] md:h-[800px] lg:h-[880px] xl:h-[832px] z-10 bg-[#121212] py-40 flex-col items-center justify-end">
       <Image
         src="/GrayLines.svg"
         alt="lines"
@@ -74,8 +74,8 @@ const DragSlider = (props) => {
             <div
               className={`${
                 index % 2 == 0
-                  ? "w-[90vw] md:w-[640px] h-[360px] md:h-[540px] relative z-10 flex items-end p-4 sm:p-8 font-inter overflow-hidden"
-                  : "w-[90vw] md:w-[640px] h-[360px] md:h-[496px]  shadow-2xl shadow-[#c0c0c01b] relative z-10 flex items-end p-4 sm:p-8 font-inter overflow-hidden"
+                  ? "w-[90vw] md:w-[640px] h-[360px] md:h-[480px] relative z-10 flex items-end p-4 sm:p-8 font-inter overflow-hidden"
+                  : "w-[90vw] md:w-[640px] h-[360px] md:h-[440px]  shadow-2xl shadow-[#c0c0c01b] relative z-10 flex items-end p-4 sm:p-8 font-inter overflow-hidden"
               } `}
             >
               <div className=" relative w-full flex justify-between items-center bg-black_overlay p-4 z-10">

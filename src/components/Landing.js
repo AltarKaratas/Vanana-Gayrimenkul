@@ -9,7 +9,7 @@ const Landing = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="h-[80vh] lg:h-[100dvh] flex justify-center items-end">
+    <section className="h-[80vh] lg:h-[100dvh] w- flex justify-center items-end">
       <div className="absolute pt-16 md:pt-20 px-10 md:px-20 z-[5] w-full flex flex-col self-start">
         <Image
           src="/backgroundImage.svg"
@@ -39,8 +39,8 @@ const Landing = (props) => {
       <div
         className={`${
           screenSize.width < 1024
-            ? "relative h-[80vh]  flex flex-col justify-end"
-            : "relative h-[calc(100vh-80px)] flex flex-col justify-end"
+            ? "relative h-[80vh]  w-full flex flex-col justify-end"
+            : "relative h-[calc(100vh-80px)] w-full flex flex-col justify-end"
         } `}
       >
           <div className="flex relative w-full h-full flex-col items-center pt-24 ">
