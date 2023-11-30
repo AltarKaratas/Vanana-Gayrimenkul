@@ -35,7 +35,6 @@ const About = () => {
             text={
               "A’dan Z’ ye Planlama. Müşterilerin karşılanmasından etkili satış yöntemlerine kadar tüm detayları sizin için hazırlıyoruz. Konut ve ofis projelerinizin satışını istikrarlı bir şekilde  gerçekleştiriyoruz."
             }
-            isFullWidth={false}
           />
           <AboutContainer
             source="/skyline.jpg"
@@ -44,7 +43,6 @@ const About = () => {
             text={
               "İnşaat sektöründe tecrübeli reklam ajanslarıyla çalışarak hedef müşteri kitlenize  hitap ediyoruz. Projenizi sosyal medyada da tanıtıyoruz."
             }
-            isFullWidth={true}
           />
           <AboutContainer
             source="/handshake.jpg"
@@ -56,7 +54,6 @@ const About = () => {
           />
         </div>
         <div className="w-[25vw] relative">
-          <Image href="/vananaSignature.jpg" fill objectFit="contain" className="rotate-90 z-[9999]" />
         </div>
       </div>
       <div className="flex flex-col-reverse lg:flex-row">
