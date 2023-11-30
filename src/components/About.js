@@ -1,16 +1,20 @@
 import Image from "next/image";
-import AboutContainer from "./AboutContainer";
-import { Transition } from "@headlessui/react";
-import { useRef } from "react";
-import { useIsVisible } from "@/utils/hooks/useIsVisible";
 import Link from "next/link";
 
+import { useRef } from "react";
+
+import AboutContainer from "./AboutContainer";
+import { useIsVisible } from "@/utils/hooks/useIsVisible";
+import useScreenSize from "@/utils/hooks/useScreenSize";
+
 const About = () => {
-  const ref1 = useRef();
-  const isVisible = useIsVisible(ref1);
+  const visibilityRef = useRef();
+  const isVisible = useIsVisible(visibilityRef);
+  const screenSize = useScreenSize();
+
   return (
     <section id="scrollPoint" className="h-min w-full ">
-      <div className="w-full h-[160px] sm:h-[240px] md:h-[320px] lg:h-[440px]  relative flex ">
+      <div className="relative w-full h-[80px] sm:h-[240px] md:h-[320px] lg:h-[440px]">
         <Image
           src="/VectorLines.svg"
           alt="Lines"
@@ -21,16 +25,16 @@ const About = () => {
       </div>
 
       <div
-        className="flex h-[240px] lg:h-[400px] mt-8 pt-8 md:pt-16 md:mt-16 px-10 md:px-20 "
-        ref={ref1}
+        className="pt-8 pb-16 md:pt-16 md:pb-32 px-6 md:px-12 lg:px-20 flex"
+        ref={visibilityRef}
       >
         <h2
-          className={`text-white h-min w-full lg:w-2/3 text-left text-4xl lg:text-7xl transition-transform ease-in
-          duration-700 ${isVisible ? "translate-x-0" : "-translate-x-full"}`}
+          className={`text-white w-full  text-left text-2xl lg:text-5xl transition-all ease-in-out
+          duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
         >
-          İnşaat projenizde satış ortağınız
+          İnşaat projenizde <br/>satış ortağınız
           <br />
-          <span className="text-gold font-normal text-left">
+          <span className="text-gold">
             Her zaman yanınızda
           </span>
         </h2>
@@ -62,14 +66,13 @@ const About = () => {
 
       />
       <div className="flex flex-col-reverse lg:flex-row">
-       
-        <div className="lg:w-2/3 h-[160px] lg:h-[400px] bg-gradient-to-r from-beige  to-black" />
-        <div className="font-inter lg:w-1/3 p-10 md:p-20  h-[320px] lg:h-[400px] flex flex-col lg:justify-center items-center lg:items-end gap-8  bg-black">
-          <h3 className="text-gold text-xl md:text-2xl  pt-10 md:pt-0">
+        {screenSize.width >=1024 && <div className="lg:w-3/5 h-[160px] lg:h-[400px] bg-gradient-to-r from-beige to-black" />}
+        <div className={`font-inter lg:w-2/5 p-10 md:p-20  h-[320px] lg:h-[400px] flex flex-col lg:justify-center items-center lg:items-end gap-6 ${screenSize.width < 1024 ? "bg-gradient-to-t from-beige to-black":"bg-gradient-to-r from-black to-black"} `}>
+          <h3 className="inline text-center sm:text-right text-gold text-2xl md:text-4xl pt-10 md:pt-0">
             Daha fazla bilgi almak ister misiniz?
           </h3>
-          <div className="flex w-full flex-col lg:flex-row items-center lg:justify-end gap-4  ">
-            <Link href="/Iletisim" className="text-white text-xl md:text-2xl relative">
+          <div className="flex flex-col lg:flex-row items-center lg:justify-end gap-6">
+            <Link href="/Iletisim" className="text-white text-base md:text-2xl relative border-b border-white border-spacing-4">
               İletişim sayfasını ziyaret et
             </Link>
             <Link href="/Iletisim" className="text-white">

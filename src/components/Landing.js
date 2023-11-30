@@ -10,8 +10,8 @@ const Landing = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="h-[80vh] lg:h-[100dvh] pt-16 md:pt-20 flex justify-center items-end">
-      <div className="absolute px-6 lg:px-12 w-full flex flex-col self-start">
+    <section className="h-[85vh] lg:h-[100dvh] pt-16 md:pt-20 flex justify-center items-end">
+      <div className="absolute px-6 md:px-12 lg:px-20 w-full flex flex-col self-start">
         <Image
           src="/backgroundImage.svg"
           width={screenSize.width <= 768 ? 200 : 400}
@@ -25,8 +25,8 @@ const Landing = (props) => {
           className="self-start"
         />
       </div>
-      {screenSize.width <= 1024 && (
-        <div className="w-full h-full absolute px-6 z-40 flex justify-start items-end ">
+      {screenSize.width < 1024 && (
+        <div className="w-full h-full absolute px-6 md:px-12 z-40 flex justify-start items-end ">
           <div className="relative h-1/3 flex items-start">
             <Link href="#scrollPoint">
               <Image
@@ -58,28 +58,21 @@ const Landing = (props) => {
               className="absolute"
             />
           </div>
-          <div className="relative flex flex-col items-center justify-end h-[50vh] sm:h-[45vh] md:h-[55vh] lg:h-[80vh] w-[270px] sm:w-[480px] md:w-[540px] lg:w-[640px] xl:w-[720px]">
-            <Image
-              src="/ArpKuleBulut.svg"
-              alt=""
-              fill
-              sizes=" (min-width:640px) 270px, (min-width:768px) 480w, (min-width:1024px) 640w, (min-width:1280px) 720px,100vw"
-              className="z-10 opacity-100 saturate-[85%]"
-              objectFit="cover"
-            />
-            <div className="absolute h-[40vh] md:h-[50vh] lg:h-[70vh] w-[270px] sm:w-[320px] md:w-[360px] lg:w-[480px] flex justify-center">
+          <div className="relative flex flex-col items-center justify-end h-[50vh] sm:h-[45vh] md:h-[55vh] lg:h-[80vh] w-[320px] sm:w-[480px] md:w-[540px] lg:w-[640px] xl:w-[720px]">
+            <Image src="/ArpKuleBulut.svg" alt="" fill objectFit="cover" />
+            <div className="absolute h-[40vh] md:h-[50vh] lg:h-[70vh] w-[270px] sm:w-[320px] md:w-[360px] lg:w-[480px]">
               <Image
                 src="/ARP KULE1.png"
                 alt=""
-                fill={true}
-                className="relative brightness-90 z-30 saturate-[85%]"
+                fill
+                className="z-30"
                 objectFit="contain"
                 objectPosition="bottom"
               />
             </div>
           </div>
-          {screenSize.width <= 1024 ? (
-            <div className="relative p-6">
+          {screenSize.width < 1024 ? (
+            <div className="relative p-6 md:p-12">
               <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] to-[#acacac] text-2xl sm:text-4xl">
                 Konut ve Kurumsal Emlak Satışında
                 <br />
@@ -89,8 +82,8 @@ const Landing = (props) => {
               </h1>
             </div>
           ) : (
-            <div className="absolute z-40 h-[50vh] md:h-[60dvh] lg:h-[70vh] w-[100vw] flex justify-between items-end px-12">
-              {screenSize.width > 1024 && (
+            <div className="absolute z-40 h-[50vh] md:h-[60dvh] lg:h-[70vh] w-[100vw] flex justify-between items-end px-20">
+              {screenSize.width >= 1024 && (
                 <Link href="#scrollPoint">
                   <Image
                     src="/VectorArrowDown.svg"
@@ -101,9 +94,9 @@ const Landing = (props) => {
                   />
                 </Link>
               )}
-              <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] to-[#acacac] md:text-4xl xl:text-4xl md:w-[280px] lg:w-[300px] xl:w-[320px] relative invisible md:visible transition-all duration-300 ease-in-out tran">
+              <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] to-[#acacac] md:text-4xl lg:w-[300px] xl:w-[320px] relative invisible md:visible">
                 Konut ve Kurumsal Emlak Satışında{" "}
-                <span className="text-light_gold relative z-20 font-semibold ">
+                <span className="text-light_gold relative z-20 font-semibold">
                   Uzman İsim
                 </span>
               </h1>

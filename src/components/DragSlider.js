@@ -34,7 +34,7 @@ const DragSlider = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="relative w-full h-[580px] sm:h-[600px] md:h-[800px] lg:h-[880px] xl:h-[832px] z-10 bg-[#121212] py-40 flex-col items-center justify-end">
+    <section className="relative z-0 w-full h-[580px] sm:h-[600px] md:h-[800px] lg:h-[880px] xl:h-[832px]  bg-[#121212] py-40 flex-col items-center justify-end">
       <Image
         src="/GrayLines.svg"
         alt="lines"
