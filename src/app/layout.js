@@ -25,8 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className={`${archivo.variable} font-sans ${inter.variable} `}>
-     
+      <body className={`${archivo.variable} font-sans ${inter.variable} overflow-y-visible`}>
         <GeneralContextProvider>
           <Navbar />
           {children}

@@ -107,7 +107,7 @@ const CustomerGallery = (props) => {
           </div>
         </section>
       )}
-      <div className="w-full px-10 md:px-20 py-4 md:py-8 mb-32  flex justify-between items-center bg-black">
+      <div className="w-full px-10 md:px-20 py-4 md:py-8 mb-32  flex justify-between items-center bg-[#0a0a0a]">
         <h1 className="text-white font-inter text-2xl md:text-4xl lg:text-5xl flex">
           Bizimle İletişime Geçin.
         </h1>

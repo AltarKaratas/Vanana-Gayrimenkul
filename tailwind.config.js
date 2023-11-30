@@ -15,7 +15,7 @@ module.exports = {
     extend: {
       colors: {
         white:"#DDDDDD",
-        black: "#0D0D0D",
+        black: "#121212",
         black_overlay: "#0d0d0d/50",
         light_black: "#171717",
         dark_black:"#121212",

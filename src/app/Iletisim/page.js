@@ -98,7 +98,7 @@ export default function Page(props) {
           className="flex flex-col w-full md:w-[360px] lg:w-[480px] xl:w-[540px] px-4 sm:px-0 font-inter"
         >
           <div className="w-full flex flex-col gap-2">
-            <label className="text-white text-xl">Adınız Soyadınız (*)</label>
+            <label className="after:content-['*'] text-white text-xl">Adınız Soyadınız</label>
             {errors.firstName && (
               <p className="text-red-500">Adınızı doğru formatta girin</p>
             )}
@@ -110,7 +110,7 @@ export default function Page(props) {
             />
           </div>
           <div className="w-full flex flex-col gap-2">
-            <label className="text-white text-xl">E-mail (*)</label>
+            <label className="after:content-['*'] text-white text-xl">E-mail </label>
             {errors.email && (
               <p className="text-red-500">
                 Email adresinizi doğru formatta girin
@@ -125,7 +125,7 @@ export default function Page(props) {
             />
           </div>
           <div className="w-full flex flex-col gap-2">
-            <label className="text-white text-xl">Telefon</label>
+            <label className="after:content-['*'] text-white text-xl">Telefon</label>
             {errors.telephone && (
               <p className="text-red-500">
                 Telefon numaranızı doğru formatta girin

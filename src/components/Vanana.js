@@ -5,7 +5,7 @@ import Link from "next/link";
 const Vanana = (props) => {
   const screenSize = useScreenSize();
   return (
-    <section className="relative  flex flex-col justify-center items-center z-10 w-full h-[540px] sm:h-[960px] lg:h-[1120px]   overflow-visible pt-40 ">
+    <section className="relative  flex flex-col justify-center items-center z-10 w-full h-[540px] sm:h-[960px] lg:h-[960px] overflow-visible pt-20 lg:pt-40">
       <Image
         src="/GrayLines.svg"
         alt="lines"
@@ -13,7 +13,7 @@ const Vanana = (props) => {
         objectFit="cover"
         className="z-0"
       />
-      <div className="relative z-10 w-full h-full px-4 flex flex-col items-center justify-center text-2xl md:text-4xl text-center leading-relaxed bg-black overflow-visible">
+      <div className="relative z-10 h-full mx-6 py-16 md:mx-12 md:py-20  lg:py-20 lg:mx-40 xl:mx-60 flex flex-col items-center justify-center text-2xl md:text-4xl text-center leading-relaxed bg-black overflow-visible">
         <h2 className="text-[#706338] ">Vanana Gayrimenkul Danışmanlık </h2>
         <span className="text-white">
           olarak profesyonel ekibimizle, inşaat firmalaranın ve müteahhitlerin

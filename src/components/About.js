@@ -13,75 +13,80 @@ const About = () => {
   const screenSize = useScreenSize();
 
   return (
-    <section id="scrollPoint" className="h-min w-full ">
-      <div className="relative w-full h-[80px] sm:h-[240px] md:h-[320px] lg:h-[440px]">
-        <Image
-          src="/VectorLines.svg"
-          alt="Lines"
-          fill
-          objectFit="cover"
-          className="brightness-75"
-        />
-      </div>
-
+    <section id="scrollPoint" className="h-min w-full relative ">
       <div
-        className="pt-8 pb-16 md:pt-16 md:pb-32 px-6 md:px-12 lg:px-20 flex"
+        className="z-10  px-6 lg:px-20 h-[320px] md:h-[480px] lg:h-[720px] flex justify-center items-center bg-gradient-to-b from-[#171717] to-beige "
         ref={visibilityRef}
       >
         <h2
-          className={`text-white w-full  text-left text-2xl lg:text-5xl transition-all ease-in-out
+          className={`relative font-inter z-30 w-full h-min text-white text-left text-2xl md:text-5xl xl:text-7xl transition-all ease-in-out
           duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
         >
-          İnşaat projenizde <br/>satış ortağınız
-          <br />
-          <span className="text-gold">
-            Her zaman yanınızda
-          </span>
+          İnşaat projenizde satış ortağınız
+          <br /> her zaman yanınızda
         </h2>
       </div>
-
-      <AboutContainer
-        source="/Plan.svg"
-        h1={"Satış Öncesi Planınız "}
-        keyword={"Bizimle Hazır"}
-        text={
-          "A’dan Z’ ye Planlama. Müşterilerin karşılanmasından etkili satış yöntemlerine kadar tüm detayları sizin için hazırlıyoruz. Konut ve ofis projelerinizin satışını istikrarlı bir şekilde  gerçekleştiriyoruz."
-        }
-      />
-      <AboutContainer
-        source="/skyline.jpg"
-        h1={"Hedef Kitleye "}
-        keyword={"Doğru Reklam "}
-        text={
-          "İnşaat sektöründe tecrübeli reklam ajanslarıyla çalışarak hedef müşteri kitlenize  hitap ediyoruz. Projenizi sosyal medyada da tanıtıyoruz."
-        }
-      />
-      <AboutContainer
-        source="/handshake.jpg"
-        h1={"Müşterilerinize farklı bir "}
-        keyword={"satış deneyimi yaşatın."}
-        text={
-          "Örnek dairenin hazırlanmasından, satış ofisinin düzenine kadar , akılda kalıcı, eşsiz bir deneyim sunuyoruz. "
-        }
-
-      />
+      <div className="flex h-min bg-gradient-to-t from-beige to-[#0a0a0a] bg-repeat-y">
+        <div className="h-min">
+          <AboutContainer
+            source="/Plan.svg"
+            h1={"Satış Öncesi Planınız "}
+            keyword={"Bizimle Hazır"}
+            text={
+              "A’dan Z’ ye Planlama. Müşterilerin karşılanmasından etkili satış yöntemlerine kadar tüm detayları sizin için hazırlıyoruz. Konut ve ofis projelerinizin satışını istikrarlı bir şekilde  gerçekleştiriyoruz."
+            }
+            isFullWidth={false}
+          />
+          <AboutContainer
+            source="/skyline.jpg"
+            h1={"Hedef Kitleye "}
+            keyword={"Doğru Reklam "}
+            text={
+              "İnşaat sektöründe tecrübeli reklam ajanslarıyla çalışarak hedef müşteri kitlenize  hitap ediyoruz. Projenizi sosyal medyada da tanıtıyoruz."
+            }
+            isFullWidth={true}
+          />
+          <AboutContainer
+            source="/handshake.jpg"
+            h1={"Müşterilerinize farklı"}
+            keyword={"satış deneyimleri yaşatın."}
+            text={
+              "Örnek dairenin hazırlanmasından, satış ofisinin düzenine kadar , akılda kalıcı, eşsiz bir deneyim sunuyoruz. "
+            }
+          />
+        </div>
+        <div className="w-[25vw] relative">
+          <Image href="/vananaSignature.jpg" fill objectFit="contain" className="rotate-90 z-[9999]" />
+        </div>
+      </div>
       <div className="flex flex-col-reverse lg:flex-row">
-        {screenSize.width >=1024 && <div className="lg:w-3/5 h-[160px] lg:h-[400px] bg-gradient-to-r from-beige to-black" />}
-        <div className={`font-inter lg:w-2/5 p-10 md:p-20  h-[320px] lg:h-[400px] flex flex-col lg:justify-center items-center lg:items-end gap-6 ${screenSize.width < 1024 ? "bg-gradient-to-t from-beige to-black":"bg-gradient-to-r from-black to-black"} `}>
-          <h3 className="inline text-center sm:text-right text-gold text-2xl md:text-4xl pt-10 md:pt-0">
+        {screenSize.width >= 1024 && (
+          <div className="w-3/5 lg:h-[360px] bg-gradient-to-r from-beige to-black" />
+        )}
+        <div
+          className={`font-inter lg:w-2/5 py-12 px-6 lg:px-20 h-[180px] lg:h-[360px] flex flex-col lg:justify-center items-start lg:items-end gap-4 lg:gap-8 ${
+            screenSize.width < 1024
+              ? "bg-gradient-to-t from-beige to-black"
+              : "bg-gradient-to-r from-black to-black"
+          } `}
+        >
+          <h3 className="inline text-left sm:text-right lg:text-left xl:text-right text-gold text-xl lg:text-4xl">
             Daha fazla bilgi almak ister misiniz?
           </h3>
-          <div className="flex flex-col lg:flex-row items-center lg:justify-end gap-6">
-            <Link href="/Iletisim" className="text-white text-base md:text-2xl relative border-b border-white border-spacing-4">
-              İletişim sayfasını ziyaret et
+          <div className="flex flex-row items-center justify-start lg:justify-end gap-6">
+            <Link
+              href="/Iletisim"
+              className="inline text-white text-base md:text-2xl relative border-b border-white border-spacing-4"
+            >
+              İletişim sayfasını ziyaret edin
             </Link>
             <Link href="/Iletisim" className="text-white">
               <Image
                 src="/VectorArrowDown.svg"
                 alt="VANANA"
-                width={64}
+                width={screenSize.width < 768 ? 32 : 48}
                 height={350}
-                className="-rotate-90 transition-all duration-200 ease-in-out hover:scale-110 relative z-20"
+                className="-rotate-90 transition-all duration-200 ease-in-out hover:scale-110 relative z-20 "
               />
             </Link>
           </div>

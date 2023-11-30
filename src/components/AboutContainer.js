@@ -11,16 +11,22 @@ const AboutContainer = (props) => {
   const isVisible = useIsVisible(visibilityRef);
   const screenSize = useScreenSize();
 
+  let mobileResizeWidth = "";
+
+  !props.isFullWidth && screenSize.width <= 500
+    ? (mobileResizeWidth = "w-[80vw]")
+    : (mobileResizeWidth = "w-[75vw]");
+
   return (
     <div
-      className={`flex relative px-6 py-24 md:px-12 md:py-20  lg:py-20 lg:px-20 ${
+      className={`flex relative px-6 py-12 lg:px-20 ${mobileResizeWidth}  h-[320px] md:h-[360px]   ${
         props.direction === "right" ? "justify-end" : "justify-start"
-      }     min-h-[500px] sm:min-h-0 h-[calc(75vh-64px)] md:h-[480px]`}
+      }`}
       ref={visibilityRef}
     >
-      <div className="relative h-min w-full lg:w-1/2">
+      <div className={`relative h-min ${mobileResizeWidth}`}>
         <h1
-          className={`relative inline z-10 text-transparent bg-clip-text bg-gradient-to-r from-beige via-[#736130] to-gold text-2xl md:text-4xl mb-4 transition-opacity ease-in
+          className={`relative inline z-10 text-transparent bg-clip-text bg-gradient-to-r from-gold to-light_gold text-2xl md:text-4xl lg:text-5xl mb-4 transition-opacity ease-in
     duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
         >
           {props.h1}
@@ -29,11 +35,11 @@ const AboutContainer = (props) => {
             {props.keyword}
           </span>
         </h1>
-        <p className="relative mt-4 mb-8 md:mb-16 z-10 text-white font-light sm:text-base md:text-xl">
+        <p className="relative mt-4 z-10 text-white font-light sm:text-base md:text-xl">
           {props.text}
         </p>
       </div>
-      
+
       <Image
         src={props.source}
         alt="bg"
