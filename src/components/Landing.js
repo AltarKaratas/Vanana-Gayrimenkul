@@ -2,7 +2,6 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import useScroll from "next/router";
 
 import useScreenSize from "@/utils/hooks/useScreenSize";
 
@@ -11,13 +10,14 @@ const Landing = (props) => {
   const pageWidth = screenSize.width;
 
   let calculatedHeight = "h-[75vh]";
+  
   if (pageWidth < 768) calculatedHeight = "h-[75vh]";
   else if (pageWidth >= 768 && pageWidth <= 1024) calculatedHeight = "h-[70vh]";
   else if (pageWidth > 1024) calculatedHeight = "h-[100dvh]";
 
   return (
     <section
-      className={`${calculatedHeight} pt-16 lg:pt-20 flex justify-center items-end bg-gradient-to-b from-[#0a0a0a] to-[#171717]`}
+      className={`${calculatedHeight} pt-16 lg:pt-20 sm:landscape:min-h-[540px] md:landscape:min-h-[840px] flex justify-center items-end bg-gradient-to-b from-[#0a0a0a] to-[#171717]`}
     >
       <div className="absolute px-6 md:px-12 lg:px-20 w-full flex flex-col self-start">
         <Image
@@ -60,7 +60,7 @@ const Landing = (props) => {
           />
         </div>
         <div className="flex relative h-full w-full flex-col items-center justify-end">
-          <div className="relative flex flex-col items-center justify-end h-full  w-[320px] sm:w-[480px] md:w-[540px] lg:w-[640px] xl:w-[720px]">
+          <div className="relative flex flex-col items-center justify-end  h-full  w-[320px] sm:w-[480px] md:w-[540px] lg:w-[640px] xl:w-[720px]">
             <Image src="/ArpKuleBulut.svg" alt="" fill objectFit="cover" className="brightness-75"/>
             <div className="relative h-[40vh] md:h-[60vh] lg:h-[70vh] w-[270px] sm:w-[320px] md:w-[360px]  lg:w-[480px]">
               <Image

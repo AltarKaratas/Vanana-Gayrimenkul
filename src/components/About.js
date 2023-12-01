@@ -15,7 +15,7 @@ const About = () => {
   return (
     <section id="scrollPoint" className="h-min w-full relative ">
       <div
-        className="z-10  px-6 lg:px-20 h-[320px] md:h-[480px] lg:h-[720px] flex justify-center items-center bg-gradient-to-b from-[#171717] to-beige "
+        className="z-10 px-6 lg:px-20 h-[320px] md:h-[480px] lg:h-[720px] flex justify-center items-center bg-gradient-to-b from-[#171717] to-beige "
         ref={visibilityRef}
       >
         <h2
@@ -26,7 +26,7 @@ const About = () => {
           <br /> her zaman yanınızda
         </h2>
       </div>
-      <div className="flex h-min bg-gradient-to-t from-beige to-[#0a0a0a] bg-repeat-y">
+      <div className="flex h-min bg-gradient-to-t from-beige to-[#0a0a0a] ">
         <div className="h-min">
           <AboutContainer
             source="/Plan.svg"
@@ -53,7 +53,25 @@ const About = () => {
             }
           />
         </div>
-        <div className="w-[25vw] relative">
+        <div className="w-[28vw] relative flex-col gap-8 mt-16 lg:mt-40">
+        <div className="relative  w-[25vw] mx-auto h-[320px] sm:h-[320px] md:h-[640px] lg:h-[720px] transition-all duration-300 ease-in-out hover:scale-110">
+            <Image
+              src="/BannerVanana.svg"
+              alt="Banner"
+              fill
+              className="absolute z-40 saturate-0"
+            />
+            </div>
+          {screenSize.width <= 768 && (
+            <div className="relative  w-[25vw] mx-auto h-[320px] sm:h-[320px] md:h-[640px] lg:h-[720px] mt-32">
+            <Image
+              src="/BannerVanana.svg"
+              alt="Banner"
+              fill
+              className="absolute z-40 saturate-0"
+            />
+            </div>
+          )}
         </div>
       </div>
       <div className="flex flex-col-reverse lg:flex-row">

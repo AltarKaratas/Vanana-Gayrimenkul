@@ -14,12 +14,12 @@ const AboutContainer = (props) => {
   let mobileResizeWidth = "";
 
   !props.isFullWidth && screenSize.width <= 500
-    ? (mobileResizeWidth = "w-[80vw]")
+    ? (mobileResizeWidth = "w-[72vw]")
     : (mobileResizeWidth = "w-[75vw]");
 
   return (
     <div
-      className={`flex relative px-6 py-12 lg:px-20 ${mobileResizeWidth}  h-[320px] md:h-[360px]   ${
+      className={`flex relative  px-6 py-12 lg:px-20 ${mobileResizeWidth}  h-[360px] md:h-[360px]   ${
         props.direction === "right" ? "justify-end" : "justify-start"
       }`}
       ref={visibilityRef}
