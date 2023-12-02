@@ -17,7 +17,7 @@ export const archivo = Archivo({
 });
 
 export const inter = Inter({
-  weight: ["100", "400", "800"],
+  weight: ["100", "400","500", "800"],
   variable: "--font-inter",
   subsets: ["latin"],
 });

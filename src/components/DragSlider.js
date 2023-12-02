@@ -34,7 +34,7 @@ const DragSlider = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="relative z-0 w-full h-[580px] sm:h-[600px] md:h-[800px] lg:h-[880px] xl:h-[832px]  bg-[#121212] py-40 flex-col items-center justify-end">
+    <section className="relative z-12 w-full h-[600px] sm:h-[540px] md:h-[760px] lg:h-[680px] xl:h-[720px] bg-[#121212]  py-40">
       <Image
         src="/GrayLines.svg"
         alt="lines"
@@ -42,11 +42,11 @@ const DragSlider = (props) => {
         objectFit="cover"
         className="z-0"
       />
-      <div className="relative w-[90vw] mx-auto flex justify-between items-center">
-        <h1 className="relative z-20 leading-none  text-4xl sm:text-5xl md:text-7xl lg:text-9xl  text-white ">
+      <div className="relative w-full px-8 md:px-14 flex justify-between items-center">
+        <h1 className="relative z-20 leading-none text-5xl md:text-7xl xl:text-8xl  text-white ">
           Öne Çıkan
-          <br />
-          Projeler
+          {screenSize.width < 1024 && <br />}
+          {" "}Projeler
         </h1>
         <div className="self-end flex justify-end mb-2 sm:mb-4 md:mb-8">
           <Link
@@ -58,50 +58,48 @@ const DragSlider = (props) => {
         </div>
       </div>
       <Splide
-        className="z-10 pb-10 mx-auto overflow-visible"
+        className="z-10 px-6 md:px-12 pb-8 mx-auto overflow-visible"
         options={{
           type: "loop",
-          width: "90vw",
-          gap: "20px",
+          width: "w-full",
+          gap: "48px",
           autoWidth: true,
           snap: true,
           drag: true,
           arrows: false,
         }}
       >
-        {images.map((img, index) => (
+        {images.map((imgObj, index) => (
           <SplideSlide key={index}>
-            <div
-              className={`${
-                index % 2 == 0
-                  ? "w-[90vw] md:w-[640px] h-[360px] md:h-[480px] relative z-10 flex items-end p-4 sm:p-8 font-inter overflow-hidden"
-                  : "w-[90vw] md:w-[640px] h-[360px] md:h-[440px]  shadow-2xl shadow-[#c0c0c01b] relative z-10 flex items-end p-4 sm:p-8 font-inter overflow-hidden"
-              } `}
-            >
-              <div className=" relative w-full flex justify-between items-center bg-black_overlay p-4 z-10">
-                <h3 className="font-inter text-white w-1/2 sm:w-full text-xl md:text-4xl font-semibold z-10 uppercase">
-                  {img.title}
-                </h3>
-                <div className="flex justify-center items-center w-[64px] h-[64px] z-10">
-                  <Link href={`/Projeler/${index}`} className=" text-white">
-                    <Image
-                      src="/arrow.svg"
-                      width={screenSize.width < 768 ? 36 : 64}
-                      height={2}
-                      className="right-0 z-10 self-center hover:scale-125"
-                    />
+            <Link href={imgObj.title}>
+              <div
+                className={`${
+                  index % 2 == 0
+                    ? "w-[90vw] md:w-[640px] h-[320px] md:h-[492px] relative z-10 flex items-end font-inter overflow-hidden"
+                    : "w-[90vw] md:w-[640px] h-[320px] md:h-[492px]  relative z-10 flex items-end  font-inter overflow-hidden shadow-2xl shadow-[#c0c0c01b]"
+                } `}
+              >
+                <div className=" relative w-full flex justify-between items-center bg-gradient-to-r from-black via-[#0a0a0a] to-black p-6  z-10 ">
+                  <h3 className="w-full font-inter font-medium  border-b-4 border-gold text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#e2e2e2]  to-light_gold  sm:w-full text-2xl md:text-4xl lg:text-5xl  z-10 uppercase ">
+                    {imgObj.title}
+                  </h3>
+                  
+                </div>
+                <Image
+                  src={imgObj.url}
+                  title={imgObj.title}
+                  alt={imgObj.title}
+                  fill
+                  objectFit={`${index % 2 == 1 ? "cover" : ""}`}
+                  className="brightness-50 saturate-[0.0] transition-all duration-300 ease-in-out hover:scale-125 hover:saturate-50"
+                />
+                <div className="absolute bottom-7 right-6  z-20  transition-all duration-200 ease-in-out hover:scale-125 hover:mr-2">
+                  <Link href={imgObj.title} className="relative w-[25%] text-xs md:text-base lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-light_gold h-full" >
+                    Detayları Gör
                   </Link>
                 </div>
               </div>
-              <Image
-                src={img.url}
-                title={img.title}
-                alt={img.title}
-                fill
-                objectFit={`${index % 2 == 1 ? "cover" : ""}`}
-                className="brightness-50 saturate-50 transition-all duration-300 ease-in-out hover:scale-125"
-              />
-            </div>
+            </Link>
           </SplideSlide>
         ))}
         <SplideTrack className="w-[500px] h-2 bg-slate-100" />

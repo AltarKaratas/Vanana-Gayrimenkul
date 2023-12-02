@@ -53,24 +53,34 @@ const About = () => {
             }
           />
         </div>
-        <div className="w-[28vw] relative flex-col gap-8 mt-16 lg:mt-40">
-        <div className="relative  w-[25vw] mx-auto h-[320px] sm:h-[320px] md:h-[640px] lg:h-[720px] transition-all duration-300 ease-in-out hover:scale-110">
+        <div className="w-[28vw] relative flex-col mt-12">
+          <div className="relative  w-[25vw] mx-auto h-[320px]  md:h-[640px] lg:h-[720px] transition-all duration-300 ease-in-out hover:scale-110">
             <Image
               src="/BannerVanana.svg"
               alt="Banner"
               fill
               className="absolute z-40 saturate-0"
             />
-            </div>
+          </div>
           {screenSize.width <= 768 && (
-            <div className="relative  w-[25vw] mx-auto h-[320px] sm:h-[320px] md:h-[640px] lg:h-[720px] mt-32">
-            <Image
-              src="/BannerVanana.svg"
-              alt="Banner"
-              fill
-              className="absolute z-40 saturate-0"
-            />
-            </div>
+            <>
+              <div className="relative  w-[25vw] mx-auto h-[320px]  md:h-[640px] lg:h-[720px] mt-20 ">
+                <Image
+                  src="/BannerVanana.svg"
+                  alt="Banner"
+                  fill
+                  className="absolute z-40 saturate-0"
+                />
+              </div>
+              <div className="relative  w-[25vw] mx-auto h-[320px]  md:h-[640px] lg:h-[720px] mt-20 ">
+                <Image
+                  src="/BannerVanana.svg"
+                  alt="Banner"
+                  fill
+                  className="absolute z-40 saturate-0"
+                />
+              </div>
+            </>
           )}
         </div>
       </div>

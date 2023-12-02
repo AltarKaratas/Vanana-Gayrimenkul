@@ -48,11 +48,11 @@ export default function Page() {
           objectFit="cover"
           className="brightness-50 saturate-50 absolute z-0"
         />
-        <div className="relative flex flex-col gap-8 justify-center items-center px-8 lg:px-20 pt-16 sm:py-0">
+        <div className="relative flex flex-col gap-8 justify-center items-center px-6 md:px-12 pt-16 sm:py-0">
           <h1 className="text-white text-5xl md:text-7xl self-start">
             Biz Kimiz ?
           </h1>
-          <p className="text-white text-xl md:text-2xl leading-relaxed">
+          <p className="text-white text-xl md:text-2xl leading-loose pr-6 md:pr-12 xl:pr-20 ">
             <span className="font-bold text-light_gold">
               Vanana Gayrimenkul Danışmanlığı
             </span>{" "}
@@ -306,7 +306,7 @@ export default function Page() {
           <ul className="splide__pagination mt-20"></ul>
           <SplideTrack>
             {advantages.map((advantage_item) => (
-              <SplideSlide className="w-[240px] h-[480px] lg:w-[320px] lg:h-[540px] flex justify-center pt-20 bg-gradient-to-b from-[#242424] via-[#0d0d0d] to-[#0d0d0d] border border-black">
+              <SplideSlide className="w-[240px] h-[420px] lg:w-[320px] lg:h-[540px] flex justify-center pt-20 bg-gradient-to-b from-[#0a0a0a] via-black to-black ">
                 <div className="flex flex-col gap-8 p-4 items-center text-center">
                   <div className="w-[75px] h-[53px] lg:w-[150px] lg:h-[106px] relative flex justify-center items-center">
                     <Image
