@@ -1,8 +1,10 @@
+"use client"
+
 import { useState, useEffect } from "react";
 
 export default function useScreenSize(){
 
-    const hasWindow = typeof window !== 'undefined';
+    const hasWindow = typeof window !== undefined;
   
     function getWindowDimensions() {
       const width = hasWindow ? window.innerWidth : null;

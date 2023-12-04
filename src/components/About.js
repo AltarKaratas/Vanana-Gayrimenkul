@@ -1,29 +1,53 @@
+"use client";
 import Image from "next/image";
+
 import Link from "next/link";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import AboutContainer from "./AboutContainer";
 import { useIsVisible } from "@/utils/hooks/useIsVisible";
 import useScreenSize from "@/utils/hooks/useScreenSize";
+import localFont from "next/font/local";
+import { Transition } from "@headlessui/react";
+
+const sloganArray = ["Satış Gücü", "Deneyim", "Profesyonellik"];
+
+const testimonia = localFont({ src: "../ThePrestigeSignature.otf" });
 
 const About = () => {
+  const [sloganArrayIndex, setSloganArrayIndex] = useState(0);
+  const [showAnimation, setShowAnimation] = useState(false);
   const visibilityRef = useRef();
   const isVisible = useIsVisible(visibilityRef);
   const screenSize = useScreenSize();
 
+  useEffect(() => {
+    setShowAnimation(true);
+    const id = setTimeout(() => {
+      setSloganArrayIndex((sloganArrayIndex + 1) % sloganArray.length);
+    }, 2000);
+    return () => {
+      setShowAnimation(false);
+      clearInterval(id); // removes React warning when gets unmounted
+    };
+  }, [sloganArrayIndex]);
+
   return (
     <section id="scrollPoint" className="h-min w-full relative ">
       <div
-        className="z-10 px-6 lg:px-20 h-[320px] md:h-[480px] lg:h-[720px] flex justify-center items-center bg-gradient-to-b from-[#171717] to-beige "
+        className="z-10 px-6 lg:px-20 h-[320px] md:h-[480px] lg:h-[720px] flex py-40 bg-gradient-to-b from-[#171717] to-beige "
         ref={visibilityRef}
       >
         <h2
-          className={`relative font-inter z-30 w-full h-min text-white text-left text-2xl md:text-5xl xl:text-7xl transition-all ease-in-out
-          duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
+          className={`relative  ont-light z-30 w-full h-min text-white text-left text-2xl md:text-5xl xl:text-7xl transition-all ease-in-out
+          duration-1000 ${isVisible ? "opacity-100" : "opacity-0"} `}
         >
-          İnşaat projenizde satış ortağınız
-          <br /> her zaman yanınızda
+          Aradığınız<br/>
+          
+            <span className="text-gold text-9xl">{sloganArray[sloganArrayIndex]}</span>
+            <br/>
+          Vanana Gayrimenkulde.
         </h2>
       </div>
       <div className="flex h-min bg-gradient-to-t from-beige to-[#0a0a0a] ">

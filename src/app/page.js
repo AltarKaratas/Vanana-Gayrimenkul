@@ -3,12 +3,11 @@
 import { Inter } from "next/font/google";
 import { Archivo } from "next/font/google";
 
-import Landing from "@/components/Landing";
 import Vanana from "@/components/Vanana";
 import About from "@/components/About";
 import DragSlider from "@/components/DragSlider";
 import CustomerGallery from "@/components/CustomerGallery";
-import News from "@/components/News";
+import LandingPage from "@/components/LandingPage";
 
 export const archivo = Archivo({
   weight: ["200", "400", "700"],
@@ -17,21 +16,21 @@ export const archivo = Archivo({
 });
 
 export const inter = Inter({
-  weight: ["100", "400","500", "800"],
+  weight: ["100", "400", "500", "800"],
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export default function Home() {
   return (
-      <main
-        className={`${archivo.variable} ${inter.variable} font-sans h-min bg-gradient-to-b from-[#0f0f0f]  to-[#121212] antialiased scroll-smooth overflow-hidden `}
-      >
-        <Landing />
-        <About />
-        <Vanana />
-        <DragSlider />
-        <CustomerGallery />
-      </main>
+    <main
+      className={`${archivo.variable} ${inter.variable}  font-sans h-min bg-gradient-to-b from-[#0f0f0f]  to-[#121212] antialiased scroll-smooth  `}
+    >
+      <LandingPage />
+      <About />
+      <Vanana />
+      <DragSlider />
+      <CustomerGallery />
+    </main>
   );
 }

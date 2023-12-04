@@ -45,8 +45,8 @@ const AboutContainer = (props) => {
         alt="bg"
         fill
         objectFit="cover"
-        objectPosition="center bottom"
-        className="z-0 brightness-50 saturate-[0.15]"
+        objectPosition="center center"
+        className="z-0 brightness-[0.3] saturate-[0.15]"
       />
     </div>
   );
