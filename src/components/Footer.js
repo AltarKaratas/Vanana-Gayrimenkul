@@ -14,12 +14,14 @@ const Footer = (props) => {
     <nav className="relative h-min flex flex-col p-8 sm:p-10 md:p-20 pb-4 sm:pb-5 md:pb-10 bg-[#0a0a0a]">
       {screenSize.width < 768 ? (
         <div className="w-full h-full flex-col">
+          <Link href="/">
           <Image
-            src="/Landing Vanana Text.svg"
+            src="/LandingVananaText.svg"
             alt="V"
             width={screenSize.width < 1280 ? 160 : 320}
             height={64}
           />
+          </Link>
           <div className="w-full md:w-[160px] flex justify-between">
             <p className="mt-4 text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343]">
               Konut ve Kurumsal Emlak Satışında Uzman
@@ -46,13 +48,15 @@ const Footer = (props) => {
       ) : (
         <>
           <div className="w-full flex justify-between">
+            <Link href="/">
             <Image
-              src="/Landing Vanana Text.svg"
+              src="/LandingVananaText.svg"
               alt="V"
               width={screenSize.width < 1280 ? 160 : 320}
               height={64}
               className="lg:pb-2"
             />
+            </Link>
             <ul className="flex flex-wrap justify-between items-end ">
               {navLinks.map((item, index) => (
                 <li
@@ -72,7 +76,7 @@ const Footer = (props) => {
             </p>
           </div>
           <div className="w-full h-full flex self-end my-8">
-            <div className="flex md:w-[160px] xl:w-[320px] justify-between">
+            <div className="flex md:w-[160px] xl:w-[320px] justify-around">
               <Image
                 src="/facebook.svg"
                 alt="FB"
