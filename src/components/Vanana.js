@@ -29,7 +29,7 @@ const Vanana = (props) => {
             src="/Logovananagray.svg"
             alt="V"
             fill
-            className="absolute ml-2 mt-2 z-40"
+            className="absolute ml-1 mt-1 z-40"
           />
         </div>
       </div>
