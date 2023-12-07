@@ -7,7 +7,6 @@ import useScreenSize from "@/utils/hooks/useScreenSize";
 const AboutContainer = (props) => {
   const visibilityRef = useRef();
   const isVisible = useIsVisible(visibilityRef);
-  const screenSize = useScreenSize();
 
   return (
     <div

@@ -3,6 +3,7 @@
 import { Inter } from "next/font/google";
 import { Archivo } from "next/font/google";
 
+import dynamic from "next/dynamic";
 import Vanana from "@/components/Vanana";
 import About from "@/components/About";
 import DragSlider from "@/components/DragSlider";
@@ -30,7 +31,19 @@ export default function Home() {
       <About />
       <Vanana />
       <DragSlider />
-      <CustomerGallery />
+      <CustomerGallery1 />
     </main>
   );
 }
+
+const CustomerGallery1 = dynamic(
+  () => import("../components/CustomerGallery"),
+  { ssr: false }
+);
+const LandingPage1 = dynamic(() => import("../components/LandingPage"), {
+  ssr: false,
+});
+const About1 = dynamic(() => import("../components/About"), { ssr: false });
+const DragSlider1 = dynamic(() => import("../components/DragSlider"), {
+  ssr: false,
+});

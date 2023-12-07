@@ -3,10 +3,9 @@
 import { useState, useLayoutEffect } from "react";
 
 export default function useScreenSize() {
-  console.log(typeof window === undefined ? "undefined" : "window")
   const [screenSize, setScreenSize] = useState({
-    width: typeof window === undefined ? null : window?.innerWidth,
-    height: typeof window === undefined ? null : window?.innerHeight,
+    width: typeof window === "undefined" ? 0 : window.innerWidth,
+    height: typeof window === "undefined" ? 0 : window.innerHeight,
   });
 
   useLayoutEffect(() => {

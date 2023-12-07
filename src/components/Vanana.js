@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Vanana = (props) => {
-  const screenSize = useScreenSize();
   return (
     <section className="relative  flex flex-col justify-center items-center z-10 w-full h-[540px] sm:h-[960px] lg:h-[960px] overflow-visible pt-20 lg:pt-40">
       <Image

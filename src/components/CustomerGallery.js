@@ -2,9 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import useScreenSize from "@/utils/hooks/useScreenSize";
+import { useState,useLayoutEffect } from "react";
 
 const CustomerGallery = (props) => {
-  const screenSize = useScreenSize();
+  const screenSize = useScreenSize()
+  
 
   return (
     <>
