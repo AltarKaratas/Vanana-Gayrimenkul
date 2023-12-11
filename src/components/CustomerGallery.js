@@ -2,17 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import useScreenSize from "@/utils/hooks/useScreenSize";
-import { useState,useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 const CustomerGallery = (props) => {
-  const screenSize = useScreenSize()
-  
+  const screenSize = useScreenSize();
 
   return (
     <>
       <div className="flex flex-col-reverse lg:flex-row h-min ">
-        <div className="absolute top-[-9999px] left-[-9999px] lg:top-0 lg:left-0 invisible lg:relative lg:visible lg:w-1/3 p-10 h-[400px] bg-black"></div>
-        <div className="relative flex justify-end items-end  p-10 md:p-20  lg:w-2/3 h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] bg-gradient-to-tr from-beige to-black">
+        <div className="lg:relative absolute top-[-9999px] left-[-9999px] lg:top-0 lg:left-0 lg:w-1/3  h-[400px] p-10 bg-black_000" />
+        <div className="relative flex justify-end items-end lg:w-2/3 h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] p-10 md:p-20 bg-gradient-to-tr from-beige to-black_000">
           <Image
             src="/skyline1.svg"
             alt=""
@@ -23,34 +22,30 @@ const CustomerGallery = (props) => {
         </div>
       </div>
       {screenSize.width < 1024 ? (
-        <section className="w-[100%] h-min  py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-black to-black">
-          <div className="w-1/2 h-min relative">
-            <div className="relative  top-0 left-0 shadow-xl">
-              <Image
-                src="/4.jpg"
-                width={screenSize.width / 2}
-                height={1}
-                objectFit="cover"
-              />
-            </div>
-            
-          </div>
-          <div className="w-full relative px-8 sm:px-12">
-            <h1 className="text-white text-2xl md:text-4xl border-b-4 border-gold mb-8">
-              Müşteri
-              odaklı
-              çalışıyoruz
+        <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-black_100 to-black_000">
+          <Image src="/4.jpg" width={screenSize.width / 1.6} height={1} />
+          <div className="px-8 sm:px-12">
+            <h1 className="mb-4 text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 to-gray  border-b-4 border-gold_100">
+              Müşteri odaklı çalışıyoruz
             </h1>
-            <p className="flex justify-center text-white  font-light">
+            <p className="flex justify-center text-white font-light mb-8">
               Önceki satışlarımız ve memnun müşterilerimiz, işimizin temelini
               oluşturan referanslarımızdır. Siz de bu memnuniyete şahit olmak
               ister misiniz?
             </p>
+            <div className="flex">
+              <Link
+                href="/Gallery"
+                className="font-inter text-base md:text-2xl text-white flex items-center border-b border-white border-spacing-4npm"
+              >
+                Galeriye Git
+              </Link>
+            </div>
           </div>
         </section>
       ) : (
-        <section className="w-[100%] h-min mx-auto  py-80  flex flex-row  overflow-visible relative bg-gradient-to-t from-beige via-black to-black">
-          <div className="w-1/2 flex justify-end items-center relative ">
+        <section className="flex mx-auto py-80 overflow-visible bg-gradient-to-t from-beige via-black_000 to-black_000">
+          <div className="w-1/2 flex justify-end items-center relative">
             <div className={`absolute top-4 right-0 shadow-xl`}>
               <Image
                 src="/4.jpg"
@@ -67,7 +62,7 @@ const CustomerGallery = (props) => {
                 objectFit="cover"
               />
             </div>
-            <div className={` absolute top-20 right-16 shadow-xl`}>
+            <div className={`absolute top-20 right-16 shadow-xl`}>
               <Image
                 src="/1.jpg"
                 width={screenSize.width / 3}
@@ -75,7 +70,7 @@ const CustomerGallery = (props) => {
                 objectFit="cover"
               />
             </div>
-            <div className={` absolute top-28 right-24 shadow-xl`}>
+            <div className={`absolute top-28 right-24 shadow-xl`}>
               <Image
                 src="/3.jpg"
                 width={screenSize.width / 3}
@@ -84,45 +79,30 @@ const CustomerGallery = (props) => {
               />
             </div>
           </div>
-          <div className="w-1/2 flex flex-col gap-8  pl-10 pr-32 xl:pl-20 xl:pr-60 justify-center items-start relative ">
-            <h1 className="relative  leading-snug text-white text-7xl border-b-4 border-gold">
+          <div className="relative flex flex-col justify-center items-start gap-8 w-1/2 pl-10 pr-32 xl:pl-20 xl:pr-60">
+            <h1 className="relative leading-snug text-white text-7xl border-b-4 border-gold_100">
               Müşteri
               <br />
               odaklı
               <br />
               çalışıyoruz
             </h1>
-            <p className="  text-slate-100 text-2xl font-light">
+            <p className="font-light text-2xl text-white">
               Önceki satışlarımız ve memnun müşterilerimiz, işimizin temelini
               oluşturan referanslarımızdır. Siz de bu memnuniyete şahit olmak
               ister misiniz?
             </p>
-            <div className="flex w-full justify-end">
+            <div className="flex justify-end">
               <Link
                 href="/Gallery"
                 className="font-inter text-2xl text-white flex items-center border-b border-white border-spacing-4npm"
               >
                 Galeriye Git
-                
               </Link>
             </div>
           </div>
         </section>
       )}
-      <div className="w-full px-10 md:px-20 py-4 md:py-8 mb-32  flex justify-between items-center bg-[#0a0a0a]">
-        <h1 className="text-white font-inter text-2xl md:text-4xl lg:text-5xl flex">
-          Bizimle İletişime Geçin.
-        </h1>
-        <Link href={"/Iletisim"} className="hover:scale-105">
-          <Image
-            src="/VectorArrowDown.svg"
-            alt="VANANA"
-            width={screenSize.width > 1024 ? 96 : 64}
-            height={350}
-            className="relative -rotate-90"
-          />
-        </Link>
-      </div>
     </>
   );
 };

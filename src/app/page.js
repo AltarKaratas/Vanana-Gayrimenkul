@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 import Vanana from "@/components/Vanana";
 import About from "@/components/About";
 import DragSlider from "@/components/DragSlider";
-import CustomerGallery from "@/components/CustomerGallery";
 import LandingPage from "@/components/LandingPage";
 
 export const archivo = Archivo({
@@ -40,10 +39,3 @@ const CustomerGallery1 = dynamic(
   () => import("../components/CustomerGallery"),
   { ssr: false }
 );
-const LandingPage1 = dynamic(() => import("../components/LandingPage"), {
-  ssr: false,
-});
-const About1 = dynamic(() => import("../components/About"), { ssr: false });
-const DragSlider1 = dynamic(() => import("../components/DragSlider"), {
-  ssr: false,
-});

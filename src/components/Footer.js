@@ -5,25 +5,30 @@ import Link from "next/link";
 
 import useScreenSize from "@/utils/hooks/useScreenSize";
 
-const navLinks = ["Hakkimizda", "Projeler", "Iletisim", "Galeri"];
+const navLinks = [
+  { text: "Hakkımızda", link: "Hakkimizda" },
+  { text: "Projeler", link: "Projeler" },
+  { text: "İletişim", link: "İletisim" },
+  { text: "Galeri", link: "Galeri" },
+];
 
 const Footer = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <nav className="relative h-min flex flex-col p-8 sm:p-10 md:p-20 pb-4 sm:pb-5 md:pb-10 bg-[#0a0a0a]">
+    <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-black_000 ">
       {screenSize.width < 768 ? (
-        <div className="w-full h-full flex-col">
+        <div className="h-full flex-col">
           <Link href="/">
-          <Image
-            src="/LandingVananaText.svg"
-            alt="V"
-            width={screenSize.width < 1280 ? 160 : 320}
-            height={64}
-          />
+            <Image
+              src="/LandingVananaText.svg"
+              alt="V"
+              width={screenSize.width < 500 ? 160 : 320}
+              height={64}
+            />
           </Link>
-          <div className="w-full md:w-[160px] flex justify-between">
-            <p className="mt-4 text-xs text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343]">
+          <div className="flex justify-between w-full md:w-[160px]">
+            <p className="mt-4 text-xs text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
               Konut ve Kurumsal Emlak Satışında Uzman
             </p>
           </div>
@@ -31,74 +36,53 @@ const Footer = (props) => {
             {navLinks.map((item, index) => (
               <li
                 key={index}
-                className="mb-4 flex justify-start items-start transition-all ease-in-out duration-500 hover:scale-125"
+                className="flex justify-start items-start mb-4 transition-all ease-in-out duration-500 hover:scale-125"
               >
-                <Link href={`/${item}`} className="text-xl">
-                  {item}
+                <Link href={`/${item.link}`} className="text-xl">
+                  {item.text}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="flex border-t border-dark_gray mt-4">
-            <p className="text-gray text-[10px] mt-4">
+          <div className="flex mt-4 border-t border-dark_gray">
+            <p className="mt-4 text-gray text-[10px]">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>
           </div>
         </div>
       ) : (
         <>
-          <div className="w-full flex justify-between">
+          <div className="flex justify-between items-end">
             <Link href="/">
-            <Image
-              src="/LandingVananaText.svg"
-              alt="V"
-              width={screenSize.width < 1280 ? 160 : 320}
-              height={64}
-              className="lg:pb-2"
-            />
+              <Image
+                src="/LandingVananaText.svg"
+                alt="V"
+                width={screenSize.width < 1280 ? 160 : 320}
+                height={64}
+                className="lg:pb-2"
+              />
             </Link>
-            <ul className="flex flex-wrap justify-between items-end ">
+            <ul className="flex flex-wrap justify-between items-end gap-8">
               {navLinks.map((item, index) => (
                 <li
                   key={index}
-                  className="sm:ml-10 xl:ml-20 mt-4 flex justify-end transition-all ease-in-out duration-500 hover:scale-125"
+                  className="flex justify-end mt-4 transition-all ease-in-out duration-500 hover:scale-125"
                 >
-                  <Link href={`/${item}`} className="text-white text-2xl">
-                    {item}
+                  <Link href={`/${item.link}`} className="text-white text-2xl">
+                    {item.text}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="w-full md:w-[160px] xl:w-[320px] flex justify-between">
-            <p className="mt-4 lg:pl-2 text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343]">
+          <div className="flex justify-between w-full md:w-[160px] xl:w-[320px]">
+            <p className="mt-4 xl:pl-2 text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
               Konut ve Kurumsal Emlak Satışında Uzman
             </p>
           </div>
-          <div className="w-full h-full flex self-end my-8">
-            <div className="flex md:w-[160px] xl:w-[320px] justify-around">
-              <Image
-                src="/facebook.svg"
-                alt="FB"
-                width={screenSize.width < 1024 ? 24 : 32}
-                height={32}
-              />
-              <Image
-                src="/instagram.svg"
-                alt="I"
-                width={screenSize.width < 1024 ? 36 : 48}
-                height={32}
-              />
-              <Image
-                src="/linkedin.svg"
-                alt="Li"
-                width={screenSize.width < 1024 ? 24 : 32}
-                height={32}
-              />
-            </div>
-          </div>
-          <div className="flex justify-end border-t border-dark_gray mt-4">
-            <p className="text-gray text-[10px] mt-4">
+
+          <div className="flex justify-end border-t border-dark_gray mt-8 lg:mt-16">
+            <p className="text-gray text-[10px] mt-4 ">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>
           </div>
