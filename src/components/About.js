@@ -53,25 +53,27 @@ const About = () => {
       <div
         className={`relative z-10 flex h-[480px] md:h-[720px] px-6 xl:px-20 py-16 lg:py-32  transition-all duration-[3500ms] ease-in-out`}
       >
-        <div className="relative flex flex-col gap-4 ">
+        <div className="flex flex-col gap-4 ">
           <h2
-            className={`h-min text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200`}
+            className={`relative text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200`}
           >
             Aradığınız
             <br />
             {
               <span
-                className={`${fadeProp} relative h-min text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200 transition-all duration-1000 ease-in-out`}
+                className={`${fadeProp} relative text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200 transition-all duration-1000 ease-in-out`}
               >
                 {sloganArray[sloganArrayIndex]}
               </span>
             }
             <br />
             Vanana Gayrimenkulde.
-          </h2>
-          <span
-            className={`${holimount.className} absolute bottom-32 sm:bottom-40 md:bottom-80 lg:bottom-[270px] xl:bottom-40 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
+            <span
+            className={`${holimount.className} absolute -bottom-16 left-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
           >N</span>
+          </h2>
+          
+          
         </div>
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
           <div
