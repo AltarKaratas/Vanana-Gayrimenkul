@@ -68,12 +68,14 @@ const About = () => {
             }
             <br />
             Vanana Gayrimenkulde.
-            <span
-            className={`${holimount.className} absolute -bottom-[64px] left-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
-          >N</span>
+            <div className="relative mt-8 xl:mt-16">
+              <span
+                className={`${holimount.className} absolute bottom-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
+              >
+                N
+              </span>
+            </div>
           </h2>
-          
-          
         </div>
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
           <div
