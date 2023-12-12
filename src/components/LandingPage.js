@@ -31,7 +31,7 @@ export default function LandingPage(props) {
       </div>
       <div className="relative flex flex-col h-full">
         <div className="flex justify-center items-end h-full ">
-          <div className="relative z-20 w-[240px] sm:w-[280px] md:w-[360px] 2xl:w-[640px] min-[2560px]:w-[960px] h-[260px] md:h-[360px] 2xl:h-[640px] min-[2560px]:h-[960px]">
+          <div className="relative z-20 w-[240px] sm:w-[280px] md:w-[360px] 2xl:w-[640px] min-[2560px]:w-[960px] h-[260px] md:h-[360px] 2xl:h-[640px] min-[2560px]:h-[640px]">
             <Image src="/ARP KULE1.png" alt="" fill objectFit="contain" />
           </div>
           <div className="absolute z-0">
