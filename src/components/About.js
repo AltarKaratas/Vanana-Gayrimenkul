@@ -68,20 +68,21 @@ const About = () => {
             }
             <br />
             Vanana Gayrimenkulde.
-            <div className="relative mt-8 xl:mt-16">
-              <span
-                className={`${holimount.className} absolute bottom-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
+            
+          </h2>
+          <span
+                className={`${holimount.className} absolute pb-60  text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
               >
                 N
-              </span>
-            </div>
-          </h2>
+              </span>    
         </div>
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
+          
           <div
             className="relative w-32 h-32 sm:w-48 sm:h-48 xl:w-[320px] xl:h-[360px]"
             ref={visibilityRef}
           >
+           
             <Image src="/Vectorhouse.svg" fill alt="" objectFit="contain" />
           </div>
         </div>
