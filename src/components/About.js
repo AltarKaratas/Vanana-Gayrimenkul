@@ -69,7 +69,7 @@ const About = () => {
             <br />
             Vanana Gayrimenkulde.
             <span
-            className={`${holimount.className} absolute -bottom-16 left-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
+            className={`${holimount.className} absolute -bottom-[64px] left-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
           >N</span>
           </h2>
           

@@ -21,12 +21,14 @@ export const inter = Inter({
 export const metadata = {
   title: "Vanana Gayrimenkul",
   description: "Vanana Gayrimenkul Danışmanlığı",
-
+  viewport:"width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no",
 };
+
 
 export default function RootLayout({ children }) {
   return (
     <html>
+        
      
       <body
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-hidden`}
