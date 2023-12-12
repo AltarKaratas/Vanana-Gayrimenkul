@@ -35,7 +35,7 @@ export default function LandingPage(props) {
             <Image src="/ARP KULE1.png" alt="" fill objectFit="contain" />
           </div>
           <div className="absolute z-0">
-            <div className="relative w-[286px] min-[500px]:w-[520px] md:w-[520px] lg:w-[640px] 2xl:w-[960px] min-[2560px]:w-[1440px] h-[50vh] max-h-[360px] sm:h-[400px] md:max-h-none md:h-[500px] lg:h-[640px] 2xl:h-[740px] min-[2560px]:h-[1080px]">
+            <div className="relative w-[286px] min-[500px]:w-[520px] md:w-[520px] lg:w-[640px] 2xl:w-[960px] min-[2560px]:w-[1440px] h-[50vh] max-h-[360px] sm:h-[400px] md:max-h-none md:h-[500px] lg:h-[640px] 2xl:h-[740px] min-[2560px]:h-[740px]">
               <Image
                 src="/ArpKuleBulut.svg"
                 alt=""
