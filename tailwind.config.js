@@ -49,6 +49,7 @@ module.exports = {
         light_gold: "#a59564",
         beige: "#736d5c",
       },
+      
     },
   },
   plugins: [],

@@ -2,11 +2,14 @@
 import Image from "next/image";
 import Maps from "@/components/Maps";
 import { useForm } from "react-hook-form";
-import Script from 'next/script'
 import useScreenSize from "@/utils/hooks/useScreenSize";
+import { useState } from "react";
 
 export default function Page(props) {
   const screenSize = useScreenSize();
+
+  const [emailSent, setEmailSent] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -18,24 +21,27 @@ export default function Page(props) {
       userMessage: "",
     },
   });
-  const smtpConfig = {
-    Host: "smtp.elasticemail.com",
-    Username: "karatasaltar@gmail.com",
-    Password: "52095756D8200F0A606048AF5B97D3C4D5AE",
-    To: "karatasaltar@gmail.com",
-    From: "karatasaltar@gmail.com",
-    Subject: "This is the subject",
-    Body: "And this is the body",
-  };
-  const onSubmit = (data) => {
-    if (window.Email)
-      window.Email.send(smtpConfig).then((message) => alert(message));
-  };
-  
+
+  async function onSubmit(data) {
+    //if status code === 200 ? message sent ok
+    await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(
+        (response) => response.status === 200 && setEmailSent("successful"),
+        () => setEmailSent("error")
+      )
+      .catch(() => setEmailSent("error"));
+  }
+
   const validEmail = new RegExp(
     /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
   );
-  const validName = new RegExp(/^[a-zA-Z]+ [a-zA-Z]+$/);
+  const validName = new RegExp(/^[A-Za-zşŞıİçÇöÖüÜĞğ ]+$/);
 
   const validTelephone = new RegExp(
     /^(?:\+90.?5|0090.?5|905|0?5)(?:[01345][0-9])\s?(?:[0-9]{3})\s?(?:[0-9]{2})\s?(?:[0-9]{2})$/
@@ -43,7 +49,6 @@ export default function Page(props) {
 
   return (
     <div className="overflow-x-hidden bg-black">
-       <Script src="https://smtpjs.com/v3/smtp.js" />
       <div className="relative h-[600px] w-full bg-black flex justify-center items-center">
         <Image
           src="/ankara.webp"
@@ -79,9 +84,7 @@ export default function Page(props) {
           </div>
           <div className="flex flex-col gap-4">
             <h1 className="text-white font-bold text-4xl lg:5xl">Telefon</h1>
-            <p className="text-white text-xl">
-            +90(312) 222 72 72
-            </p>
+            <p className="text-white text-xl">+90(312) 222 72 72</p>
           </div>
         </div>
       </div>
@@ -98,7 +101,9 @@ export default function Page(props) {
           className="flex flex-col w-full md:w-[360px] lg:w-[480px] xl:w-[540px] px-4 sm:px-0 font-inter"
         >
           <div className="w-full flex flex-col gap-2">
-            <label className="after:content-['*'] text-white text-xl">Adınız Soyadınız</label>
+            <label className="after:content-['*'] text-white text-xl">
+              Adınız Soyadınız
+            </label>
             {errors.firstName && (
               <p className="text-red-500">Adınızı doğru formatta girin</p>
             )}
@@ -110,7 +115,9 @@ export default function Page(props) {
             />
           </div>
           <div className="w-full flex flex-col gap-2">
-            <label className="after:content-['*'] text-white text-xl">E-mail </label>
+            <label className="after:content-['*'] text-white text-xl">
+              E-mail{" "}
+            </label>
             {errors.email && (
               <p className="text-red-500">
                 Email adresinizi doğru formatta girin
@@ -125,7 +132,9 @@ export default function Page(props) {
             />
           </div>
           <div className="w-full flex flex-col gap-2">
-            <label className="after:content-['*'] text-white text-xl">Telefon</label>
+            <label className="after:content-['*'] text-white text-xl">
+              Telefon
+            </label>
             {errors.telephone && (
               <p className="text-red-500">
                 Telefon numaranızı doğru formatta girin
@@ -148,11 +157,35 @@ export default function Page(props) {
               className="mb-5 px-2  pt-4 pb-10 rounded-md"
             />
           </div>
-          <input
-            value="Gönder"
-            type="submit"
-            className="w-full text-white text-xl mb-5 px-2 py-4 rounded-md bg-gold transition-all duration-500 ease-in-out hover:scale-110"
-          />
+          <div className="flex flex-col gap-4">
+            <input
+              value={`${emailSent === "successful" ? "Gönderildi" : "Gönder"}`}
+              type="submit"
+              disabled={emailSent === "successful" || emailSent === "error"}
+              className=" text-white text-xl mb-5 px-2 py-4 rounded-md bg-gold_100 transition-all duration-500 ease-in-out hover:scale-110"
+            />
+            {emailSent === "successful" && (
+              <span
+                className={`transition-all duration-1000 ease-in-out ${
+                  emailSent === "successful" ? "opacity-100" : "opacity-0"
+                } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
+              >
+                Mesajınızı aldık. En kısa süre içinde sizinle iletişime
+                geçeceğiz.
+                <Image src="./tick.svg" alt="" width={48} height={48} />
+              </span>
+            )}
+            {emailSent === "error" && (
+              <span
+                className={`transition-all duration-1000 ease-in-out ${
+                  emailSent === "error" ? "opacity-100" : "opacity-0"
+                } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
+              >
+                Üzgünüz mesajınızı iletilemedi. Lütfen tekrar deneyin.
+                <Image src="./cancel.svg" alt="" width={48} height={48} />
+              </span>
+            )}
+          </div>
         </form>
       </div>
     </div>

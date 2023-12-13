@@ -8,7 +8,7 @@ import useScreenSize from "@/utils/hooks/useScreenSize";
 const navLinks = [
   { text: "Hakkımızda", link: "Hakkimizda" },
   { text: "Projeler", link: "Projeler" },
-  { text: "İletişim", link: "İletisim" },
+  { text: "İletişim", link: "Iletisim" },
   { text: "Galeri", link: "Galeri" },
 ];
 
@@ -23,7 +23,7 @@ const Footer = (props) => {
             <Image
               src="/LandingVananaText.svg"
               alt="V"
-              width={screenSize.width < 500 ? 160 : 320}
+              width={180}
               height={64}
             />
           </Link>
@@ -66,7 +66,7 @@ const Footer = (props) => {
               {navLinks.map((item, index) => (
                 <li
                   key={index}
-                  className="flex justify-end mt-4 transition-all ease-in-out duration-500 hover:scale-125"
+                  className="flex justify-end mt-4 transition-all ease-in-out duration-500 hover:scale-125 hover:border-b-2 hover:border-gold_100"
                 >
                   <Link href={`/${item.link}`} className="text-white text-2xl">
                     {item.text}
@@ -81,7 +81,7 @@ const Footer = (props) => {
             </p>
           </div>
 
-          <div className="flex justify-end border-t border-dark_gray mt-8 lg:mt-16">
+          <div className="flex justify-end border-t border-dark_gray mt-16 lg:mt-24">
             <p className="text-gray text-[10px] mt-4 ">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>

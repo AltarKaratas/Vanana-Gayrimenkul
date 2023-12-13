@@ -47,7 +47,7 @@ const About = () => {
     <section
       id="scrollPoint"
       className={`relative h-min transition-all duration-[3500ms] ease-in-out ${
-        isVisible ? "bg-black_000" : "bg-black_300"
+        isVisible ? "bg-black_000" : "bg-black_200"
       } `}
     >
       <div
@@ -68,21 +68,19 @@ const About = () => {
             }
             <br />
             Vanana Gayrimenkulde.
-            
+            <span
+            className={`${holimount.className} absolute -bottom-16 left-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
+          >
+            N
+          </span>
           </h2>
-          <span
-                className={`${holimount.className} absolute pb-60  text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
-              >
-                N
-              </span>    
+          
         </div>
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
-          
           <div
             className="relative w-32 h-32 sm:w-48 sm:h-48 xl:w-[320px] xl:h-[360px]"
             ref={visibilityRef}
           >
-           
             <Image src="/Vectorhouse.svg" fill alt="" objectFit="contain" />
           </div>
         </div>

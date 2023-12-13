@@ -91,7 +91,7 @@ const DragSlider = (props) => {
                 objectFit={`${index % 2 == 1 ? "cover" : ""}`}
                 className="brightness-50 saturate-[0.0] transition-all duration-300 ease-in-out hover:scale-125 hover:saturate-50"
               />
-              <div className="absolute bottom-7 right-6  z-20  transition-all duration-200 ease-in-out hover:scale-125 hover:mr-2">
+              <div className="absolute bottom-7 right-6  z-20  transition-all duration-500 ease-in-out hover:scale-125 hover:mr-2">
                 <Link
                   href={imgObj.title}
                   className="relative w-[25%] text-xs md:text-base lg:text-xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200"

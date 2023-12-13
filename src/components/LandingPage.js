@@ -7,7 +7,7 @@ export default function LandingPage(props) {
   const screenSize = useScreenSize();
 
   return (
-    <section className="relative h-[560px] md:h-[720px] lg:h-[880px] xl:h-screen bg-gradient-to-b from-black_000 to-black_300">
+    <section className="relative h-[560px] md:h-[720px] lg:h-[880px] xl:h-screen bg-gradient-to-b from-black_000 to-black_200">
       <div className="absolute flex justify-center items-center w-full h-[calc(100%-64px)] lg:h-[calc(100%-80px)]">
         <div className="absolute flex flex-col w-full h-full px-6  xl:px-20 py-16 md:py-20">
           <div className="relative self-end w-32 md:w-48 lg:w-64 xl:w-96 h-12 md:h-24 lg:h-32 xl:h-64 ">
@@ -35,7 +35,7 @@ export default function LandingPage(props) {
             <Image src="/ARP KULE1.png" alt="" fill objectFit="contain" />
           </div>
           <div className="absolute z-0">
-            <div className="relative w-[286px] min-[500px]:w-[520px] md:w-[520px] lg:w-[640px] 2xl:w-[960px] min-[2560px]:w-[1440px] h-[50vh] max-h-[360px] sm:h-[400px] md:max-h-none md:h-[500px] lg:h-[640px] 2xl:h-[740px] min-[2560px]:h-[740px]">
+            <div className="relative w-[286px] min-[480px]:w-[360px] md:w-[520px] lg:w-[640px] 2xl:w-[960px] min-[2560px]:w-[1440px] h-[40vh] sm:h-[400px] md:h-[500px] lg:h-[640px] 2xl:h-[740px] min-[2560px]:h-[740px]">
               <Image
                 src="/ArpKuleBulut.svg"
                 alt=""

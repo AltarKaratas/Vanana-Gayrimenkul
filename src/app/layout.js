@@ -4,6 +4,8 @@ import { GeneralContextProvider } from "../utils/general_context";
 import { Archivo } from "next/font/google";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
+import Script from 'next/script'
+
 import Head from "next/head";
 import { Metadata } from "next";
 
@@ -21,15 +23,14 @@ export const inter = Inter({
 export const metadata = {
   title: "Vanana Gayrimenkul",
   description: "Vanana Gayrimenkul Danışmanlığı",
-  viewport:"width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no",
+  viewport:
+    "width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no",
 };
-
 
 export default function RootLayout({ children }) {
   return (
     <html>
-        
-     
+      <Script src="https://smtpjs.com/v3/smtp.js" ></Script>
       <body
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-hidden`}
       >
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </GeneralContextProvider>
       </body>
+      
     </html>
   );
 }

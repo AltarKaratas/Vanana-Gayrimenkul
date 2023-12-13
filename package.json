@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@elasticemail/elasticemail-client": "^4.0.23",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@headlessui/react": "^1.7.17",
     "@splidejs/react-splide": "^0.7.12",
@@ -17,9 +18,11 @@
     "@vercel/blob": "^0.15.1",
     "google-map-react": "^2.2.1",
     "next": "13.5.6",
+    "nodemailer": "^6.9.7",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.48.2"
+    "react-hook-form": "^7.48.2",
+    "vercel": "^32.7.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",
