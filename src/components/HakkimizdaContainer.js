@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function HakkimizdaContainer(props) {
   return (
-    <div className="flex flex-col items-end gap-16 ">
-      <div className="w-full pl-8">
-        <div className="w-full h-[360px] relative">
+    <div className="flex flex-col items-end gap-8">
+      <div className="w-full pl-6">
+        <div className="h-[240px] md:h-[360px] relative">
           <Image
             src={`${props.image}`}
             fill={true}
@@ -14,15 +14,15 @@ export default function HakkimizdaContainer(props) {
           />
         </div>
       </div>
-      <div className="px-8 flex flex-col gap-8">
+      <div className="px-6 xl:px-20 flex flex-col gap-4">
         <div className="flex flex-col ">
-          <h1 className="text-5xl md:text-7xl text-neutral-700">{props.h1}</h1>
-          <h1 className="text-5xl md:text-7xl text-white"> {props.h1_side}</h1>
+          <h1 className="text-2xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-l from-white_200 via-gray to-gold_100">{props.h1}</h1>
+          <h1 className="text-2xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_100"> {props.h1_side}</h1>
         </div>
-        <p className="text-xl md:text-2xl text-white ">
+        <p className="text-base md:text-xl text-white font-light">
           {props.p1}
         </p>
-        <p className="text-xl md:text-2xl text-white ">
+        <p className="text-base md:text-xl text-white font-light">
          {props.p2}
         </p>
       </div>

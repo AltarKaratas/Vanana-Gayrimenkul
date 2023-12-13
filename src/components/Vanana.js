@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Vanana = (props) => {
   return (
-    <section className="relative flex flex-col justify-center items-center z-10 w-full h-[540px] sm:h-[960px] lg:h-[960px] pt-20 lg:pt-40 bg-black_000 overflow-visible">
+    <section className="relative flex flex-col justify-center items-center z-10  h-[540px] sm:h-[960px] lg:h-[960px] pt-20 lg:pt-40 bg-black_000 overflow-visible ">
       <Image
         src="/GrayLines.svg"
         alt="lines"
@@ -13,7 +13,7 @@ const Vanana = (props) => {
         className="z-0"
       />
       <div
-        className="relative z-10 flex flex-col items-center justify-center h-full mx-6  lg:mx-20 lg:px-6 py-16 md:py-20 text-2xl md:text-4xl text-center leading-relaxed bg-gradient-to-br from-black_000 via-black_100 to-black_000 ">
+        className="relative z-10 flex flex-col items-center justify-center h-full mx-6  lg:mx-20 lg:px-6 py-16 md:py-20 text-2xl md:text-4xl text-center leading-relaxed bg-gradient-to-br from-black_000 via-black_100 to-black_000 shadow-[0px_32px_50px_10px_#0f0f0f] rounded-sm">
         <h2 className="text-transparent bg-clip-text bg-gradient-to-br from-[#706338] to-[#BFB286]">Vanana Gayrimenkul Danışmanlık </h2>
         <span className="text-white">
           olarak profesyonel ekibimizle, inşaat firmalaranın ve müteahhitlerin

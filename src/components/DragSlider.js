@@ -36,7 +36,8 @@ const DragSlider = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="relative z-12 w-full h-[480px] sm:h-[540px] md:h-[760px] lg:h-[680px] xl:h-[720px] py-40 bg-black_000">
+    <section className="relative z-12  h-[480px] sm:h-[540px] md:h-[760px] lg:h-[680px] xl:h-[720px] py-40 bg-black_000">
+      
       <Image
         src="/GrayLines.svg"
         alt="lines"
@@ -44,6 +45,7 @@ const DragSlider = (props) => {
         objectFit="cover"
         className="z-0"
       />
+      
       <div className="relative flex justify-between items-center w-full px-8 md:px-14">
         <h1 className="relative z-20 leading-none text-4xl md:text-7xl xl:text-8xl text-white ">
           Öne Çıkan
@@ -52,7 +54,7 @@ const DragSlider = (props) => {
         <div className="flex justify-end self-end mb-2 sm:mb-4 md:mb-8">
           <Link
             href="/Projeler"
-            className=" w-2/3 sm:w-full font-inter text-white text-base md:text-[18px] leading-tight lg:text-2xl border-b border-white"
+            className=" w-2/3 sm:w-full font-inter text-white text-base md:text-xl leading-tight lg:text-2xl border-b border-white"
           >
             Tüm projeleri görüntüle
           </Link>
@@ -79,7 +81,7 @@ const DragSlider = (props) => {
               className="relative z-10 flex items-end w-[320px] min-[400px]:w-[360px] min-[400px]:h-[276px] md:w-[640px] h-[246px] md:h-[492px] font-inter overflow-hidden shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]"
             >
               <div className="relative z-10 w-full flex justify-between items-center p-6 bg-gradient-to-r from-black_100 via-black_100 to-black_200">
-                <h3 className="w-full z-10 font-inter font-medium text-xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200 uppercase border-b-4 border-gold_100">
+                <h3 className="w-full z-10 font-inter font-medium text-xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100">
                   {imgObj.title}
                 </h3>
               </div>

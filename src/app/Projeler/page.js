@@ -11,7 +11,7 @@ function GridItem(props) {
 
   return (
     <div
-      className="relative w-full h-[calc(80vh-64px)] md:h-[480px] lg:h-[640px] flex justify-center items-end"
+      className="relative h-[400px] md:h-[480px]  flex justify-center items-end"
       onClick={() => setMouseHovered((prev) => !prev)}
       onMouseLeave={() => setTimeout(() => setMouseHovered(false), 1500)}
     >
@@ -24,11 +24,11 @@ function GridItem(props) {
       />
       <div
         className={`relative z-10 w-full px-4 lg:px-8 py-8  transition-all duration-500 ease-in-out ${
-          mouseHovered ? "h-full bg-black/100" : "h-1/3 bg-black/90"
+          mouseHovered ? "h-full bg-gradient-to-r from-black_100 via-black_100 to-black_200" : "h-1/3 bg-gradient-to-r from-black_100 via-black_100 to-black_200"
         }  flex flex-col gap-4`}
       >
         <h5
-          className={`py-2 text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343] font-inter `}
+          className={`py-2 text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343] font-inter border-b-4 border-gold_100 `}
         >
           Faras<br/> HighHill
         </h5>
@@ -72,7 +72,7 @@ export default function Page() {
       <div className="w-full pt-10 lg:pt-20 pb-4">
         <h3 className="text-white text-5xl lg:text-8xl">Tüm Satış Projeleri</h3>
       </div>
-      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
         <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
         <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
         <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />

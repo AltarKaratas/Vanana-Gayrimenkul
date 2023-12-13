@@ -46,7 +46,7 @@ const About = () => {
   return (
     <section
       id="scrollPoint"
-      className={`relative h-min transition-all duration-[3500ms] ease-in-out ${
+      className={`relative  transition-all duration-[3500ms] ease-in-out ${
         isVisible ? "bg-black_000" : "bg-black_200"
       } `}
     >
@@ -117,7 +117,7 @@ const About = () => {
           <div className="w-3/5 lg:h-[360px] bg-gradient-to-r from-beige to-black_000" />
         )}
         <div
-          className={`flex flex-col lg:justify-center items-start lg:items-end gap-4 lg:gap-8 lg:w-2/5 h-[180px] lg:h-[360px] font-inter py-12 px-6 lg:px-20 ${
+          className={`flex flex-col lg:justify-center items-start lg:items-end gap-4 lg:gap-8 lg:w-2/5 h-[180px] lg:h-[360px] font-inter py-12 px-6 xl:px-20 ${
             screenSize.width < 1024
               ? "bg-gradient-to-t from-beige to-black_000"
               : "bg-gradient-to-r from-black_000 to-black_000"

@@ -64,26 +64,26 @@ export default function Page(props) {
         </div>
       </div>
 
-      <div className="px-4 sm:px-8 lg:px-10 py-20 lg:py-40 flex flex-col justify-center xl:flex-row xl:items-center bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
-        <div className="w-full xl:w-1/2">
+      <div className="px-6 sm:px-8 xl:px-20 py-20 lg:py-40 flex flex-col justify-center lg:flex-row xl:items-center bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
+        <div className="w-full lg:w-1/2">
           <Maps
-            width={screenSize.width < 768 ? "320" : "640"}
-            height={screenSize.width < 1024 ? "360" : "640"}
+            width={screenSize.width < 1024 ? 320 : screenSize.width/2-160}
+            height={screenSize.width < 1024 ? 320 : screenSize.width/2-160}
           />
         </div>
-        <div className="w-full xl:w-1/2 h-full py-8 self-start flex flex-col gap-8">
+        <div className="w-full lg:w-1/2 h-full py-8 self-start flex flex-col gap-8">
           <div className="flex flex-col gap-4">
-            <h1 className="text-white font-bold text-4xl lg:5xl">Adres</h1>
+            <h1 className="text-white font-bold text-2xl 2xl:text-5xl">Adres</h1>
             <p className="text-white text-xl">
               Konutkent Mahallesi 3029. Cadde No:3/96 Çankaya - ANKARA
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <h1 className="text-white font-bold text-4xl lg:5xl">E-Mail</h1>
+            <h1 className="text-white font-bold text-2xl 2xl:text-5xl">E-Mail</h1>
             <p className="text-white text-xl">turgay@vanana.com.tr</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h1 className="text-white font-bold text-4xl lg:5xl">Telefon</h1>
+            <h1 className="text-white font-bold text-2xl 2xl:text-5xl">Telefon</h1>
             <p className="text-white text-xl">+90(312) 222 72 72</p>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function Page(props) {
               value={`${emailSent === "successful" ? "Gönderildi" : "Gönder"}`}
               type="submit"
               disabled={emailSent === "successful" || emailSent === "error"}
-              className=" text-white text-xl mb-5 px-2 py-4 rounded-md bg-gold_100 transition-all duration-500 ease-in-out hover:scale-110"
+              className={`text-white text-xl mb-5 px-2 py-4 rounded-md ${emailSent === "successful" ? "bg-gold_200" : "bg-gold_100"} transition-all duration-500 ease-in-out hover:scale-110`}
             />
             {emailSent === "successful" && (
               <span

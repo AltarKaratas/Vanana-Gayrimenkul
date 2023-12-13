@@ -16,7 +16,7 @@ const Footer = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-black_000 ">
+    <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-[#0A0A0A] ">
       {screenSize.width < 768 ? (
         <div className="h-full flex-col">
           <Link href="/">
