@@ -9,14 +9,14 @@ const navLinks = [
   { text: "Hakkımızda", link: "Hakkimizda" },
   { text: "Projeler", link: "Projeler" },
   { text: "İletişim", link: "Iletisim" },
-  { text: "Galeri", link: "Galeri" },
+  { text: "Galeri", link: "Gallery" },
 ];
 
 const Footer = (props) => {
   const screenSize = useScreenSize();
 
   return (
-    <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-[#0A0A0A] ">
+    <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-[#0A0A0A] font-inter">
       {screenSize.width < 768 ? (
         <div className="h-full flex-col">
           <Link href="/">
@@ -38,7 +38,7 @@ const Footer = (props) => {
                 key={index}
                 className="flex justify-start items-start mb-4 transition-all ease-in-out duration-500 hover:scale-125"
               >
-                <Link href={`/${item.link}`} className="text-xl">
+                <Link href={`/${item.link}`} className="text-xl ">
                   {item.text}
                 </Link>
               </li>
@@ -66,9 +66,9 @@ const Footer = (props) => {
               {navLinks.map((item, index) => (
                 <li
                   key={index}
-                  className="flex justify-end mt-4 transition-all ease-in-out duration-500 hover:scale-125 hover:border-b-2 hover:border-gold_100"
+                  className="flex justify-end mt-4"
                 >
-                  <Link href={`/${item.link}`} className="text-white text-2xl">
+                  <Link href={`/${item.link}`} className="text-white text-2xl  transition-all ease-in-out duration-500 hover:scale-125 hover:text-beige">
                     {item.text}
                   </Link>
                 </li>

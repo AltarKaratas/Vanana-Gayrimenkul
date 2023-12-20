@@ -49,7 +49,7 @@ export default function Page(props) {
 
   return (
     <div className="overflow-x-hidden bg-black">
-      <div className="relative h-[600px] w-full bg-black flex justify-center items-center">
+      <div className="relative h-[540px] md:h-[600px] w-full bg-black flex justify-center items-center">
         <Image
           src="/ankara.webp"
           alt=""
@@ -57,7 +57,7 @@ export default function Page(props) {
           objectFit="cover"
           className="brightness-50 saturate-50 absolute z-0"
         />
-        <div className="relative w-full px-8 lg:px-20 pt-16 sm:py-0">
+        <div className="relative w-full px-6 xl:px-20 pt-16 sm:py-0">
           <h1 className="text-white text-5xl md:text-7xl self-start">
             Bize Ulaşın
           </h1>

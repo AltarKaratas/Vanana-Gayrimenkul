@@ -117,24 +117,24 @@ const About = () => {
           <div className="w-3/5 lg:h-[360px] bg-gradient-to-r from-beige to-black_000" />
         )}
         <div
-          className={`flex flex-col lg:justify-center items-start lg:items-end gap-4 lg:gap-8 lg:w-2/5 h-[180px] lg:h-[360px] font-inter py-12 px-6 xl:px-20 ${
+          className={`flex flex-col lg:justify-center items-start lg:items-end gap-4 lg:gap-8 lg:w-2/5 h-[180px] md:h-[240px] lg:h-[360px] font-inter py-12 px-6 xl:px-20 ${
             screenSize.width < 1024
               ? "bg-gradient-to-t from-beige to-black_000"
               : "bg-gradient-to-r from-black_000 to-black_000"
           } `}
         >
-          <h3 className="inline text-left sm:text-right lg:text-left xl:text-right text-xl md:text-2xl lg:text-4xl text-gold_100">
+          <h3 className="inline text-left sm:text-right lg:text-left xl:text-right text-xl md:text-3xl  text-gold_100">
             Daha fazla bilgi almak ister misiniz?
           </h3>
           <div className="flex flex-row items-center justify-start lg:justify-end gap-6">
             <Link
-              href="/Iletisim"
+              href="/Hakkimizda"
               className="inline text-white text-base md:text-xl lg:text-2xl relative border-b border-white border-spacing-4"
             >
-              İletişim sayfasını ziyaret edin
+              Hakkımızda sayfasını ziyaret edin
             </Link>
             <Link
-              href="/Iletisim"
+              href="/Hakkimizda"
               className="relative text-white h-8 w-8 md:w-16 md:h-16 lg:w-24 lg:h-24"
             >
               <Image

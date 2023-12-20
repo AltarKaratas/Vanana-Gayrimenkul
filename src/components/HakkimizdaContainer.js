@@ -16,13 +16,13 @@ export default function HakkimizdaContainer(props) {
       </div>
       <div className="px-6 xl:px-20 flex flex-col gap-4">
         <div className="flex flex-col ">
-          <h1 className="text-2xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-l from-white_200 via-gray to-gold_100">{props.h1}</h1>
-          <h1 className="text-2xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_100"> {props.h1_side}</h1>
+          <h1 className="text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-l from-white_200 via-gray to-gold_100">{props.h1}</h1>
+          <h1 className="text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_100"> {props.h1_side}</h1>
         </div>
-        <p className="text-base md:text-xl text-white font-light">
+        <p className="text-white font-light">
           {props.p1}
         </p>
-        <p className="text-base md:text-xl text-white font-light">
+        <p className="text-white font-light">
          {props.p2}
         </p>
       </div>

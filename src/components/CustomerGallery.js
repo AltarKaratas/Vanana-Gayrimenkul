@@ -36,7 +36,7 @@ const CustomerGallery = (props) => {
             <div className="flex">
               <Link
                 href="/Gallery"
-                className="font-inter text-base md:text-2xl text-white flex items-center border-b border-white border-spacing-4npm"
+                className="font-inter md:text-xl  text-white flex items-center border-b border-white border-spacing-4npm"
               >
                 Galeriye Git
               </Link>

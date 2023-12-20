@@ -1,99 +1,111 @@
 "use client";
-import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-
-import useScreenSize from "@/utils/hooks/useScreenSize";
+import { images } from "@/components/DragSlider";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 function GridItem(props) {
-  const [mouseHovered, setMouseHovered] = useState(false);
-
   return (
     <div
-      className="relative h-[400px] md:h-[480px]  flex justify-center items-end"
-      onClick={() => setMouseHovered((prev) => !prev)}
-      onMouseLeave={() => setTimeout(() => setMouseHovered(false), 1500)}
+      id={props.id}
+      className="relative h-[540px] md:h-[540px] xl:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.9)]"
     >
-      <Image
-        src="/FarasHighHill.webp"
-        alt=""
-        fill
-        objectFit="cover"
-        className="brightness-50 z-0"
-      />
-      <div
-        className={`relative z-10 w-full px-4 lg:px-8 py-8  transition-all duration-500 ease-in-out ${
-          mouseHovered ? "h-full bg-gradient-to-r from-black_100 via-black_100 to-black_200" : "h-1/3 bg-gradient-to-r from-black_100 via-black_100 to-black_200"
-        }  flex flex-col gap-4`}
-      >
-        <h5
-          className={`py-2 text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343] font-inter border-b-4 border-gold_100 `}
-        >
-          Faras<br/> HighHill
-        </h5>
-        <Transition
-          show={mouseHovered}
-          enter="transition-all duration-300"
-          enterFrom="h-min opacity-0"
-          enterTo="h-full opacity-100"
-          leave="transition-all duration-300"
-          leaveFrom="h-full opacity-100"
-          leaveTo="h-min opacity-0"
-        >
-          <div className="relative h-full flex flex-col gap-4 justify-end">
-            <h4 className="text-white md:text-xl">
-              High Hill Gökyüzünün Sonsuzluğundan Alınan İlham...
-            </h4>
-            <p className="text-white text-sm md:text-base ">
-              High Hill projesinde, estetiğe ve kullanışlılığa büyük önem
-              verildi. Mimaride ve iç tasarımda denge, harmoni ve doğru orantı
-              çok önemli bir rol oynar. Bu kadar karışık bir dünyada
-              yaşanabilir, barış ve huzur dolu, insanların kendilerini çok rahat
-              hissedebilecekleri alanlar oluşturmayı hedefler.
-            </p>
-            <Link target="_blank" href={props.href} className="mt-8 p-4 bg-[#736D5C]">
-              Proje Sitesine Git
-            </Link>
-          </div>
-        </Transition>
+      <div className="absolute top-0 left-0 h-0" />
+      <div className="h-full w-full ">
+        <div className="absolute w-full z-10 px-3 lg:px-6 py-6 flex justify-between">
+          <Image
+            src={`${props.companyImageUrl}`}
+            alt=""
+            width={128}
+            height={44}
+          />
+          <Link
+            href={"/"}
+            className="bg-black_100 flex items-end rounded-sm text-white  lg:text-xl p-2 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Projeyi ziyaret et
+          </Link>
+        </div>
+        <div className="relative h-full w-full">
+          <Image
+            src={`${props.imageUrl}`}
+            fill={true}
+            objectFit="cover"
+            alt=""
+            className="brightness-75 relative"
+          />
+        </div>
+      </div>
+      <div className="h-2/3 relative z-10 w-full flex flex-col justify-between  p-2 lg:p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200 overflow-hidden ">
+        <h3 className="relative p-2 w-full z-10 font-inter  text-2xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100  ">
+          {props.title}
+        </h3>
+        <p className="text-white h-full font-light p-2 ">{props.text}</p>
       </div>
     </div>
   );
 }
 
 export default function Page() {
-  const screenSize = useScreenSize()
+  const params = useSearchParams();
+  const match = params.get("id") ? true : false;
+  useEffect(() => {
+    if (match) {
+      var timer = setTimeout(()=> {
+        const element = document.getElementById(params.get("id"));
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center",
+        });
+      },300)
+     
+    }
 
+    return (() => {clearTimeout(timer)})
+  }, [params.get("id")]);
 
   return (
-    <section className="relative w-full h-min px-8 lg:px-20 mt-16 lg:mt-20 pb-8 bg-light_black">
-      
-      <div className="w-full pt-10 lg:pt-20 pb-4">
-        <h3 className="text-white text-5xl lg:text-8xl">Tüm Satış Projeleri</h3>
-      </div>
-      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-        <GridItem href={"https://www.instagram.com/highhillincekevleri/"} />
-      </div>
-      <div className="w-full p-4 lg:p-8  flex justify-between items-center bg-gradient-to-bl from-[#171717] via-[#736D5C] to-bg-black">
-        <h1 className="text-white font-inter text-4xl lg:text-5xl flex">
-          Daha fazla bilgi almak ister misiniz?
-        </h1>
-        <Link href={"/Iletisim"} className="hover:scale-105">
+    <section className="relative pb-8 bg-black_000">
+      <div className="relative flex justify-center min-[500px]:items-center h-[540px] md:h-[600px]">
         <Image
-            src="/VectorArrowDown.svg"
-            alt="VANANA"
-            width={screenSize.width > 1024 ? 96 : 64}
-            height={350}
-            className="relative -rotate-90"
+          src="/apartments.jpg"
+          alt=""
+          fill={true}
+          objectFit="cover"
+          className="brightness-[0.25] saturate-50"
+        />
+        <div className="relative w-full flex flex-col justify-center px-6 xl:px-20 pt-24  md:pt-32">
+          -
+          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl mb-4 lg:mb-8">
+            Tüm Satış Projeleri
+          </h1>
+          <p className=" text-white text-xl md:text-2xl leading-loose pr-6 md:pr-12 xl:pr-20 ">
+            <span className=" font-bold text-light_gold">
+              Satışını yaptığımız projelere{" "}
+            </span>
+            göz atın.
+          </p>
+        </div>
+      </div>
+      <div className={"px-6 xl:px-20 pt-20 md:pt-40"}>
+        <h3 className="text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
+          İnşaat projenizi taçlandırın
+          <br />
+          Adımlarınızı bizimle atın
+        </h3>
+      </div>
+      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 xl:grid-cols-3 gap-16 px-6 lg:px-20 py-20 lg:py-40">
+        {images.map((projects) => (
+          <GridItem
+            title={projects.title}
+            imageUrl={projects.imageUrl}
+            id={projects.id}
+            text={projects.text}
+            companyImageUrl={projects.companyImageUrl}
           />
-          </Link>
+        ))}
       </div>
     </section>
   );

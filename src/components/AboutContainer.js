@@ -27,7 +27,7 @@ const AboutContainer = (props) => {
             fill
             objectFit="cover"
             objectPosition="center center"
-            className="z-0 brightness-50 saturate-[0.55]"
+            className="z-0 brightness-50 saturate-[0.55] shadow-[0px_32px_145px_10px_rgba(112,99,56,0.65)]"
           />
         </div>
       </div>
@@ -37,10 +37,10 @@ const AboutContainer = (props) => {
         } `}
       >
         <div
-          className={`w-[320px] md:w-[640px] lg:w-full h-min xl:pt-32 mx-auto md:mx-0`}
+          className={`w-[320px] md:w-[640px] lg:w-full h-min xl:pt-32 md:mx-auto lg:mx-0 `}
         >
           <h1
-            className={`inline z-10 text-gold text-2xl md:text-4xl lg:text-5xl  text-left mb-4 transition-opacity ease-in 
+            className={`inline z-10 text-gold text-2xl md:text-4xl text-left mb-4 transition-opacity ease-in 
     duration-[1500ms] ${isVisible ? "opacity-100" : "opacity-0"}`}
           >
             {props.h1}
@@ -49,7 +49,7 @@ const AboutContainer = (props) => {
               {props.keyword}
             </span>
           </h1>
-          <p className="mt-4 font-light sm:text-base md:text-xl text-white ">
+          <p className="mt-4 font-light  text-white ">
             {props.text}
           </p>
         </div>

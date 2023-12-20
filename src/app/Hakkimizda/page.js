@@ -42,7 +42,7 @@ export default function Page() {
 
   return (
     <main className="overflow-x-hidden bg-black_000">
-      <div className="relative flex justify-center md:items-center h-[600px] pt-16 lg:pt-20">
+      <div className="relative flex justify-center md:items-center h-[540px] md:h-[600px] pt-16 lg:pt-20">
         <Image
           src="/skyscraper.jpg"
           alt=""
@@ -51,7 +51,7 @@ export default function Page() {
           className="brightness-[0.25] saturate-50"
         />
         <div className="relative flex flex-col  px-6 xl:px-20 pt-8  md:pt-0">-
-          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl mb-4 lg:mb-8">Biz Kimiz ?</h1>
+          <h1 className="text-white text-5xl md:text-7xl mb-4 lg:mb-8">Biz Kimiz ?</h1>
           <p className="text-white text-xl md:text-2xl leading-loose pr-6 md:pr-12 xl:pr-20 ">
             <span className="font-bold text-light_gold">
               Vanana Gayrimenkul Danışmanlığı
@@ -188,7 +188,7 @@ export default function Page() {
                       
                     />
                   </div>
-                  <h1 className="text-white text-xl md:text-4xl font-inter font-bold">
+                  <h1 className="text-white text-xl md:text-2xl font-inter font-bold">
                     {advantage_item.h1}
                   </h1>
                   <p className="text-white">{advantage_item.text}</p>
