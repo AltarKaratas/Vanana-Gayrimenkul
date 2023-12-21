@@ -24,7 +24,6 @@ export const inter = Inter({
 
 export default function Home() {
   return (
-    <Nossr>
     <main
       className={`${archivo.variable} ${inter.variable}  font-sans h-min bg-gradient-to-b from-[#0f0f0f]  to-[#121212] antialiased scroll-smooth  `}
     >
@@ -35,7 +34,6 @@ export default function Home() {
       <DragSlider />
       <CustomerGallery1 />
     </main>
-    </Nossr>
   );
 }
 
