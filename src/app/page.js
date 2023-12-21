@@ -8,6 +8,7 @@ import Vanana from "@/components/Vanana";
 import About from "@/components/About";
 import DragSlider from "@/components/DragSlider";
 import LandingPage from "@/components/LandingPage";
+import Nossr from "@/utils/NoSsr";
 
 export const archivo = Archivo({
   weight: ["200", "400", "700"],
@@ -23,15 +24,18 @@ export const inter = Inter({
 
 export default function Home() {
   return (
+    <Nossr>
     <main
       className={`${archivo.variable} ${inter.variable}  font-sans h-min bg-gradient-to-b from-[#0f0f0f]  to-[#121212] antialiased scroll-smooth  `}
     >
+
       <LandingPage />
       <About />
       <Vanana />
       <DragSlider />
       <CustomerGallery1 />
     </main>
+    </Nossr>
   );
 }
 

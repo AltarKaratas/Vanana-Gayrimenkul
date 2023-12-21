@@ -1,13 +1,10 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import { GeneralContextProvider } from "../utils/general_context";
 import { Archivo } from "next/font/google";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
-import Script from 'next/script'
-
-import Head from "next/head";
-import { Metadata } from "next";
+import Script from "next/script";
+import Nossr from "@/utils/NoSsr";
 
 export const archivo = Archivo({
   weight: ["200", "400", "700"],
@@ -30,17 +27,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <Script src="https://smtpjs.com/v3/smtp.js" ></Script>
+      <Script src="https://smtpjs.com/v3/smtp.js"></Script>
       <body
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-hidden`}
       >
-        <GeneralContextProvider>
+        <Nossr>
           <Navbar />
           {children}
           <Footer />
-        </GeneralContextProvider>
+        </Nossr>
       </body>
-      
     </html>
   );
 }

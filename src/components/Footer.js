@@ -12,8 +12,12 @@ const navLinks = [
   { text: "Galeri", link: "Gallery" },
 ];
 
-const Footer = (props) => {
+const Footer = () => {
   const screenSize = useScreenSize();
+
+  if(!screenSize || !window){
+    return (<></>)
+  }
 
   return (
     <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-[#0A0A0A] font-inter">

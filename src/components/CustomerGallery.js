@@ -1,11 +1,22 @@
-"use client";
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import useScreenSize from "@/utils/hooks/useScreenSize";
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 const CustomerGallery = (props) => {
+  const [isClient,setIsClient] = useState(false);
   const screenSize = useScreenSize();
+
+
+
+  useEffect(() => {
+    setIsClient(true)
+  })
+
+  if(!screenSize || !window){
+    return (<></>)
+  }
 
   return (
     <>
@@ -21,7 +32,7 @@ const CustomerGallery = (props) => {
           />
         </div>
       </div>
-      {screenSize.width < 1024 ? (
+      {isClient && screenSize.width < 1024 ? (
         <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-black_100 to-black_000">
           <Image src="/4.jpg" width={screenSize.width / 1.6} height={1} />
           <div className="px-8 sm:px-12">

@@ -26,6 +26,7 @@ const Navbar = () => {
 
   const [timeoutID, setTimeoutID] = useState();
 
+
   useEffect(() => {
     if (pathArray[1] !== "") {
       setSelectedItem(pathArray[1]);
@@ -37,12 +38,17 @@ const Navbar = () => {
       });
 
       (findPhotoInArray || findPhotoInArray === 0) &&
+        console.log("eldek")
         setPhotoUrlIndicator(findPhotoInArray);
     } else {
       setSelectedItem("/");
       setPhotoUrlIndicator(-1);
     }
   }, [pathname]);
+
+  if(!screenSize || !window){
+    return (<></>)
+  }
 
   return (
     <nav className="fixed w-full  z-[9999] h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A] border-b-thin border-dark_gray font-inter">
@@ -102,7 +108,6 @@ const Navbar = () => {
                                   }, 100);
                                   setTimeoutID(timeout);
                                 } else if (selectedItem === "/") {
-                                  console.log("eldek");
                                   setPhotoUrlIndicator(-1);
                                 }
                               });
