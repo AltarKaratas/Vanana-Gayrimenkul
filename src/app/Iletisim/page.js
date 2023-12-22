@@ -74,7 +74,7 @@ export default function Page(props) {
     <div className="overflow-x-hidden bg-black">
       <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
         <Image
-          src="/ankara.webp"
+          src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"
           alt=""
           fill={true}
           objectFit="cover"
