@@ -2,29 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import useScreenSize from "@/utils/hooks/useScreenSize";
-import { useState, useEffect } from "react";
 
-const CustomerGallery = (props) => {
-  const [isClient,setIsClient] = useState(false);
+const CustomerGallery = () => {
   const screenSize = useScreenSize();
-
-
-
-  useEffect(() => {
-    setIsClient(true)
-  })
-
-  if(!screenSize || !window){
-    return (<></>)
-  }
 
   return (
     <>
       <div className="flex flex-col-reverse lg:flex-row h-min ">
-        <div className="lg:relative absolute top-[-9999px] left-[-9999px] lg:top-0 lg:left-0 lg:w-1/3  h-[400px] p-10 bg-black_000" />
-        <div className="relative flex justify-end items-end lg:w-2/3 h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] p-10 md:p-20 bg-gradient-to-tr from-beige to-black_000">
+        <div className="relative w-full flex justify-end items-end  h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] p-10 md:p-20 bg-gradient-to-tr from-beige via-beige  to-black_000">
           <Image
-            src="/skyline1.svg"
+            src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/skyline1.svg"
             alt=""
             fill
             objectFit="contain"
@@ -32,7 +19,7 @@ const CustomerGallery = (props) => {
           />
         </div>
       </div>
-      {isClient && screenSize.width < 1024 ? (
+      {screenSize.width < 1024 ? (
         <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-black_100 to-black_000">
           <Image src="/4.jpg" width={screenSize.width / 1.6} height={1} />
           <div className="px-8 sm:px-12">
@@ -59,7 +46,7 @@ const CustomerGallery = (props) => {
           <div className="w-1/2 flex justify-end items-center relative">
             <div className={`absolute top-4 right-0 shadow-xl`}>
               <Image
-                src="/4.jpg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -67,7 +54,7 @@ const CustomerGallery = (props) => {
             </div>
             <div className={`absolute top-12 right-8 shadow-xl`}>
               <Image
-                src="/3.jpg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings1.webp"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -75,7 +62,7 @@ const CustomerGallery = (props) => {
             </div>
             <div className={`absolute top-20 right-16 shadow-xl`}>
               <Image
-                src="/1.jpg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings1.webp"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -83,7 +70,7 @@ const CustomerGallery = (props) => {
             </div>
             <div className={`absolute top-28 right-24 shadow-xl`}>
               <Image
-                src="/3.jpg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -98,7 +85,7 @@ const CustomerGallery = (props) => {
               <br />
               çalışıyoruz
             </h1>
-            <p className="font-light text-2xl text-white">
+            <p className="font-light  text-white">
               Önceki satışlarımız ve memnun müşterilerimiz, işimizin temelini
               oluşturan referanslarımızdır. Siz de bu memnuniyete şahit olmak
               ister misiniz?

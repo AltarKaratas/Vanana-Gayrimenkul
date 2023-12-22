@@ -9,7 +9,7 @@ function GridItem(props) {
   return (
     <div
       id={props.id}
-      className="relative h-[540px] md:h-[540px] xl:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.9)]"
+      className="relative h-[600px] md:h-[600px] min-[1900px]:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.9)]"
     >
       <div className="absolute top-0 left-0 h-0" />
       <div className="h-full w-full ">
@@ -21,7 +21,8 @@ function GridItem(props) {
             height={44}
           />
           <Link
-            href={"/"}
+            href={`${props.projectUrl}`}
+            target="_blank"
             className="bg-black_100 flex items-end rounded-sm text-white  lg:text-xl p-2 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Projeyi ziyaret et
@@ -37,7 +38,7 @@ function GridItem(props) {
           />
         </div>
       </div>
-      <div className="h-2/3 relative z-10 w-full flex flex-col justify-between  p-2 lg:p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200 overflow-hidden ">
+      <div className="h-3/4 relative z-10 w-full flex flex-col justify-between  p-2 lg:p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200 overflow-hidden ">
         <h3 className="relative p-2 w-full z-10 font-inter  text-2xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100  ">
           {props.title}
         </h3>
@@ -69,7 +70,7 @@ export default function Page() {
 
   return (
     <section className="relative pb-8 bg-black_000">
-      <div className="relative flex justify-center min-[500px]:items-center h-[540px] md:h-[600px]">
+      <div className="relative flex justify-center min-[500px]:items-center h-[540px] md:h-[480px] ">
         <Image
           src="/apartments.jpg"
           alt=""
@@ -94,13 +95,14 @@ export default function Page() {
         </h3>
       </div>
       <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-16 px-6 xl:px-20 py-20 lg:py-40">
-        {images.map((projects) => (
+        {images.map((project) => (
           <GridItem
-            title={projects.title}
-            imageUrl={projects.imageUrl}
-            id={projects.id}
-            text={projects.text}
-            companyImageUrl={projects.companyImageUrl}
+            title={project.title}
+            imageUrl={project.imageUrl}
+            id={project.id}
+            text={project.text}
+            companyImageUrl={project.companyImageUrl}
+            projectUrl={project.projectUrl}
           />
         ))}
       </div>

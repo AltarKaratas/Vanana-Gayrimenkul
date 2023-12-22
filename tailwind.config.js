@@ -16,6 +16,7 @@ module.exports = {
       inter: "var(--font-inter)",
     },
     extend: {
+      
       colors: {
         white: "#DDDDDD",
         white_100:"#e2e2e2",

@@ -81,13 +81,13 @@ const About = () => {
             className="relative w-32 h-32 sm:w-48 sm:h-48 xl:w-[320px] xl:h-[360px]"
             ref={visibilityRef}
           >
-            <Image src="/Vectorhouse.svg" fill alt="" objectFit="contain" />
+            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Vectorhouse.svg" fill alt="" objectFit="contain" />
           </div>
         </div>
       </div>
       <div className="">
         <AboutContainer
-          source="/Plan.svg"
+          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AboutPlan.svg"
           h1={"Satış Öncesi Planınız "}
           keyword={"Bizimle Hazır"}
           text={
@@ -95,7 +95,7 @@ const About = () => {
           }
         />
         <AboutContainer
-          source="/skyline.jpg"
+          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VananaReklam.jpg"
           h1={"Hedef Kitleye "}
           keyword={"Doğru Reklam "}
           direction="right"
@@ -104,7 +104,7 @@ const About = () => {
           }
         />
         <AboutContainer
-          source="/handshake.jpg"
+          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AboutHandshake.webp"
           h1={"Müşterilerinize Farklı"}
           keyword={"Satış Deneyimleri Sunun."}
           text={
@@ -123,7 +123,7 @@ const About = () => {
               : "bg-gradient-to-r from-black_000 to-black_000"
           } `}
         >
-          <h3 className="inline text-left sm:text-right lg:text-left xl:text-right text-xl md:text-3xl  text-gold_100">
+          <h3 className="inline text-left  lg:text-left xl:text-right text-xl md:text-3xl  text-gold_100">
             Daha fazla bilgi almak ister misiniz?
           </h3>
           <div className="flex flex-row items-center justify-start lg:justify-end gap-6">
@@ -138,7 +138,7 @@ const About = () => {
               className="relative text-white h-8 w-8 md:w-16 md:h-16 lg:w-24 lg:h-24"
             >
               <Image
-                src="/VectorArrowDown.svg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VectorArrowDown.svg"
                 alt="VANANA"
                 fill
                 objectFit="contain"

@@ -15,9 +15,7 @@ const navLinks = [
 const Footer = () => {
   const screenSize = useScreenSize();
 
-  if(!screenSize || !window){
-    return (<></>)
-  }
+ 
 
   return (
     <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-[#0A0A0A] font-inter">
@@ -25,7 +23,7 @@ const Footer = () => {
         <div className="h-full flex-col">
           <Link href="/">
             <Image
-              src="/LandingVananaText.svg"
+              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
               alt="V"
               width={180}
               height={64}
@@ -42,7 +40,7 @@ const Footer = () => {
                 key={index}
                 className="flex justify-start items-start mb-4 transition-all ease-in-out duration-500 hover:scale-125"
               >
-                <Link href={`/${item.link}`} className="text-xl ">
+                <Link href={`/${item.link}`} className="text-xl">
                   {item.text}
                 </Link>
               </li>
@@ -59,7 +57,7 @@ const Footer = () => {
           <div className="flex justify-between items-end">
             <Link href="/">
               <Image
-                src="/LandingVananaText.svg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
                 alt="V"
                 width={screenSize.width < 1280 ? 160 : 320}
                 height={64}

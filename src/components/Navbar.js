@@ -10,10 +10,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { text: "Hakkımızda", link: "Hakkimizda", imgUrl: "/1.jpg" },
-  { text: "Projeler", link: "Projeler", imgUrl: "/2.jpg" },
-  { text: "İletişim", link: "Iletisim", imgUrl: "/3.jpg" },
-  { text: "Galeri", link: "Gallery", imgUrl: "/4.jpg" },
+  { text: "Hakkımızda", link: "Hakkimizda", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Hakk%C4%B1m%C4%B1zdaNavigation.webp" },
+  { text: "Projeler", link: "Projeler", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/SkylineNavigation.webp" },
+  { text: "İletişim", link: "Iletisim", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp" },
+  { text: "Galeri", link: "Gallery", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryNavigation.webp" },
 ];
 
 const Navbar = () => {
@@ -26,9 +26,8 @@ const Navbar = () => {
 
   const [timeoutID, setTimeoutID] = useState();
 
-
   useEffect(() => {
-    if (pathArray[1] !== "") {
+    if (pathArray[1] !== "" || pathArray !== " ") {
       setSelectedItem(pathArray[1]);
       let findPhotoInArray;
       navLinks.forEach((item, index) => {
@@ -38,7 +37,6 @@ const Navbar = () => {
       });
 
       (findPhotoInArray || findPhotoInArray === 0) &&
-        console.log("eldek")
         setPhotoUrlIndicator(findPhotoInArray);
     } else {
       setSelectedItem("/");
@@ -46,23 +44,23 @@ const Navbar = () => {
     }
   }, [pathname]);
 
-  if(!screenSize || !window){
-    return (<></>)
-  }
-
   return (
-    <nav className="fixed w-full  z-[9999] h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A] border-b-thin border-dark_gray font-inter">
+    <nav
+      id="nav"
+      className={`fixed w-full  z-[9999] h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A]  font-inter`}
+    >
       <Menu className="h-screen flex items-center justify-center outline-0">
         {({ open }) => {
           return (
             <>
               <Menu.Button
+              
                 className={`${
                   open ? "bg-beige" : "bg-transparent"
                 } transition-all duration-700 ease-in-out h-full w-16 lg:w-20 xl:w-40 flex justify-center items-center border-r-thin border-dark_gray outline-0`}
               >
                 <Image
-                  src={`${open ? "/close.svg" : "/MenuBar.svg"}`}
+                  src={`${open ? "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/close.svg" : "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/MenuBar.svg"}`}
                   width={screenSize.width < 1024 ? 16 : 24}
                   height={screenSize.width < 1024 ? 12 : 18}
                   alt="Close"
@@ -77,12 +75,12 @@ const Navbar = () => {
                 leave="transition duration-[1000ms] ease-in-out"
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
-                className={`absolute ${
+                className={`absolute z-[40] w-full ${
                   screenSize.width < 1024 ? "top-16" : "top-20"
                 } left-0`}
               >
                 <Menu.Items
-                  className={`w-full fixed flex justify-between ${
+                  className={`w-full  flex justify-between ${
                     screenSize.width < 1024
                       ? "top-16 h-[calc(100dvh-64px)]"
                       : "top-20 h-[calc(100dvh-80px)]"
@@ -121,7 +119,7 @@ const Navbar = () => {
                               return (
                                 <Link
                                   href={`/${item.link}`}
-                                  className={`text-4xl ${
+                                  className={`text-3xl  ${
                                     selectedItem === item.link || active
                                       ? "text-beige"
                                       : "text-white"
@@ -148,7 +146,7 @@ const Navbar = () => {
                             {({ active }) => (
                               <Link
                                 href={`/${item.link}`}
-                                className={`text-4xl ${
+                                className={`text-3xl  ${
                                   selectedItem === item.link || active
                                     ? "text-beige"
                                     : "text-white"
@@ -164,7 +162,7 @@ const Navbar = () => {
                     </div>
                   )}
                   {screenSize.width >= 768 && (
-                    <div className="relative w-2/3 p-6 xl:p-20">
+                    <div className="relative h-screen w-2/3 p-6 xl:p-20">
                       {showAnim &&
                         navLinks[photoUrlIndicator] &&
                         typeof navLinks[photoUrlIndicator].imgUrl !==
@@ -204,7 +202,7 @@ const Navbar = () => {
                           leaveTo="opacity-0"
                         >
                           <Image
-                            src="/ankara.webp"
+                            src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"
                             fill
                             objectFit="cover"
                             alt=""
@@ -227,19 +225,22 @@ const Navbar = () => {
 
       <Link href="/" className="flex justify-center items-center p-4">
         <Image
-          src="/VananaLogo.svg"
+          src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VananaLogo.svg"
           alt="Vanana"
           width={screenSize.width < 1024 ? 30 : 45}
           height={screenSize.width < 1024 ? 22.55 : 33.75}
         />
       </Link>
-      <Link href="/Iletisim" className="h-full w-16 lg:w-20 xl:w-40 border-l-thin border-dark_gray  flex items-center justify-center">
-          <Image
-            src="/VectorIletisim.svg"
-            alt="Language"
-            width={screenSize.width < 1024 ? 20 : 29}
-            height={20}
-          />
+      <Link
+        href="/Iletisim?id=iletisim-form"
+        className={`${selectedItem === "Iletisim" ? "bg-beige" : "bg-transparent"} h-full w-16 lg:w-20 xl:w-40 border-l-thin border-dark_gray  flex items-center justify-center`}
+      >
+        <Image
+          src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VectorIletisim.svg"
+          alt="Language"
+          width={screenSize.width < 1024 ? 20 : 29}
+          height={20}
+        />
       </Link>
     </nav>
   );

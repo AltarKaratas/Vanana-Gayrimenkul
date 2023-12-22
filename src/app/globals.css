@@ -10,6 +10,7 @@
     background-color: #121212;
   }
 }
+*:focus {outline:none}
 
 :root {
   font-family:"var(--font-archivo)";

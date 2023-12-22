@@ -3,12 +3,35 @@ import Image from "next/image";
 import Maps from "@/components/Maps";
 import { useForm } from "react-hook-form";
 import useScreenSize from "@/utils/hooks/useScreenSize";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+
 
 export default function Page(props) {
   const screenSize = useScreenSize();
 
   const [emailSent, setEmailSent] = useState("");
+
+  const params = useSearchParams();
+  const match = params.get("id") ? true : false;
+  useEffect(() => {
+    if (match) {
+      var timer = setTimeout(() => {
+        const element = document.getElementById(params.get("id"));
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center",
+        });
+      }, 300);
+    }
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [params.get("id")]);
+
+
 
   const {
     register,
@@ -49,7 +72,7 @@ export default function Page(props) {
 
   return (
     <div className="overflow-x-hidden bg-black">
-      <div className="relative h-[540px] md:h-[600px] w-full bg-black flex justify-center items-center">
+      <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
         <Image
           src="/ankara.webp"
           alt=""
@@ -64,32 +87,32 @@ export default function Page(props) {
         </div>
       </div>
 
-      <div className="px-6 sm:px-8 xl:px-20 py-20 lg:py-40 flex flex-col justify-center lg:flex-row xl:items-center bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
-        <div className="w-full lg:w-1/2">
+      <div className="px-6 sm:px-8 xl:px-20 py-20 lg:py-40 flex flex-col justify-center lg:gap-8 2xl:gap-0 lg:flex-row xl:items-center bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
+        <div className="w-full ">
           <Maps
-            width={screenSize.width < 1024 ? 320 : screenSize.width/2-160}
-            height={screenSize.width < 1024 ? 320 : screenSize.width/2-160}
+            width={screenSize.width < 1280 ? 320 : 605}
+            height={screenSize.width < 1280 ? 320 : 400}
           />
         </div>
-        <div className="w-full lg:w-1/2 h-full py-8 self-start flex flex-col gap-8">
+        <div className="w-full  h-full py-4 self-start flex flex-col gap-8">
           <div className="flex flex-col gap-4">
-            <h1 className="text-white font-bold text-2xl 2xl:text-5xl">Adres</h1>
+            <h1 className="text-white font-bold text-2xl 2xl:text-4xl">Adres</h1>
             <p className="text-white text-xl">
               Konutkent Mahallesi 3029. Cadde No:3/96 Çankaya - ANKARA
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <h1 className="text-white font-bold text-2xl 2xl:text-5xl">E-Mail</h1>
+            <h1 className="text-white font-bold text-2xl 2xl:text-4xl">E-Mail</h1>
             <p className="text-white text-xl">turgay@vanana.com.tr</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h1 className="text-white font-bold text-2xl 2xl:text-5xl">Telefon</h1>
+            <h1 className="text-white font-bold text-2xl 2xl:text-4xl">Telefon</h1>
             <p className="text-white text-xl">+90(312) 222 72 72</p>
           </div>
         </div>
       </div>
 
-      <div className="px-4 sm:px-8 lg:px-10 py-20 lg:py-40 flex flex-col justify-center items-center gap-8 lg:gap-16">
+      <div id="iletisim-form" className="px-4 sm:px-8 lg:px-10 py-20 lg:py-40 flex flex-col justify-center items-center gap-8 lg:gap-16">
         <div className="w-full text-center text-transparent bg-clip-text bg-gradient-to-r from-[#F6F6F6] via-[#676767] to-[#434343] text-4xl lg:text-5xl">
           <h2>
             Daha fazla bilgi almak ister misiniz? <br />
@@ -97,6 +120,7 @@ export default function Page(props) {
           </h2>
         </div>
         <form
+          
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col w-full md:w-[360px] lg:w-[480px] xl:w-[540px] px-4 sm:px-0 font-inter"
         >
@@ -172,7 +196,7 @@ export default function Page(props) {
               >
                 Mesajınızı aldık. En kısa süre içinde sizinle iletişime
                 geçeceğiz.
-                <Image src="./tick.svg" alt="" width={48} height={48} />
+                <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/tick.svg" alt="" width={48} height={48} />
               </span>
             )}
             {emailSent === "error" && (
@@ -182,7 +206,7 @@ export default function Page(props) {
                 } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
               >
                 Üzgünüz mesajınızı iletilemedi. Lütfen tekrar deneyin.
-                <Image src="./cancel.svg" alt="" width={48} height={48} />
+                <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/cancel.svg" alt="" width={48} height={48} />
               </span>
             )}
           </div>

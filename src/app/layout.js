@@ -29,7 +29,8 @@ export default function RootLayout({ children }) {
     <html>
       <Script src="https://smtpjs.com/v3/smtp.js"></Script>
       <body
-        className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-hidden`}
+        id="body"
+        className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}
       >
         <Nossr>
           <Navbar />
