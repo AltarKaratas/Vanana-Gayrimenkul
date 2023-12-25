@@ -1,3 +1,4 @@
+"use client"
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { Archivo } from "next/font/google";
@@ -15,30 +16,21 @@ export const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Vanana Gayrimenkul",
-  description: "Vanana Gayrimenkul Danışmanlığı",
-  viewport:
-    "width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no",
-};
+
 
 export default function RootLayout({ children }) {
   return (
     <html>
-     
       <body
         id="body"
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}
       >
-        
-          <Navbar />
-        
+        <Navbar />
+
         {children}
-        
-          <Footer />
-          
+
+        <Footer />
       </body>
-     
     </html>
   );
 }
