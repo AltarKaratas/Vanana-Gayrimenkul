@@ -16,10 +16,10 @@ export default function useScreenSize() {
       });
     };
 
-    if (typeof window !== "undefined") {
       window.addEventListener("resize", debouncedResizeHandler);
+      debouncedResizeHandler();
       return () => window.removeEventListener("resize", debouncedResizeHandler);
-    }
+    
   }, []);
 
   return screenSize;
