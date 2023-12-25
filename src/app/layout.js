@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import { Archivo } from "next/font/google";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
-import Script from "next/script";
-import Nossr from "@/utils/NoSsr";
 
 export const archivo = Archivo({
   weight: ["200", "400", "700"],
@@ -27,15 +25,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      
+     
       <body
         id="body"
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}
       >
+        
           <Navbar />
-          {children}
+        
+        {children}
+        
           <Footer />
+          
       </body>
+     
     </html>
   );
 }

@@ -1,10 +1,12 @@
-"use client";
+"use client"
+
 import Image from "next/image";
 import Maps from "@/components/Maps";
 import { useForm } from "react-hook-form";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 import { useState,useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Script from "next/script";
 
 
 export default function Page(props) {

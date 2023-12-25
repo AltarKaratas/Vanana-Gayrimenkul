@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 
 export default function useScreenSize() {
   const [screenSize, setScreenSize] = useState({
-    width: undefined,
-    height: undefined,
+    width: window.innerWidth,
+    height: window.innerHeight,
   });
 
   useEffect(() => {
-    const debouncedResizeHandler = () => {
+    function debouncedResizeHandler () {
       setScreenSize({
         width: window?.innerWidth,
         height: window?.innerHeight,
