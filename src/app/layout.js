@@ -27,16 +27,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <Script src="https://smtpjs.com/v3/smtp.js"></Script>
+      
       <body
         id="body"
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}
       >
-        <Nossr>
           <Navbar />
           {children}
           <Footer />
-        </Nossr>
       </body>
     </html>
   );

@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { useRef, useContext } from "react";
+import { useRef } from "react";
 import { useIsVisible } from "@/utils/hooks/useIsVisible";
-import generalContext from "@/utils/general_context";
-import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const AboutContainer = (props) => {
   const visibilityRef = useRef();
@@ -14,7 +12,7 @@ const AboutContainer = (props) => {
       ref={visibilityRef}
     >
       <div
-        className={`relative w-full h-min flex justify-center ${
+        className={`relative flex justify-center ${
           props.direction == "right"
             ? "xl:order-2 xl:w-1/2"
             : "xl:order-1 xl:w-1/2"
@@ -27,7 +25,7 @@ const AboutContainer = (props) => {
             fill
             objectFit="cover"
             objectPosition="center center"
-            className="z-0 brightness-75 saturate-[0.55] shadow-[4px_16px_32px_10px_rgba(112,99,56,0.65)] md:shadow-[0px_32px_48px_10px_rgba(112,99,56,0.65)]  xl:shadow-[0px_32px_145px_10px_rgba(112,99,56,0.65)]"
+            className="z-0 brightness-75 saturate-[0.55] shadow-[4px_0px_32px_10px_rgba(112,99,56,0.65)] md:shadow-[0px_8px_48px_10px_rgba(112,99,56,0.65)]  xl:shadow-[0px_32px_145px_10px_rgba(112,99,56,0.65)]"
           />
         </div>
       </div>
@@ -49,7 +47,7 @@ const AboutContainer = (props) => {
               {props.keyword}
             </span>
           </h1>
-          <p className="mt-4 font-light  text-white ">
+          <p className="mt-4 font-light text-white ">
             {props.text}
           </p>
         </div>

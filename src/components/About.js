@@ -87,7 +87,7 @@ const About = () => {
       </div>
       <div className="">
         <AboutContainer
-          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AboutPlan.svg"
+          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AboutPlan.webp"
           h1={"Satış Öncesi Planınız "}
           keyword={"Bizimle Hazır"}
           text={

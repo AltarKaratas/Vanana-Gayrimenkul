@@ -71,6 +71,8 @@ export default function Page(props) {
   );
 
   return (
+    <>
+    <Script src="https://smtpjs.com/v3/smtp.js"></Script>
     <div className="overflow-x-hidden bg-black">
       <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
         <Image
@@ -213,5 +215,6 @@ export default function Page(props) {
         </form>
       </div>
     </div>
+    </>
   );
 }

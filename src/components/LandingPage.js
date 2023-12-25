@@ -15,10 +15,11 @@ export default function LandingPage(props) {
               src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/backgroundImage.svg"
               fill
               className="rotate-180"
+              priority={true}
             />
           </div>
           <div className="relative self-start w-32 md:w-48 lg:w-80 xl:w-96 h-12 md:h-24 lg:h-32 xl:h-64 ">
-            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/backgroundImage.svg" fill/>
+            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/backgroundImage.svg" fill alt="image" priority={true} />
           </div>
         </div>
         <div className="relative z-10 w-80 sm:w-[540px] lg:w-[720px] min-[1900px]:w-[1200px] h-24 md:h-32 lg:h-48 2xl:h-64 min-[2560px]:h-80">
@@ -26,22 +27,25 @@ export default function LandingPage(props) {
             src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
             fill
             className="-translate-y-10 md:-translate-y-20 lg:-translate-y-12 xl:-translate-y-20 min-[2560px]:-translate-y-56"
+            priority={true}
           />
         </div>
       </div>
       <div className="relative flex flex-col h-full">
         <div className="flex justify-center items-end h-full ">
           <div className="relative z-20 w-[240px] sm:w-[280px] md:w-[360px] xl:w-[480px] min-[1900px]:w-[640px] min-[2560px]:w-[960px] h-[260px] md:h-[360px] xl:h-[480px] min-[1900px]:h-[640px] min-[2560px]:h-[640px]">
-            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ARPKULE1.png" alt="" fill objectFit="contain" />
+            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKule.webp" alt="" fill objectFit="contain" fetchPriority="high" loading="eager" />
           </div>
           <div className="absolute z-0">
             <div className="relative w-[286px] min-[480px]:w-[360px] md:w-[520px] lg:w-[640px] min-[1900px]:w-[960px] min-[2560px]:w-[1440px] h-[40vh] sm:h-[400px] md:h-[500px] lg:h-[540px] min-[1900px]:h-[740px] min-[2560px]:h-[740px]">
               <Image
-                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleBulut.svg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleBulut.webp"
                 alt=""
                 fill
                 objectFit="cover"
                 className="brightness-75"
+                fetchPriority="high"
+                loading="eager"
               />
             </div>
           </div>

@@ -53,7 +53,7 @@ const DragSlider = () => {
   const screenSize = useScreenSize();
 
   return (
-    <section className="relative z-12  h-[480px] sm:h-[540px] md:h-[760px] lg:h-[680px] xl:h-[720px] py-40 bg-black_000">
+    <section className="relative z-12  h-[480px] sm:h-[540px] md:h-[760px] lg:h-[680px] xl:h-[720px] py-32 bg-black_000">
       <Image
         src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GrayLines.svg"
         alt="lines"
@@ -94,7 +94,7 @@ const DragSlider = () => {
             className="w-[320px] min-[400px]:w-[360px] md:w-[640px] h-[246px] min-[400px]:h-[276px] md:h-[492px]"
           >
             <div className="relative z-10 flex flex-col w-[320px] min-[400px]:w-[360px] min-[400px]:h-[276px] md:w-[640px] h-[246px] md:h-[492px] font-inter overflow-hidden shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]">
-              <div className="relative w-full h-full ">
+              <div className="relative  h-full ">
                 <Image
                   src={project.imageUrl}
                   title={project.title}
@@ -104,8 +104,8 @@ const DragSlider = () => {
                   className="brightness-50 transition-all duration-300 ease-in-out hover:scale-125 hover:saturate-50"
                 />
               </div>
-              <div className="relative z-10 w-full flex justify-between items-center p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200">
-                <h3 className="relative p-2  z-10 font-inter font-medium text-xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100 border-spacing-8">
+              <div className="relative z-10  flex justify-between items-center p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200">
+                <h3 className="relative p-2 w-full  z-10 font-inter font-medium text-xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100 border-spacing-8">
                   {project.title}
                 </h3>
               </div>
