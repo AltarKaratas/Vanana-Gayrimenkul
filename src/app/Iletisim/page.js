@@ -46,7 +46,7 @@ export default function Page(props) {
       userMessage: "",
     },
   });
-  ,
+  
   async function onSubmit(data) {
     //if status code === 200 ? message sent ok
     console.log(data);
