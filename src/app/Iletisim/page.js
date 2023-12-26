@@ -59,7 +59,7 @@ export default function Page(props) {
     })
       .then(
         (response) => {response.status === 200 && setEmailSent("successful")
-       
+       console.log(response.message);
       },
         () => setEmailSent("error")
       )
