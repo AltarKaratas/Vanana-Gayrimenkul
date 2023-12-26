@@ -52,6 +52,7 @@ export const images = [
 const DragSlider = () => {
   const screenSize = useScreenSize();
 
+
   return (
     <section className="relative z-12  h-[480px] sm:h-[540px] md:h-[760px] lg:h-[680px] xl:h-[720px] py-32 bg-black_000">
       <Image
@@ -77,7 +78,7 @@ const DragSlider = () => {
         </div>
       </div>
       <Splide
-        className="z-10 px-6 xl:px-20 pb-8 mx-auto overflow-visible"
+        className="z-10 px-4 xl:px-20 pb-8 mx-auto overflow-visible bg-gradient-to-b from-black_000 via-75% via-beige to-100% to-black_300"
         options={{
           type: "slide",
           snap: true,
@@ -85,16 +86,16 @@ const DragSlider = () => {
           drag: true,
           autoWidth: true,
           arrows: false,
-          gap: "8px",
+          gap:`${screenSize.width < 400 ? "4px" : "32px"}`
         }}
       >
         {images.map((project, index) => (
           <SplideSlide
             key={index}
-            className="w-[320px] min-[400px]:w-[360px] md:w-[640px] h-[246px] min-[400px]:h-[276px] md:h-[492px]"
+            className="max-[320px]:w-[280px]  min-[360px]:w-[340px]  min-[400px]:w-[360px] md:w-[640px] h-[276px] min-[400px]:h-[276px] md:h-[492px] "
           >
-            <div className="relative z-10 flex flex-col w-[320px] min-[400px]:w-[360px] min-[400px]:h-[276px] md:w-[640px] h-[246px] md:h-[492px] font-inter overflow-hidden shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]">
-              <div className="relative  h-full ">
+            <div className="relative z-10 flex flex-col max-[320px]:w-[280px]  min-[360px]:w-[340px]  min-[400px]:w-[360px] md:w-[640px] h-[276px] min-[400px]:h-[276px] md:h-[492px]  font-inter overflow-hidden ">
+              <div className="relative  h-full">
                 <Image
                   src={project.imageUrl}
                   title={project.title}
@@ -104,16 +105,16 @@ const DragSlider = () => {
                   className="brightness-50 transition-all duration-300 ease-in-out hover:scale-125 hover:saturate-50"
                 />
               </div>
-              <div className="relative z-10  flex justify-between items-center p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200">
-                <h3 className="relative p-2 w-full  z-10 font-inter font-medium text-xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100 border-spacing-8">
+              <div className="relative z-10  flex justify-between items-center p-4  bg-gradient-to-r from-black_300  to-black_300">
+                <h3 className="relative lg:p-2  w-full  z-10 font-inter font-medium text-2xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 to-gray  border-b-4 border-gold_100 border-spacing-8">
                   {project.title}
                 </h3>
               </div>
 
-              <div className="absolute bottom-7 right-6  z-20 transition-all duration-500 ease-in-out hover:scale-125 hover:mr-2">
+              <div className="absolute bottom-[20px] lg:bottom-[28px] right-6  z-20 transition-all duration-500 ease-in-out hover:scale-125 hover:mr-2">
                 <Link
                   href={`/Projeler/?id=${project.id}`}
-                  className="relative w-[25%]  md:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200"
+                  className="relative w-[25%]  md:text-xl lg:text-2xl text-transparent text-white"
                 >
                   Detayları Gör
                 </Link>

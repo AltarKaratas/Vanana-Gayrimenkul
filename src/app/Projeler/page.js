@@ -39,7 +39,7 @@ function GridItem(props) {
         </div>
       </div>
       <div className="h-3/4 relative z-10 w-full flex flex-col justify-between  p-2 lg:p-4  bg-gradient-to-r from-black_100 via-black_100 to-black_200 overflow-hidden ">
-        <h3 className="relative p-2 w-full z-10 font-inter  text-2xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200  border-b-4 border-gold_100  ">
+        <h3 className="relative p-2 w-full z-10 font-inter  text-2xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 to-gray  border-b-4 border-gold_100  ">
           {props.title}
         </h3>
         <p className="text-white h-full font-light p-2 ">{props.text}</p>
@@ -57,8 +57,8 @@ export default function Page() {
         const element = document.getElementById(params.get("id"));
         element.scrollIntoView({
           behavior: "smooth",
-          block: "center",
-          inline: "center",
+          block: "end",
+          inline: "end",
         });
       }, 300);
     }

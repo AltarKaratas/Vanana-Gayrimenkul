@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Vanana = (props) => {
   return (
-    <section className="relative flex flex-col justify-center items-center z-10  h-[480px] sm:h-[720px] lg:h-[960px] pt-20 lg:pt-40  overflow-y-visible ">
+    <section className="relative flex flex-col justify-center items-center z-10 h-[480px] sm:h-[720px] lg:h-[960px] pt-20 lg:pt-40  overflow-y-visible bg-black_000   ">
       <Image
         src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GrayLines.svg"
         alt="lines"
@@ -12,7 +12,7 @@ const Vanana = (props) => {
         objectFit="cover"
         className="z-0"
       />
-      <div className="relative z-40 flex flex-col items-center justify-center  text-left sm:text-center  h-[480px] lg:h-[480px] min-[1900px]:h-[540px] mx-6 xl:mx-20 lg:px-6 py-8  text-2xl md:text-4xl  leading-relaxed overflow-visible  rounded-sm bg-black_000">
+      <div className="relative z-40 flex flex-col items-center justify-center  text-center sm:text-center  h-[480px] lg:h-[480px] min-[1900px]:h-[540px] mx-6 xl:mx-20 lg:px-6 py-8  text-2xl md:text-4xl  leading-relaxed overflow-visible  rounded-sm ">
         <span className="relative z-40 px-12 xl:px-40 text-white ">
           Vanana Gayrimenkul Danışmanlık olarak profesyonel ekibimizle, inşaat
           firmalaranın ve müteahhitlerin hedeflerini anlayarak, gayrimenkul

@@ -25,7 +25,7 @@ const AboutContainer = (props) => {
             fill
             objectFit="cover"
             objectPosition="center center"
-            className="z-0 brightness-75 saturate-[0.55] shadow-[4px_0px_32px_10px_rgba(112,99,56,0.65)] md:shadow-[0px_8px_48px_10px_rgba(112,99,56,0.65)]  xl:shadow-[0px_32px_145px_10px_rgba(112,99,56,0.65)]"
+            className="z-0 brightness-75 saturate-[0.55] shadow-[4px_0px_32px_4px_rgba(112,99,56,0.35)] md:shadow-[0px_8px_48px_10px_rgba(112,99,56,0.65)]  xl:shadow-[0px_32px_145px_10px_rgba(112,99,56,0.65)]"
           />
         </div>
       </div>

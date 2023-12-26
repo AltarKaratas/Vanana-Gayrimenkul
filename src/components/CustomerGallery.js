@@ -9,7 +9,7 @@ const CustomerGallery = () => {
   return (
     <>
       <div className="flex flex-col-reverse lg:flex-row h-min ">
-        <div className="relative w-full flex justify-end items-end  h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] p-10 md:p-20 bg-gradient-to-tr from-beige via-beige  to-black_000">
+        <div className="relative w-full flex justify-end items-end  h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] p-10 md:p-20 bg-gradient-to-b from-transparent to-beige">
           <Image
             src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/skyline1.svg"
             alt=""
@@ -20,8 +20,8 @@ const CustomerGallery = () => {
         </div>
       </div>
       {screenSize.width < 1024 ? (
-        <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-black_100 to-black_000">
-          <Image src="/4.jpg" width={screenSize.width / 1.6} height={1} />
+        <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-30% via-black_100 to-black_000">
+          <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp" width={screenSize.width / 1.6} height={1} />
           <div className="px-8 sm:px-12">
             <h1 className="mb-4 text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 to-gray  border-b-4 border-gold_100">
               Müşteri odaklı çalışıyoruz
@@ -42,7 +42,7 @@ const CustomerGallery = () => {
           </div>
         </section>
       ) : (
-        <section className="flex mx-auto py-80 overflow-visible bg-gradient-to-t from-beige via-black_000 to-black_000">
+        <section className="flex mx-auto py-80 overflow-visible bg-gradient-to-t from-beige via-30% via-black_100 to-black_000">
           <div className="w-1/2 flex justify-end items-center relative">
             <div className={`absolute top-4 right-0 shadow-xl`}>
               <Image
