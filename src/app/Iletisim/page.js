@@ -49,8 +49,8 @@ export default function Page(props) {
   
   async function onSubmit(data) {
     //if status code === 200 ? message sent ok
-    console.log(data);
-    await fetch("/api/send", {
+   
+    await fetch("/.netlify/functions/checkUserHasEmailed", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
