@@ -1,44 +1,36 @@
-import ElasticEmail from '@elasticemail/elasticemail-client';
+let ElasticEmail = require("@elasticemail/elasticemail-client");
 
 exports.handler = async function (event, context) {
-  const formObject =  event.body;
-    console.log(formObject);
-    
-
 
   let defaultClient = ElasticEmail.ApiClient.instance;
-  let api = new ElasticEmail.EmailsApi();
   let apikey = defaultClient.authentications["apikey"];
-
-  apikey.apiKey =
-    "2269B4890736E01C73E9B21DBE0A5B5D48EF7DCC5596E624A95CD024F27AAB05F86CB2CB03B0A020A47DCEDC6DFFD5D8";
-
+  apikey.apiKey ="3734ED0DBF15015B7EBE8CFA4F2C1E1FA5764876B0763F6FCD18E140AE6A108A6C648334C4B71741375399C739B66FFD";
+  
+  let api = new ElasticEmail.EmailsApi();
   let email = ElasticEmail.EmailMessageData.constructFromObject({
     Recipients: [new ElasticEmail.EmailRecipient("karatasaltar@gmail.com")],
     Content: {
       Body: [
         ElasticEmail.BodyPart.constructFromObject({
           ContentType: "HTML",
-          Content: `${formObject.userMessage} Telefon Numaram:${formObject.telephone}`,
+          Content: ` Telefon Numaram:`,
         }),
       ],
-      Subject: `Vanana Gayrimenkul ${formObject.firstName} isimli müşterinin e-maili`,
-      From: formObject.email,
+      Subject: `Vanana Gayrimenkul   isimli müşterinin e-maili`,
+      From: "karatasaltar@gmail.com",
     },
   });
 
-  try {
-    var callback = function (error, data, response) {
-      if (error) {
-        throw error.message;
-      } else {
-        return  Response.json(response.statusCode);
-      }
-    };
-    await api.emailsPost(email, callback);
-  } catch (error) {
-    return Response.json(error);
+ 
+  await api.emailsPost(email, (error,data,response) => {
+    if(error){
+      console.log(error)
+    }
+    else{
+      console.log(data);
+    }
+  });
+  return {
+    response:"ok"
   }
-
-  
 };

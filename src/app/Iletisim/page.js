@@ -50,20 +50,14 @@ export default function Page(props) {
   async function onSubmit(data) {
     //if status code === 200 ? message sent ok
    
-    await fetch("/.netlify/functions/checkUserHasEmailed", {
+    const response  = await fetch("/.netlify/functions/checkUserHasEmailed", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: data,
     })
-      .then(
-        (response) => {response === 200 && setEmailSent("successful")
-       console.log(response);
-      },
-        () => setEmailSent("error")
-      )
-      .catch(() => setEmailSent("error"));
+    
   }
 
   const validEmail = new RegExp(
