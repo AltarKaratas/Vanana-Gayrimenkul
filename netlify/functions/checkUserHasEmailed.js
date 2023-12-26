@@ -32,12 +32,12 @@ exports.handler = async function (event, context) {
       if (error) {
         throw error.message;
       } else {
-        return new Response.json(response.statusCode);
+        return  Response.json(response.statusCode);
       }
     };
     await api.emailsPost(email, callback);
   } catch (error) {
-    return new Response.json(error);
+    return Response.json(error);
   }
 
   return {
