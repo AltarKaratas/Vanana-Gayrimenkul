@@ -46,7 +46,7 @@ export default function Page(props) {
       userMessage: "",
     },
   });
-
+  ,
   async function onSubmit(data) {
     //if status code === 200 ? message sent ok
     console.log(data);
@@ -58,7 +58,9 @@ export default function Page(props) {
       body: JSON.stringify(data),
     })
       .then(
-        (response) => response.status === 200 && setEmailSent("successful"),
+        (response) => {response.status === 200 && setEmailSent("successful")
+        console.log(response)
+      },
         () => setEmailSent("error")
       )
       .catch(() => setEmailSent("error"));
