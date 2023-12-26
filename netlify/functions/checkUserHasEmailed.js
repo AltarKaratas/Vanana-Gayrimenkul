@@ -1,10 +1,9 @@
 let ElasticEmail = require("@elasticemail/elasticemail-client");
 
 exports.handler = async function (event, context) {
-  const formObject = await event.json();
-
-    console.log(formObject + "********")
-    console.log(context)
+  const formObject =  event.body;
+    console.log(formObject);
+    
 
 
   let defaultClient = ElasticEmail.ApiClient.instance;
