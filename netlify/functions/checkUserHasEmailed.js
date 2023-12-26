@@ -1,4 +1,4 @@
-let ElasticEmail = require("@elasticemail/elasticemail-client");
+import ElasticEmail from '@elasticemail/elasticemail-client';
 
 exports.handler = async function (event, context) {
   const formObject =  event.body;
@@ -40,8 +40,5 @@ exports.handler = async function (event, context) {
     return Response.json(error);
   }
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Hello World" }),
-  };
+  
 };
