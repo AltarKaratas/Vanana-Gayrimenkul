@@ -58,8 +58,8 @@ export default function Page(props) {
       body: JSON.stringify(data),
     })
       .then(
-        (response) => {response.status === 200 && setEmailSent("successful")
-       console.log(response.message);
+        (response) => {response === 200 && setEmailSent("successful")
+       console.log(response);
       },
         () => setEmailSent("error")
       )
