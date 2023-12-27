@@ -1,36 +1,37 @@
-let ElasticEmail = require("@elasticemail/elasticemail-client");
+exports.handler = async function (request, context) {
+  const kv = require("@vercel/kv");
+  const ip = request.headers["x-forwarded-for"];
 
-exports.handler = async function (event, context) {
-
-  let defaultClient = ElasticEmail.ApiClient.instance;
-  let apikey = defaultClient.authentications["apikey"];
-  apikey.apiKey ="3734ED0DBF15015B7EBE8CFA4F2C1E1FA5764876B0763F6FCD18E140AE6A108A6C648334C4B71741375399C739B66FFD";
-  
-  let api = new ElasticEmail.EmailsApi();
-  let email = ElasticEmail.EmailMessageData.constructFromObject({
-    Recipients: [new ElasticEmail.EmailRecipient("karatasaltar@gmail.com")],
-    Content: {
-      Body: [
-        ElasticEmail.BodyPart.constructFromObject({
-          ContentType: "HTML",
-          Content: ` Telefon Numaram:`,
-        }),
-      ],
-      Subject: `Vanana Gayrimenkul   isimli müşterinin e-maili`,
-      From: "karatasaltar@gmail.com",
-    },
+  const users = kv.createClient({
+    url: process.env.VANANAKV_REST_API_URL,
+    token: process.env.VANANAKV_REST_API_TOKEN,
   });
+  const isUser = await users.get(ip);
+  if (isUser) {
+    return {
+      statusCode: 403,
+    };
+  } else {
+    users.set(ip, "ip", { ex: 86400 });
+    const sgMail = require("@sendgrid/mail");
+    const emailObject = JSON.parse(request.body);
 
- 
-  await api.emailsPost(email, (error,data,response) => {
-    if(error){
-      console.log(error)
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+      to: "karatasaltar@gmail.com", // Change to your recipient
+      from: "karatasaltar@gmail.com", // Change to your verified sender
+      subject: `${emailObject.firstName} adlı kullanıcının mesajı`,
+      text: `Müşteri Tel No: ${emailObject.telephone} Email: ${emailObject.email} Mesajı: ${emailObject.userMessage}`,
+    };
+    try {
+      const response = await sgMail.send(msg);
+      return {
+        statusCode: response.statusCode,
+      };
+    } catch (e) {
+      return {
+        statusCode: 403,
+      };
     }
-    else{
-      console.log(data);
-    }
-  });
-  return {
-    response:"ok"
   }
 };

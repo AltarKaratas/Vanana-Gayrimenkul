@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@elasticemail/elasticemail-client": "^4.0.23",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@headlessui/react": "^1.7.17",
+    "@sendgrid/mail": "^8.1.0",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",

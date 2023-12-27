@@ -78,7 +78,7 @@ const DragSlider = () => {
         </div>
       </div>
       <Splide
-        className="z-10 px-4 xl:px-20 pb-8 mx-auto overflow-visible bg-gradient-to-b from-black_000 via-75% via-beige to-100% to-black_300"
+        className="z-10 px-4 xl:px-20 pb-8 mx-auto overflow-visible bg-gradient-to-b from-black_000 via-75% via-beige to-100% to-transparent "
         options={{
           type: "slide",
           snap: true,

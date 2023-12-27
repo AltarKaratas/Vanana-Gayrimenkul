@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import Maps from "@/components/Maps";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 import { useState,useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Script from "next/script";
 
 
 export default function Page(props) {
@@ -48,16 +47,25 @@ export default function Page(props) {
   });
   
   async function onSubmit(data) {
-    //if status code === 200 ? message sent ok
-   
+    const body = JSON.stringify(data)
     const response  = await fetch("/.netlify/functions/checkUserHasEmailed", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: data,
+      body: body,
     })
-    
+    console.log(response.status)
+
+    if(response.status === 202){
+      setEmailSent("successful")
+    }
+    else if(response.status === 403){
+      setEmailSent("forbidden")
+    }
+    else{
+      setEmailSent("error");
+    }
   }
 
   const validEmail = new RegExp(
@@ -71,7 +79,7 @@ export default function Page(props) {
 
   return (
     <>
-    <Script src="https://smtpjs.com/v3/smtp.js"></Script>
+    
     <div className="overflow-x-hidden bg-black">
       <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
         <Image
@@ -209,6 +217,16 @@ export default function Page(props) {
                 Üzgünüz mesajınızı iletilemedi. Lütfen tekrar deneyin.
                 <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/cancel.svg" alt="" width={48} height={48} />
               </span>
+            )}
+            {emailSent === "forbidden" && (
+               <span
+               className={`transition-all duration-1000 ease-in-out ${
+                 emailSent === "forbidden" ? "opacity-100" : "opacity-0"
+               } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
+             >
+               Günde 1 E-mail atma hakkınız bulunmakta. Lütfen ertesi gün tekrar deneyin
+               <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/cancel.svg" alt="" width={48} height={48} />
+             </span>
             )}
           </div>
         </form>

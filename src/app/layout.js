@@ -1,8 +1,10 @@
-"use client"
+"use client";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { Archivo } from "next/font/google";
 import { Inter } from "next/font/google";
+import Script from "next/script";
+
 import Footer from "@/components/Footer";
 
 export const archivo = Archivo({
@@ -16,11 +18,10 @@ export const inter = Inter({
   subsets: ["latin"],
 });
 
-
-
 export default function RootLayout({ children }) {
   return (
     <html>
+      <Script src="https://smtpjs.com/v3/smtp.js"></Script>
       <body
         id="body"
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}
