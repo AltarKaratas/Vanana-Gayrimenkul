@@ -1,7 +1,9 @@
 exports.handler = async function (request, context) {
   const kv = require("@vercel/kv");
   const ip = request.headers["x-forwarded-for"];
-  console.log(ip);
+  
+  console.log(ip)
+  console.log(request)
   const users = kv.createClient({
     url: process.env.VANANAKV_REST_API_URL,
     token: process.env.VANANAKV_REST_API_TOKEN,
@@ -32,7 +34,7 @@ exports.handler = async function (request, context) {
       };
     } catch (e) {
       return {
-        statusCode: 403,
+        statusCode: 406,
       };
     }
   }
