@@ -55,7 +55,7 @@ export default function Page(props) {
       },
       body: body,
     })
-    console.log(response.status)
+    
 
     if(response.status === 202){
       setEmailSent("successful")

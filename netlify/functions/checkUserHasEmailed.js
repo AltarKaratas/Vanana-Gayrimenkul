@@ -12,7 +12,6 @@ exports.handler = async function (request, context) {
   });
   const isUser = await users.exists(ip);
 
- 
   if(isUser) {
     return {
       statusCode: 403,
@@ -21,7 +20,6 @@ exports.handler = async function (request, context) {
     users.set(ip, "ip", { ex: 86400 });
     const sgMail = require("@sendgrid/mail");
     const emailObject = JSON.parse(request.body);
-    console.log(emailObject)
     
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
@@ -32,11 +30,13 @@ exports.handler = async function (request, context) {
     };
     try {
       const response = await sgMail.send(msg);
+
       console.log(response);
       return {
         statusCode: [response[0].statusCode],
       };
     } catch (e) {
+      console.log(e);
       return {
         statusCode: 406,
       };
