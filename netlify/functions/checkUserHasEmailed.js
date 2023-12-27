@@ -22,7 +22,7 @@ exports.handler = async function (request, context) {
     const sgMail = require("@sendgrid/mail");
     const emailObject = JSON.parse(request.body);
     console.log(emailObject)
-    console.log(request)
+    
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       to: "karatasaltar@gmail.com", // Change to your recipient
@@ -32,6 +32,7 @@ exports.handler = async function (request, context) {
     };
     try {
       const response = await sgMail.send(msg);
+      console.log(response);
       return {
         statusCode: [response[0].statusCode],
       };
