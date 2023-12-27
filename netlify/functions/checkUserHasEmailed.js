@@ -20,6 +20,7 @@ exports.handler = async function (request, context) {
     users.set(ip, "ip", { ex: 86400 });
     const sgMail = require("@sendgrid/mail");
     const emailObject = JSON.parse(request.body);
+    console.log(process.env.SENDGRID_API_KEY)
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       to: "altarkaratas@gmail.com", // Change to your recipient
@@ -41,20 +42,6 @@ exports.handler = async function (request, context) {
         statusCode: [response[0].statusCode],
       };
     } catch (e) {
-      console.log("eldek");
-      console.log(e);
-      console.log("*********")
-      console.log(e.response.body)
-      console.log("*********")
-      console.log(e["response"]["body"])
-      console.log(e["body"])
-      console.log("*********")
-      console.log(e[0]);
-      console.log("*********")
-      console.log(e[0].body)
-      console.log("*********")
-      console.log(e[0]["body"])
-
       return {
         statusCode: 406,
       };
