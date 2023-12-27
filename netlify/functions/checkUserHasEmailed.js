@@ -43,7 +43,16 @@ exports.handler = async function (request, context) {
     } catch (e) {
       console.log("eldek");
       console.log(e);
-
+      console.log("*********")
+      console.log(e.body)
+      console.log("*********")
+      console.log(e["body"])
+      console.log("*********")
+      console.log(e[0]);
+      console.log("*********")
+      console.log(e[0].body)
+      console.log("*********")
+      console.log(e[0]["body"])
 
       return {
         statusCode: 406,
