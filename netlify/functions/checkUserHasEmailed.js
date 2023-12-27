@@ -1,7 +1,7 @@
 exports.handler = async function (request, context) {
   const kv = require("@vercel/kv");
   const ip = request.headers["x-forwarded-for"];
-
+  
   const users = kv.createClient({
     url: process.env.VANANAKV_REST_API_URL,
     token: process.env.VANANAKV_REST_API_TOKEN,
@@ -26,7 +26,7 @@ exports.handler = async function (request, context) {
     try {
       const response = await sgMail.send(msg);
       return {
-        statusCode: response.statusCode,
+        statusCode: [response[0].statusCode],
       };
     } catch (e) {
       return {
