@@ -44,8 +44,9 @@ exports.handler = async function (request, context) {
       console.log("eldek");
       console.log(e);
       console.log("*********")
-      console.log(e.body)
+      console.log(e.response.body)
       console.log("*********")
+      console.log(e["response"]["body"])
       console.log(e["body"])
       console.log("*********")
       console.log(e[0]);
