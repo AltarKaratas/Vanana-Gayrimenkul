@@ -42,7 +42,6 @@ exports.handler = async function (request, context) {
       };
     } catch (e) {
       console.log("eldek");
-      console.log(e.json())
       console.log(JSON.parse(e));
       console.log(JSON.parse(e.body));
 
