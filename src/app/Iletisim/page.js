@@ -55,12 +55,12 @@ export default function Page(props) {
       },
       body: body,
     })
-    
+    console.log(response)
 
-    if(response.statusCode === 202){
+    if(response.status === 202){
       setEmailSent("successful")
     }
-    else if(response.statusCode === 403){
+    else if(response.status === 403){
       setEmailSent("forbidden")
     }
     else{
