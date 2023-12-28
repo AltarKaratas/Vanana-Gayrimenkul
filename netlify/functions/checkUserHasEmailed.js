@@ -32,13 +32,14 @@ exports.handler = async function (request, context) {
 
     try {
       const response = await sgMail.send(msg);
-      console.log(response)
+      
+
       return {
-        statusCode: [response[0].statusCode],
+        statusCode: response[0].statusCode,
       };
     } catch (e) {
       return {
-        statusCode: 406,
+        statusCode: 403,
       };
     }
   }
