@@ -1,6 +1,6 @@
 exports.handler = async function (request, context) {
   const kv = require("@vercel/kv");
-  
+  const fetch = require("node-fetch")
 
   const ip = request.headers["x-forwarded-for"];
   
@@ -31,17 +31,16 @@ exports.handler = async function (request, context) {
     };
     try {
       const response = await sgMail.send(msg);
-      console.log("zürten");
+       console.log("zürten");
 
-      console.log(response);
-      console.log(response.body);
-      
-
+      // console.log(response);
+      // console.log(response.body);
 
       return {
         statusCode: [response[0].statusCode],
       };
     } catch (e) {
+      console.error(e.response.body)
       return {
         statusCode: 406,
       };
