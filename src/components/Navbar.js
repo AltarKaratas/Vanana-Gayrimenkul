@@ -56,7 +56,8 @@ const Navbar = () => {
 
   useEffect(() => {
     document.getElementById("main-html").classList.remove("overflow-hidden");
-    if (pathArray[1] !== "" || pathArray !== " ") {
+
+    if (pathArray[1] !== "" || pathArray !== "") {
       setSelectedItem(pathArray[1]);
       let findPhotoInArray;
       navLinks.forEach((item, index) => {
