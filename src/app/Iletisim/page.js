@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Maps from "@/components/Maps";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Dialog, Transition, Switch } from "@headlessui/react";
+import {Switch } from "@headlessui/react";
 import Link from "next/link";
 import DisclaimerDialog from "@/components/DisclaimerDialog";
 
@@ -54,6 +54,7 @@ export default function Page(props) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resetOptions: {
@@ -79,6 +80,7 @@ export default function Page(props) {
         },
         body: body,
       });
+      reset()
       if (response.status === 202) {
         setEmailSent("successful");
         setShowEmailModal(true);

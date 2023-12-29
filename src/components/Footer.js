@@ -31,7 +31,7 @@ const Footer = () => {
           </Link>
           <div className="flex justify-between w-full md:w-[160px]">
             <p className="mt-4 text-xs text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-              Konut ve Kurumsal Emlak Satışında Uzman
+              Konut ve Kurumsal<br/> Emlak Satışında Uzman
             </p>
           </div>
           <ul className="flex flex-col justify-between items-start mt-8 text-white">
@@ -59,7 +59,7 @@ const Footer = () => {
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
                 alt="V"
-                width={screenSize.width < 1280 ? 160 : 320}
+                width={screenSize.width < 1280 ? 160 : 240}
                 height={64}
                 className="lg:pb-2"
               />
@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-between w-full md:w-[160px] xl:w-[320px]">
             <p className="mt-4 xl:pl-2 text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-              Konut ve Kurumsal Emlak Satışında Uzman
+              Konut ve Kurumsal<br/> Emlak Satışında Uzman
             </p>
           </div>
 

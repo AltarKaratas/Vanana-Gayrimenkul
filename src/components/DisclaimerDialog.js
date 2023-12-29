@@ -1,4 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react'
+import Image from 'next/image'
 import { Fragment } from 'react'
 
 export default function DisclaimerDialog(props) {
@@ -16,7 +17,7 @@ export default function DisclaimerDialog(props) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/25" />
+            <div className="fixed inset-0 bg-black/75" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
@@ -30,23 +31,24 @@ export default function DisclaimerDialog(props) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white  p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white  p-6 text-left align-middle shadow-xl transition-all">
+                  <Image src="/warning.svg" width={64} height={64} className='mx-auto mb-4'/>
                   <Dialog.Title
                     as="h3"
-                    className="text-sm font-medium leading-6 text-blue-900"
+                    className="text-sm text-center font-semibold leading-6 text-black"
                   >
                     {props.warningText}
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-blue-900">
+                  <div className=" mx-auto">
+                    <p className="text-sm text-center text-black">
                       {props.infoText}
                     </p>
                   </div>
 
-                  <div className="mt-4">
+                  <div className="mt-4 flex ">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md  border-2 border-slate-900 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md mx-auto border-2 border-slate-900 px-12 py-2 text-sm font-medium text-black hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={() => props.setShowPopUp(false)}
                     >
                       Kapat
