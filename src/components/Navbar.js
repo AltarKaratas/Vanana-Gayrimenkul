@@ -10,10 +10,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { text: "Hakkımızda", link: "Hakkimizda", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Hakk%C4%B1m%C4%B1zdaNavigation.webp" },
-  { text: "Projeler", link: "Projeler", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/SkylineNavigation.webp" },
-  { text: "İletişim", link: "Iletisim", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp" },
-  { text: "Galeri", link: "Gallery", imgUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryNavigation.webp" },
+  {
+    text: "Hakkımızda",
+    link: "Hakkimizda",
+    imgUrl:
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Hakk%C4%B1m%C4%B1zdaNavigation.webp",
+  },
+  {
+    text: "Projeler",
+    link: "Projeler",
+    imgUrl:
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/SkylineNavigation.webp",
+  },
+  {
+    text: "İletişim",
+    link: "Iletisim",
+    imgUrl:
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp",
+  },
+  {
+    text: "Galeri",
+    link: "Gallery",
+    imgUrl:
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryNavigation.webp",
+  },
 ];
 
 const Navbar = () => {
@@ -23,10 +43,19 @@ const Navbar = () => {
   const [showAnim, setShowAnim] = useState(false);
   const pathname = usePathname();
   const pathArray = pathname.split("/");
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [timeoutID, setTimeoutID] = useState();
 
+  useLayoutEffect(() => {
+    isNavOpen
+      ? document.getElementById("main-html").classList.toggle("overflow-hidden")
+      : document
+          .getElementById("main-html")
+          .classList.toggle("overflow-hidden");
+  }, [isNavOpen]);
+
   useEffect(() => {
+    document.getElementById("main-html").classList.remove("overflow-hidden");
     if (pathArray[1] !== "" || pathArray !== " ") {
       setSelectedItem(pathArray[1]);
       let findPhotoInArray;
@@ -43,24 +72,30 @@ const Navbar = () => {
       setPhotoUrlIndicator(-1);
     }
   }, [pathname]);
-
   return (
     <nav
       id="nav"
-      className={`fixed w-full  z-[9999] h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A]  font-inter`}
+      className={`fixed w-full  z-[9999] h-16 lg:h-20 flex justify-between items-center bg-[#0A0A0A] transition-all duration-200 ease-in-out font-inter`}
     >
-      <Menu className="h-screen flex items-center justify-center outline-0">
+      <Menu className="fixed h-screen flex items-center justify-center outline-0">
         {({ open }) => {
+          !open && setIsNavOpen(false);
           return (
             <>
               <Menu.Button
-              
+                onClick={() => {
+                  setIsNavOpen(true);
+                }}
                 className={`${
                   open ? "bg-beige" : "bg-transparent"
                 } transition-all duration-700 ease-in-out h-full w-16 lg:w-20 xl:w-40 flex justify-center items-center border-r-thin border-dark_gray outline-0`}
               >
                 <Image
-                  src={`${open ? "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/close.svg" : "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/MenuBar.svg"}`}
+                  src={`${
+                    open
+                      ? "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/close.svg"
+                      : "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/MenuBar.svg"
+                  }`}
                   width={screenSize.width < 1024 ? 16 : 24}
                   height={screenSize.width < 1024 ? 12 : 18}
                   alt="Close"
@@ -80,7 +115,7 @@ const Navbar = () => {
                 } left-0`}
               >
                 <Menu.Items
-                  className={`w-full  flex justify-between ${
+                  className={`w-full flex justify-between ${
                     screenSize.width < 1024
                       ? "top-16 h-[calc(100dvh-64px)]"
                       : "top-20 h-[calc(100dvh-80px)]"
@@ -233,7 +268,17 @@ const Navbar = () => {
       </Link>
       <Link
         href="/Iletisim?id=iletisim-form"
-        className={`${selectedItem === "Iletisim" ? "bg-beige" : "bg-transparent"} h-full w-16 lg:w-20 xl:w-40 border-l-thin border-dark_gray  flex items-center justify-center`}
+        onClick={() =>
+          document
+            .getElementById("main-html")
+            .classList.contains("overflow-hidden") &&
+          document
+            .getElementById("main-html")
+            .classList.toggle("overflow-hidden")
+        }
+        className={`${
+          selectedItem === "Iletisim" ? "bg-beige" : "bg-transparent"
+        } h-full w-16 lg:w-20 xl:w-40 border-l-thin border-dark_gray  flex items-center justify-center`}
       >
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VectorIletisim.svg"

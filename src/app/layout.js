@@ -20,7 +20,7 @@ export const inter = Inter({
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html id="main-html">
       <Script src="https://smtpjs.com/v3/smtp.js"></Script>
       <body
         id="body"
