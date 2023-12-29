@@ -1,22 +1,12 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 
 export default function DisclaimerDialog(props) {
-  let [isOpen, setIsOpen] = useState(false)
-
-  function closeModal() {
-    setIsOpen(false)
-    props.setShowPopUp(false);
-  }
-
-  useEffect(() => {
-    props.showPopUp & setIsOpen(true);
-  },[props.showPopUp])
-
+  
   return (
-    <>
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+    
+      <Transition appear show={props.showPopUp} as={Fragment}>
+        <Dialog as="div"  className="relative z-10" onClose={() => props.setShowPopUp(false)}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -45,11 +35,11 @@ export default function DisclaimerDialog(props) {
                     as="h3"
                     className="text-sm font-medium leading-6 text-blue-900"
                   >
-                    Lütfen aydınlatma metnini kabul edin.
+                    {props.warningText}
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-blue-900">
-                      Aydınlatma metnini okumak için tıklayınız
+                      {props.infoText}
                     </p>
                   </div>
 
@@ -57,7 +47,7 @@ export default function DisclaimerDialog(props) {
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md  border-2 border-slate-900 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
+                      onClick={() => props.setShowPopUp(false)}
                     >
                       Kapat
                     </button>
@@ -68,6 +58,6 @@ export default function DisclaimerDialog(props) {
           </div>
         </Dialog>
       </Transition>
-    </>
+    
   )
 }

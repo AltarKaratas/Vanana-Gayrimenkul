@@ -20,6 +20,20 @@ export default function Page(props) {
   const params = useSearchParams();
   const match = params.get("id") ? true : false;
 
+  let warningText;
+  let infoText;
+
+  if (emailSent === "error") {
+    warningText = "Mesajınız iletilemedi";
+    infoText = "Lütfen tekrar deneyin";
+  } else if (emailSent === "forbidden") {
+    warningText = "Günde 1 mail atma hakkınız bulunmaktadır.";
+    infoText = "Teşekkür ederiz";
+  } else {
+    warningText = "Mesajınız iletildi";
+    infoText = "Teşekkür ederiz.";
+  }
+
   useEffect(() => {
     if (match) {
       var timer = setTimeout(() => {
@@ -53,11 +67,10 @@ export default function Page(props) {
   });
 
   async function onSubmit(data) {
-    console.log(showPopUp)
-    if(!isAccepted){
+    console.log(showPopUp);
+    if (!isAccepted) {
       setShowPopUp(true);
-    }
-    else {
+    } else {
       const body = JSON.stringify(data);
       const response = await fetch("/.netlify/functions/checkUserHasEmailed", {
         method: "POST",
@@ -77,7 +90,6 @@ export default function Page(props) {
         setShowEmailModal(true);
       }
     }
-
   }
 
   const validEmail = new RegExp(
@@ -152,72 +164,6 @@ export default function Page(props) {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col w-full md:w-[360px] lg:w-[420px] min-[1900px]:w-[540px] px-4 sm:px-0 font-inter"
           >
-            <Transition
-              appear
-              show={showEmailModal}
-              enter="transition duration-[1000ms] ease-in-out"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition duration-[1000ms] ease-in-out"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Dialog
-                open={showEmailModal}
-                onClose={() => setShowEmailModal(false)}
-                className="absolute z-10 h-[100vh] flex justify-center items-center bg-gray"
-              >
-                <Dialog.Panel>
-                  {emailSent === "successful" && (
-                    <span
-                      className={`transition-all duration-1000 ease-in-out ${
-                        emailSent === "successful" ? "opacity-100" : "opacity-0"
-                      } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
-                    >
-                      Mesajınızı aldık. Teşekkür ederiz.
-                      <Image
-                        src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/tick.svg"
-                        alt=""
-                        width={48}
-                        height={48}
-                      />
-                    </span>
-                  )}
-
-                  {emailSent === "error" && (
-                    <span
-                      className={`transition-all duration-1000 ease-in-out ${
-                        emailSent === "error" ? "opacity-100" : "opacity-0"
-                      } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
-                    >
-                      Üzgünüz mesajınızı iletilemedi. Lütfen tekrar deneyin.
-                      <Image
-                        src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/cancel.svg"
-                        alt=""
-                        width={48}
-                        height={48}
-                      />
-                    </span>
-                  )}
-                  {emailSent === "forbidden" && (
-                    <span
-                      className={`transition-all duration-1000 ease-in-out ${
-                        emailSent === "forbidden" ? "opacity-100" : "opacity-0"
-                      } w-full flex justify-between items-center text-white text-xl text-center bg-black_300 px-2 py-4 rounded-md`}
-                    >
-                      Günde 1 E-mail atma hakkınız bulunmaktadır. Lütfen e-mail
-                      atmadan 1 gün sonra tekrar deneyiniz.
-                      <Image
-                        src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/cancel.svg"
-                        alt=""
-                        width={48}
-                        height={48}
-                      />
-                    </span>
-                  )}
-                </Dialog.Panel>
-              </Dialog>
-            </Transition>
             <div className="w-full flex flex-col ">
               <label className="after:content-['*'] text-white">
                 Adınız Soyadınız
@@ -319,17 +265,28 @@ export default function Page(props) {
                   emailSent === "successful" ? "Gönderildi" : "Gönder"
                 }`}
                 type="submit"
-                disabled={
-                  
-                  (emailSent === "successful" || emailSent === "error")
-                }
+                disabled={emailSent === "successful" || emailSent === "error"}
                 className={`text-white w-1/2 mx-auto text-xl mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md ${
                   emailSent === "successful" ? "bg-gold_200" : "bg-gold_100"
                 } transition-all duration-500 ease-in-out hover:scale-110`}
               />
             </div>
-            {showPopUp &&  <DisclaimerDialog setShowPopUp={setShowPopUp} showPopUp={showPopUp} />}
-            
+            {showPopUp && (
+              <DisclaimerDialog
+                setShowPopUp={setShowPopUp}
+                showPopUp={showPopUp}
+                warningText={"Lütfen aydınlatma metnini kabul edin"}
+                infoText={"Aydınlatma metnini okumak için tıklayınız"}
+              />
+            )}
+            {showEmailModal && (
+              <DisclaimerDialog
+                setShowPopUp={setShowEmailModal}
+                showPopUp={showEmailModal}
+                warningText={warningText}
+                infoText={infoText}
+              />
+            )}
           </form>
         </div>
       </div>
