@@ -24,16 +24,14 @@ exports.handler = async function (request, context) {
       to: "karatasaltar@gmail.com", // Change to your recipient
       from: "karatasaltar@gmail.com", // Change to your verified sender
       subject: `${emailObject.firstName} adlı müşterinin mesajı`,
-      html: `<html><body><strong>Müşteri Tel No:</strong> ${emailObject.telephone} 
-      <strong>Email:</strong> ${emailObject.email} 
+      html: `<html><body><strong>Müşteri Tel No:</strong> ${emailObject.telephone} <br/>
+      <strong>Email:</strong> ${emailObject.email} <br/>
       <strong>Mesajı:</strong> ${emailObject.userMessage}</body>
       </html>`,
     };
 
     try {
       const response = await sgMail.send(msg);
-      
-
       return {
         statusCode: response[0].statusCode,
       };
