@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /.netlify/functions/checkUserHasEmailed
-
-User-agent: *
-Allow: /
