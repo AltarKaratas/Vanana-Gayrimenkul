@@ -33,7 +33,7 @@ const CustomerGallery = () => {
             </p>
             <div className="flex">
               <Link
-                href="/Gallery"
+                href="/Galeri"
                 className="font-inter md:text-xl  text-white flex items-center border-b border-white border-spacing-4npm"
               >
                 Galeriye Git
@@ -92,7 +92,7 @@ const CustomerGallery = () => {
             </p>
             <div className="flex justify-end">
               <Link
-                href="/Gallery"
+                href="/Galeri"
                 className="font-inter text-2xl text-white flex items-center border-b border-white border-spacing-4npm"
               >
                 Galeriye Git

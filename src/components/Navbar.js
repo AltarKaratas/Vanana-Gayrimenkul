@@ -32,7 +32,7 @@ const navLinks = [
     text: "Galeri",
     link: "Gallery",
     imgUrl:
-      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryNavigation.webp",
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GaleriNavigation.webp",
   },
 ];
 

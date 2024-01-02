@@ -17,7 +17,7 @@ export default function PhotoGallery(props) {
     <section className="relative pb-8 bg-black_000">
       <div className="relative flex justify-center  items-center h-[540px] md:h-[480px] ">
         <Image
-          src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryBg.webp"
+          src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GaleriBg.webp"
           alt=""
           fill={true}
           objectFit="cover"
