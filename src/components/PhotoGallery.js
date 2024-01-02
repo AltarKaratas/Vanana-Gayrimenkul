@@ -1,10 +1,9 @@
-"use client";
-
+"use client"
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-
 import Image from "next/image";
-import Link from "next/link";
+
+
 
 const photoArray = [
   { imageUrl: "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGN1c3RvbWVyfGVufDB8fDB8fHww", title: "Faras HighHill" },
