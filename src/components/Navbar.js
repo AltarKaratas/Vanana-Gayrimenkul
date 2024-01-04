@@ -11,6 +11,12 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
+    text: "Ana Sayfa",
+    link: "",
+    imgUrl:
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp",
+  },
+  {
     text: "Hakkımızda",
     link: "Hakkimizda",
     imgUrl:
@@ -30,9 +36,9 @@ const navLinks = [
   },
   {
     text: "Galeri",
-    link: "Gallery",
+    link: "Galeri",
     imgUrl:
-      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GaleriNavigation.webp",
+      "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryNavigation.webp",
   },
 ];
 
@@ -89,7 +95,7 @@ const Navbar = () => {
                 }}
                 className={`${
                   open ? "bg-beige" : "bg-transparent"
-                } transition-all duration-700 ease-in-out h-full w-16 lg:w-20 xl:w-40 flex justify-center items-center border-r-thin border-dark_gray outline-0`}
+                } transition-all duration-500 ease-in-out h-full w-16 lg:w-40 flex justify-center gap-2 items-center border-r-thin border-dark_gray outline-0 hover:bg-beige`}
               >
                 <Image
                   src={`${
@@ -101,6 +107,7 @@ const Navbar = () => {
                   height={screenSize.width < 1024 ? 12 : 18}
                   alt="Close"
                 />
+               {screenSize.width>=1024 && <span className="text-white">Menü</span>}
               </Menu.Button>
 
               <Transition
@@ -279,7 +286,7 @@ const Navbar = () => {
         }
         className={`${
           selectedItem === "Iletisim" ? "bg-beige" : "bg-transparent"
-        } h-full w-16 lg:w-20 xl:w-40 border-l-thin border-dark_gray  flex items-center justify-center`}
+        } transition-all duration-500 ease-in-out hover:bg-beige h-full w-16 lg:w-40 border-l-thin border-dark_gray  flex items-center justify-center gap-2`}
       >
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VectorIletisim.svg"
@@ -287,6 +294,7 @@ const Navbar = () => {
           width={screenSize.width < 1024 ? 20 : 29}
           height={20}
         />
+        {screenSize.width>=1024 && <span className="text-white">İletişim</span>}
       </Link>
     </nav>
   );

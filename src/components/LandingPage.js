@@ -9,38 +9,61 @@ export default function LandingPage(props) {
   return (
     <section className="relative h-[560px] md:h-[720px] lg:h-[800px] xl:h-screen bg-gradient-to-b from-black_000 to-black_200">
       <div className="absolute flex justify-center items-center w-full h-[calc(100%-64px)] lg:h-[calc(100%-80px)]">
-        <div className="absolute flex flex-col w-full h-full px-6  xl:px-20 py-16 md:py-20">
-          <div className="relative self-end w-32 md:w-48 lg:w-64 xl:w-96 h-12 md:h-24 lg:h-32 xl:h-64 ">
+        <div className="absolute flex flex-col w-full h-full px-6  xl:px-20 py-12">
+          <div className="relative self-end w-32 md:w-48 lg:w-64 xl:w-96 h-12 md:h-24 lg:h-32 xl:h-[200px] ">
             <Image
               src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/backgroundImage.svg"
               fill
               className="rotate-180"
-              priority={true}
             />
           </div>
-          <div className="relative self-start w-32 md:w-48 lg:w-80 xl:w-96 h-12 md:h-24 lg:h-32 xl:h-64 ">
-            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/backgroundImage.svg" fill alt="image" priority={true} />
+          <div className="relative self-start w-32 md:w-48 lg:w-80 xl:w-96 h-12 md:h-24 lg:h-32 xl:h-[200px] ">
+            <Image
+              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/backgroundImage.svg"
+              fill
+              alt=""
+            />
           </div>
         </div>
-        <div className="relative z-10 w-80 sm:w-[540px] lg:w-[720px] min-[1900px]:w-[1200px] h-24 md:h-32 lg:h-48 2xl:h-64 min-[2560px]:h-80">
-          <Image
-            src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
-            fill
-            className="-translate-y-10 md:-translate-y-20 lg:-translate-y-12 xl:-translate-y-20 min-[2560px]:-translate-y-56"
-            priority={true}
-          />
+        <div className="flex flex-col justify-around items-center">
+          <div className="relative z-10 w-80 sm:w-[540px] lg:w-[720px] min-[1900px]:w-[1200px] h-24 md:h-32 lg:h-48  min-[2560px]:h-80 flex justify-end items-end">
+            <Image
+              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
+              fill
+              className="absolute z-0  2xl:-translate-x-4 -translate-y-0 md:-translate-y-12 lg:-translate-y-12  min-[2560px]:-translate-y-56"
+              priority={true}
+              alt="Vanana Gayrimenkul"
+            />
+          </div>
+          <div className="relative z-20 w-2/3 h-32 ">
+            <Image
+              src="/Gayrimenkul.svg"
+              fill
+              className="absolute translate-x-12 2xl:translate-x-[240px] -translate-y-[60px] md:-translate-y-20 lg:-translate-y-8  min-[2560px]:-translate-y-56 opacity-[95%]"
+              priority={true}
+              alt="Vanana Gayrimenkul"
+            />
+          </div>
         </div>
       </div>
       <div className="relative flex flex-col h-full">
         <div className="flex justify-center items-end h-full ">
-          <div className="relative z-20 w-[240px] sm:w-[280px] md:w-[360px] xl:w-[480px] min-[1900px]:w-[640px] min-[2560px]:w-[960px] h-[260px] md:h-[360px] xl:h-[480px] min-[1900px]:h-[640px] min-[2560px]:h-[640px]">
-            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKule.webp" alt="" fill objectFit="contain" fetchPriority="high" loading="eager" />
+          <div className="relative z-10 w-[240px] sm:w-[280px] md:w-[360px] xl:w-[480px] min-[1900px]:w-[640px] min-[2560px]:w-[960px] h-[260px] md:h-[360px] xl:h-[480px] min-[1900px]:h-[640px] min-[2560px]:h-[640px]">
+            <Image
+              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKule.webp"
+              alt="Arp Kule Satış Projesi"
+              fill
+              objectFit="contain"
+              fetchPriority="high"
+              className="brightness-[90%]"
+              loading="eager"
+            />
           </div>
           <div className="absolute z-0">
             <div className="relative w-[286px] min-[480px]:w-[360px] md:w-[520px] lg:w-[640px] min-[1900px]:w-[960px] min-[2560px]:w-[1440px] h-[40vh] sm:h-[400px] md:h-[500px] lg:h-[540px] min-[1900px]:h-[740px] min-[2560px]:h-[740px]">
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleBulut.webp"
-                alt=""
+                alt="Arp Kule Satış Projesi"
                 fill
                 objectFit="cover"
                 className="brightness-75"
@@ -53,7 +76,7 @@ export default function LandingPage(props) {
         {screenSize.width >= 768 ? (
           <div className="absolute flex justify-between items-end w-full h-full py-12 lg:py-20 px-6 xl:px-20">
             <div className="relative w-16 md:w-24 h-16 md:h-24">
-              <Link href="#scrollPoint">
+              <Link href="#scrollPoint" passHref>
                 <Image
                   src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VectorArrowDown.svg"
                   alt=""

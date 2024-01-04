@@ -6,20 +6,19 @@ import Link from "next/link";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const navLinks = [
+  { text: "Ana Sayfa", link: "" },
   { text: "Hakkımızda", link: "Hakkimizda" },
   { text: "Projeler", link: "Projeler" },
   { text: "İletişim", link: "Iletisim" },
-  { text: "Galeri", link: "Gallery" },
+  { text: "Galeri", link: "Galeri" },
 ];
 
 const Footer = () => {
   const screenSize = useScreenSize();
 
- 
-
   return (
     <nav className="relative flex-col px-6 xl:px-20 py-8 lg:py-16 bg-[#0A0A0A] font-inter">
-      {screenSize.width < 768 ? (
+      {screenSize.width <= 768 ? (
         <div className="h-full flex-col">
           <Link href="/">
             <Image
@@ -31,7 +30,8 @@ const Footer = () => {
           </Link>
           <div className="flex justify-between w-full md:w-[160px]">
             <p className="mt-4 text-xs text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-              Konut ve Kurumsal<br/> Emlak Satışında Uzman
+              Konut ve Kurumsal
+              <br /> Emlak Satışında Uzman
             </p>
           </div>
           <ul className="flex flex-col justify-between items-start mt-8 text-white">
@@ -64,13 +64,13 @@ const Footer = () => {
                 className="lg:pb-2"
               />
             </Link>
-            <ul className="flex flex-wrap justify-between items-end gap-8">
+            <ul className="flex flex-wrap justify-between items-end gap-4 2xl:gap-8">
               {navLinks.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex justify-end mt-4"
-                >
-                  <Link href={`/${item.link}`} className="text-white text-2xl  transition-all ease-in-out duration-500 hover:scale-125 hover:text-beige">
+                <li key={index} className="flex justify-end mt-4">
+                  <Link
+                    href={`/${item.link}`}
+                    className="text-white text-2xl  transition-all ease-in-out duration-500 hover:scale-125 hover:text-beige"
+                  >
                     {item.text}
                   </Link>
                 </li>
@@ -79,7 +79,8 @@ const Footer = () => {
           </div>
           <div className="flex justify-between w-full md:w-[160px] xl:w-[320px]">
             <p className="mt-4 xl:pl-2 text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-              Konut ve Kurumsal<br/> Emlak Satışında Uzman
+              Konut ve Kurumsal
+              <br /> Emlak Satışında Uzman
             </p>
           </div>
 

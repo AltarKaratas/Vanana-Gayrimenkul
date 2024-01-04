@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import localFont from "next/font/local";
 
-import { useRef, useState, useEffect, useLayoutEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 
 import AboutContainer from "./AboutContainer";
 import { useIsVisible } from "@/utils/hooks/useIsVisible";
@@ -13,7 +12,6 @@ const sloganArray = ["Satış Gücü", "Deneyim", "Profesyonellik"];
 const FADE_INTERVAL_MS = 1800;
 const WORD_CHANGE_INTERVAL_MS = FADE_INTERVAL_MS * 2;
 
-const holimount = localFont({ src: "../Holimountswash.otf" });
 
 const About = () => {
   const [sloganArrayIndex, setSloganArrayIndex] = useState(0);
@@ -46,7 +44,7 @@ const About = () => {
   return (
     <section
       id="scrollPoint"
-      className={`relative  transition-all duration-[3500ms] ease-in-out ${
+      className={`relative transition-all duration-[3500ms] ease-in-out ${
         isVisible ? "bg-black_000" : "bg-black_200"
       } `}
     >
@@ -68,11 +66,9 @@ const About = () => {
             }
             <br />
             Vanana Gayrimenkulde.
-            <span
-            className={`${holimount.className} absolute -bottom-16 left-0 text-8xl sm:text-[160px] lg:text-[240px] xl:text-[360px] 2xl:text-[480px] text-white select-none`}
-          >
-            N
-          </span>
+            <div className="relative w-[240px] md:w-[480px] 2xl:w-[960px] h-[48px]">
+              <Image src="line.svg" alt="" fill />
+            </div>
           </h2>
           
         </div>

@@ -20,17 +20,31 @@ export const inter = Inter({
 
 export const metadata = {
   title: {
-    default:"Vanana Gayrimenkul | Emlak ve Konut Satışında Uzman İsim",
-    template:"%s | Vanana Gayrimenkul | Emlak ve Konut Satışında Uzman İsim"
+    default: "Vanana Gayrimenkul | Emlak ve Konut Satışında Uzman İsim",
+    template: "%s | Vanana Gayrimenkul | Emlak ve Konut Satışında Uzman İsim",
   },
-  description:"Vanana Gayrimenkul, Emlak,Ankara,İstanbul, Türkiye, Gayrimenkul, Gayrimenkul Danışmanlığı",
+  description:
+    "Vanana Gayrimenkul, Emlak,Ankara,İstanbul, Türkiye, Gayrimenkul, Gayrimenkul Danışmanlığı",
   verification: { google: "ZjP3cc8OgDi8MAKv1-9V3t88Rpyohzi7YZx7Db0XvFM" },
+  themeColor: "#121212",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html id="main-html">
-      <Script src="https://smtpjs.com/v3/smtp.js"></Script>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link
+        rel="icon"
+        href="/icon.ico"
+        type="image/ico"
+        sizes="any"
+      />
+      <link
+        rel="apple-touch-icon"
+        href="/favicon.png"
+        type="image/png"
+        sizes="48x48"
+      />
       <body
         id="body"
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}

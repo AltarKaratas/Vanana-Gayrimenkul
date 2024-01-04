@@ -68,7 +68,6 @@ export default function IletisimWrapper(props) {
   });
 
   async function onSubmit(data) {
-    console.log(showPopUp);
     if (!isAccepted) {
       setShowPopUp(true);
     } else {
