@@ -163,7 +163,7 @@ const Navbar = () => {
                                 <Link
                                   href={`/${item.link}`}
                                   className={`text-3xl  ${
-                                    selectedItem === item.link || active
+                                    selectedItem.toLowerCase() === item.link.toLowerCase() || active
                                       ? "text-beige"
                                       : "text-white"
                                   }
