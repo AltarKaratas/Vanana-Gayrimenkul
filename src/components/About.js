@@ -66,7 +66,7 @@ const About = () => {
             }
             <br />
             Vanana Gayrimenkulde.
-            <div className="relative w-[240px] md:w-[480px] 2xl:w-[960px] h-[48px]">
+            <div className="relative w-[240px] md:w-[480px] xl:w-[720px] 2xl:w-[960px] h-[48px]">
               <Image src="line.svg" alt="" fill />
             </div>
           </h2>

@@ -22,16 +22,20 @@ export default function IletisimWrapper(props) {
 
   let warningText;
   let infoText;
+  let imageURL;
 
   if (emailSent === "error") {
-    warningText = "Mesajınız iletilemedi";
-    infoText = "Lütfen tekrar deneyin";
+    warningText = "Mesajınız iletilemedi.";
+    infoText = "Lütfen tekrar deneyin!";
+    imageURL= "/unsuccessful.svg"
   } else if (emailSent === "forbidden") {
     warningText = "Günde 1 mail atma hakkınız bulunmaktadır.";
-    infoText = "Teşekkür ederiz";
-  } else {
-    warningText = "Mesajınız iletildi";
     infoText = "Teşekkür ederiz.";
+    imageURL= "/unsuccessful.svg"
+  } else {
+    warningText = "Mesajınız iletildi.";
+    infoText = "Teşekkür ederiz.";
+    imageURL= "/success.svg"
   }
 
   useEffect(() => {
@@ -276,8 +280,9 @@ export default function IletisimWrapper(props) {
               <DisclaimerDialog
                 setShowPopUp={setShowPopUp}
                 showPopUp={showPopUp}
-                warningText={"Lütfen aydınlatma metnini kabul edin"}
-                infoText={"Aydınlatma metnini okumak için tıklayınız"}
+                warningText={"Lütfen aydınlatma metnini kabul edin!"}
+                infoText={"Aydınlatma metnini okumak için tıklayınız."}
+                imageURL={"/unsuccessful.svg"}
               />
             )}
             {showEmailModal && (
@@ -286,6 +291,7 @@ export default function IletisimWrapper(props) {
                 showPopUp={showEmailModal}
                 warningText={warningText}
                 infoText={infoText}
+                imageURL={imageURL}
               />
             )}
           </form>

@@ -151,7 +151,7 @@ export default function ProjelerWrapper() {
           Adımlarınızı bizimle atın
         </h3>
       </div>
-      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-16 px-6 xl:px-20 py-20 lg:py-40">
+      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 px-6 xl:px-20 py-20 lg:py-40">
         {allProjects.map((project) => (
           <GridItem
             title={project.title}

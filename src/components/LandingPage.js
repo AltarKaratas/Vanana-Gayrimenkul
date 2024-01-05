@@ -39,7 +39,7 @@ export default function LandingPage(props) {
             <Image
               src="/Gayrimenkul.svg"
               fill
-              className="absolute translate-x-12 2xl:translate-x-[240px] -translate-y-[60px] md:-translate-y-20 lg:-translate-y-8  min-[2560px]:-translate-y-56 opacity-[95%]"
+              className="absolute translate-x-12 xl:translate-x-[240px] -translate-y-[60px] md:-translate-y-20 lg:-translate-y-8  min-[2560px]:-translate-y-56 opacity-[95%]"
               priority={true}
               alt="Vanana Gayrimenkul"
             />
@@ -60,7 +60,7 @@ export default function LandingPage(props) {
             />
           </div>
           <div className="absolute z-0">
-            <div className="relative w-[286px] min-[480px]:w-[360px] md:w-[520px] lg:w-[640px] min-[1900px]:w-[960px] min-[2560px]:w-[1440px] h-[40vh] sm:h-[400px] md:h-[500px] lg:h-[540px] min-[1900px]:h-[740px] min-[2560px]:h-[740px]">
+            <div className="relative w-[286px] min-[480px]:w-[360px] md:w-[520px] lg:w-[640px]  min-[1900px]:w-[960px] min-[2560px]:w-[1440px] h-[40vh] sm:h-[400px] md:h-[500px] lg:h-[540px] min-[1900px]:h-[740px] min-[2560px]:h-[740px]">
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleBulut.webp"
                 alt="Arp Kule Satış Projesi"

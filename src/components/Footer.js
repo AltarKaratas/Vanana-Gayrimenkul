@@ -64,7 +64,7 @@ const Footer = () => {
                 className="lg:pb-2"
               />
             </Link>
-            <ul className="flex flex-wrap justify-between items-end gap-4 2xl:gap-8">
+            <ul className="flex flex-wrap justify-between items-end gap-4 xl:gap-8">
               {navLinks.map((item, index) => (
                 <li key={index} className="flex justify-end mt-4">
                   <Link
