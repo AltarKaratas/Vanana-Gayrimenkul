@@ -21,7 +21,7 @@ exports.handler = async function (request, context) {
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
-      to: "karatasaltar@gmail.com", // Change to your recipient
+      to: "altar.karatas@gmail.com", // Change to your recipient
       from: "karatasaltar@gmail.com", // Change to your verified sender
       subject: `${emailObject.firstName} adlı müşterinin mesajı`,
       html: `<html><body><strong>Müşteri Tel No:</strong> ${emailObject.telephone} <br/>
