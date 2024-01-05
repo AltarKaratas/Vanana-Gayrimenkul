@@ -31,7 +31,7 @@ export const featuredProjects = [
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings2.webp",
     id: "GoldWings2",
-    text: "Rahatlığınızı ve mutluluğunuzu en ince ayrıntısına kadar düşünen Gold Wings II, sizin için sosyal alanlarında doğayla barışık olarak basketbol-futbol-voleybol sahası, koşu-bisiklet-yürüyüş yolu, açık ve kapalı çocuk oyun alanı, dinlenme-seyir teraslarının yanı sıra her daireye özel hobi bahçesi oluşturmuştur.",
+    text: "Mutluluğunuzu en ince ayrıntısına kadar düşünen Gold Wings II, sizin için sosyal alanlarında doğayla barışık olarak basketbol-futbol-voleybol sahası, koşu yolu, açık ve kapalı çocuk oyun alanı, dinlenme-seyir teraslarının ve her daireye özel hobi bahçesi oluşturmuştur.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
     projectUrl: "https://www.deso.com.tr/projelerimiz/gold-wings-2",
@@ -77,7 +77,7 @@ export const featuredProjects = [
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Arissaincek.webp",
     id: "arissalitaastoria",
     text:`Hayallerin hayata dönüştüğü muhteşem bir mimari İncek’in en gözde lokasyonunda avantajlı koşullarla sizleri bekliyor.Arissa Lita Astoria, şehrin orta yerinde, şehir karmaşasının uzağında, tatil tadında bir yaşam sunuyor!`,
-    companyImageUrl:"/arissa-logo.png",
+    companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArissaLogo.webp",
     projectUrl: "https://www.arissainsaat.com/arissa-incek/",
   },
   {
@@ -93,7 +93,7 @@ export const featuredProjects = [
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/BaskentLoft.webp",
     id: "baskentloft",
     text:`Gözüm İnşaat tarafından hayata geçirilen Başkent Loft projesi zemin+16 katlı tek bloktan oluşuyor. Projede toplam 51 daire yer alıyor. Dairelerin tamamı 4 oda 1 salon tipinde. Net kullanım alanları ise 220 metrekare.`,
-    companyImageUrl:"/GozumInsaat.png",
+    companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
   },
   {
@@ -101,7 +101,7 @@ export const featuredProjects = [
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleProjesi.webp",
     id: "arpkule",
     text:`Gözüm İnşaat tarafından hayata geçirilen ARP Kule projesi 5 bin 40 metrekarelik arsa üzerine kuruluyor. 2 bin 300 metrekare bina oturuma sahip olan proje 21 kattan oluşuyor. 42 ofislik projede ofisler 250 metrekare olarak tasarlandı.`,
-    companyImageUrl:"/GozumInsaat.png",
+    companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
   },
 ];
@@ -151,7 +151,7 @@ const DragSlider = () => {
             className="max-[320px]:w-[280px]  min-[360px]:w-[340px]  min-[400px]:w-[360px] md:w-[640px] h-[276px] min-[400px]:h-[276px] md:h-[492px] "
           >
             <div className="relative z-10 flex flex-col max-[320px]:w-[280px]  min-[360px]:w-[340px]  min-[400px]:w-[360px] md:w-[640px] h-[276px] min-[400px]:h-[276px] md:h-[492px]  font-inter overflow-hidden ">
-              <div className="absolute bg-black_100 max-w-[500px]:w-[128px] min-w-[500px]:w-[184px] min-w-[500px]:h-16 max-w-[500px]:h-12 z-10 px-3 lg:px-6 py-3  bg-transparent 2xl:py-6 flex justify-center items-center  rounded-md">
+              <div className="absolute bg-black_100 max-w-[500px]:w-[128px] min-w-[500px]:w-[184px] min-w-[500px]:h-16 max-w-[500px]:h-12 z-10 px-3 lg:px-6 py-3  bg-transparent xl:py-6 flex justify-center items-center  rounded-md">
                 <Image
                   src={`${project.companyImageUrl}`}
                   alt=""

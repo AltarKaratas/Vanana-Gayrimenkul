@@ -5,7 +5,7 @@ export default function GridItem(props) {
   return (
     <div
       id={props.id}
-      className="relative h-[600px] md:h-[600px] min-[1900px]:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.9)]"
+      className="relative h-[600px] md:h-[600px] min-[1900px]:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.5)]"
     >
       
       <div className="absolute top-0 left-0 h-0" />
@@ -33,8 +33,11 @@ export default function GridItem(props) {
           </div>
         </div>
         <div className="relative h-full w-full">
-        <div className="absolute z-20 bottom-3  -right-0 backdrop-blur-[2px]">
-          <Image src="/satis.webp" alt="satış" width={240} height={80} />
+        <div className="absolute z-20 bottom-3  left-3 lg:left-6">
+          <div className="w-[200px] xl:w-60 h-6  xl:h-7 shadow-[4px_0px_32px_4px_rgba(32  ,32 ,32  ,0.35)] md:shadow-[0px_8px_48px_10px_rgba(32  ,32 ,32  ,0.65)]  xl:shadow-[0px_16px_100px_10px_rgba(32 ,32  ,32 ,0.85)]">
+          <Image src="/satis.png" alt="satış" fill />
+
+          </div>
         </div>
           <Image
             src={`${props.imageUrl}`}

@@ -25,7 +25,7 @@ export const inter = Inter({
 export default function Home() {
   return (
     <main
-      className={`${archivo.variable} ${inter.variable}  font-sans h-min bg-gradient-to-b from-[#0f0f0f]  to-[#121212] antialiased scroll-smooth`}
+      className={`${archivo.variable} ${inter.variable}  font-sans h-min bg-gradient-to-b from-black_400  to-black_300 antialiased scroll-smooth`}
     >
 
       <LandingPage />

@@ -62,7 +62,7 @@ export default function HakkımızdaSlider(props){
           <ul className="splide__pagination mt-20"></ul>
           <SplideTrack>
             {advantages.map((advantage_item) => (
-              <SplideSlide className="flex justify-center w-[240px] h-[420px] lg:w-[320px] min-[1900px]:h-[540px]  pt-20 bg-gradient-to-b from-black_300 via-black_000 to-black_000 rounded-xs">
+              <SplideSlide className="flex justify-center w-[240px] h-[420px] lg:w-[320px] min-[1900px]:h-[540px]  pt-20 bg-gradient-to-t from-black_300 via-black_000 to-black_000 rounded-md shadow-md">
                 <div className="flex flex-col items-center gap-8 p-4 text-center">
                   <div className="w-[100px] lg:w-[150px] h-[71px] lg:h-[106px] relative flex justify-center items-center">
                     <Image

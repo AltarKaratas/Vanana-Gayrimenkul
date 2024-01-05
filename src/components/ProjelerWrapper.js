@@ -30,7 +30,7 @@ const allProjects = [
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings2.webp",
     id: "GoldWings2",
-    text: "Rahatlığınızı ve mutluluğunuzu en ince ayrıntısına kadar düşünen Gold Wings II, sizin için sosyal alanlarında doğayla barışık olarak basketbol-futbol-voleybol sahası, koşu-bisiklet-yürüyüş yolu, açık ve kapalı çocuk oyun alanı, dinlenme-seyir teraslarının yanı sıra her daireye özel hobi bahçesi oluşturmuştur.",
+    text: "Mutluluğunuzu en ince ayrıntısına kadar düşünen Gold Wings II, sizin için sosyal alanlarında doğayla barışık olarak basketbol-futbol-voleybol sahası, koşu yolu, açık ve kapalı çocuk oyun alanı, dinlenme teraslarının yanı sıra her daireye özel hobi bahçesi oluşturmuştur.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
     projectUrl: "https://www.deso.com.tr/projelerimiz/gold-wings-2",
@@ -47,7 +47,7 @@ const allProjects = [
   },
   {
     title: "Deniz Life",
-    imageUrl: "/DenizLife.jpg",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/DenizLife.webp",
     id: "DenizLife",
     text: "DENİZ LIFE şehir merkezi Mustafa Kemal mahallesinde mimari yapısı, lüksü, konforu ve yüksek güvenlikli iş yaşamı sürdürmesi amaçlı olarak inşa edilmiştir.",
     companyImageUrl:
@@ -56,15 +56,15 @@ const allProjects = [
   },
   {
     title: "Otto Ville",
-    imageUrl: "/Ottoville.png",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Ottoville.webp",
     id: "Ottoville",
     text: "2731. Sokak No:23 Prof Dr Ahmet Taner Kışlalı Mah, Çayyolu, Ankara​.",
-    companyImageUrl: "/İMYYapıLogo.webp",
+    companyImageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IMYYapiLogo.webp",
     projectUrl: "https://www.imyyapi.com/tamamlanan-projeler",
   },
   {
     title: "Panorama",
-    imageUrl: "/faraspanorama.png",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Faraspanorama.webp",
     id: "Faraspanorama",
     text: "Faras imzasıyla Ankara’nın en gözde lokasyonu İncek’te bölgesinde ayrıcalıklı donanımlarıyla güvenilir yatırım fırsatı sunan Faras Panorama, sakinleri için mutluluk, yatırımcısı için ‘kazanç’ sunuyor.",
     companyImageUrl:
@@ -73,7 +73,7 @@ const allProjects = [
   },
   {
     title: "Lita Astoria",
-    imageUrl: "/arissaincek.png",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Arissaincek.webp",
     id: "arissalitaastoria",
     text:`Hayallerin hayata dönüştüğü muhteşem bir mimari İncek’in en gözde lokasyonunda avantajlı koşullarla sizleri bekliyor.Arissa Lita Astoria, şehrin orta yerinde, şehir karmaşasının uzağında, tatil tadında bir yaşam sunuyor!`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArissaLogo.webp",
@@ -81,7 +81,7 @@ const allProjects = [
   },
   {
     title: "Deso Plaza",
-    imageUrl: "/desoofis.jpg",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/DenizPlaza.webp",
     id: "desoplaza",
     text:`DESO PLAZA Şehir merkezi Mustafa Kemal Mahallesin de Mimari yapısı ve Yüksek Güvenlikli iş yaşamı sürdürmesi amaçlı olarak inşa edilmiştir. DESO PLAZA da sadece iş hayatı düşünülmemiştir, Yeşile ve Peyzaj alanına verilen önemle huzurlu iş hayatı benimsenmiştir.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
@@ -89,18 +89,18 @@ const allProjects = [
   },
   {
     title: "Başkent Loft",
-    imageUrl: "/baskentloft.jpeg",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/BaskentLoft.webp",
     id: "baskentloft",
     text:`Gözüm İnşaat tarafından hayata geçirilen Başkent Loft projesi zemin+16 katlı tek bloktan oluşuyor. Projede toplam 51 daire yer alıyor. Dairelerin tamamı 4 oda 1 salon tipinde. Net kullanım alanları ise 220 metrekare.`,
-    companyImageUrl:"/GozumInsaat.png",
+    companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
   },
   {
     title: "Arp Kule",
-    imageUrl: "/ArpKule.jpg",
+    imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleProjesi.webp",
     id: "arpkule",
     text:`Gözüm İnşaat tarafından hayata geçirilen ARP Kule projesi 5 bin 40 metrekarelik arsa üzerine kuruluyor. 2 bin 300 metrekare bina oturuma sahip olan proje 21 kattan oluşuyor. 42 ofislik projede ofisler 250 metrekare olarak tasarlandı.`,
-    companyImageUrl:"/GozumInsaat.png",
+    companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
   },
 ];
@@ -126,7 +126,7 @@ export default function ProjelerWrapper() {
   }, [params.get("id")]);
 
   return (
-    <section className="relative pb-8 bg-black_000">
+    <section className="relative pb-8 bg-black_200">
       <div className="relative flex justify-center min-[500px]:items-center h-[540px] md:h-[480px] ">
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ProjelerBg.webp"
@@ -151,7 +151,7 @@ export default function ProjelerWrapper() {
           Adımlarınızı bizimle atın
         </h3>
       </div>
-      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 px-6 xl:px-20 py-20 lg:py-40">
+      <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-x-12 gap-y-16 px-6 xl:px-20 py-20 lg:py-40">
         {allProjects.map((project) => (
           <GridItem
             title={project.title}

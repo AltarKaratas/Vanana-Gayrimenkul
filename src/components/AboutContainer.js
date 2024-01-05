@@ -8,7 +8,7 @@ const AboutContainer = (props) => {
 
   return (
     <div
-      className={`relative flex flex-col xl:flex-row gap-4 lg:gap-8 w-full h-[480px] md:h-[640px] lg:h-[720px] 2xl:h-[640px] max-w-[1905px] px-6 md:my-12 xl:my-20 xl:px-20 mx-auto`}
+      className={`relative flex flex-col xl:flex-row gap-4 lg:gap-8 w-full h-[480px] md:h-[640px] lg:h-[720px] 2xl:h-[640px] max-w-[1905px] px-6 md:my-12 2xl:my-20 xl:px-20 mx-auto`}
       ref={visibilityRef}
     >
       <div
