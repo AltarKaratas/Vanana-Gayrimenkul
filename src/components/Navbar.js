@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import useScreenSize from "@/utils/hooks/useScreenSize";
-import { useContext, useState, useLayoutEffect, useEffect } from "react";
+import {  useState, useLayoutEffect, useEffect } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
 
@@ -44,7 +44,7 @@ const navLinks = [
 
 const Navbar = () => {
   const screenSize = useScreenSize();
-  const [selectedItem, setSelectedItem] = useState("/");
+  const [selectedItem, setSelectedItem] = useState("");
   const [photoUrlIndicator, setPhotoUrlIndicator] = useState(-1);
   const [showAnim, setShowAnim] = useState(false);
   const pathname = usePathname();
@@ -63,7 +63,7 @@ const Navbar = () => {
   useEffect(() => {
     document.getElementById("main-html").classList.remove("overflow-hidden");
 
-    if (pathArray[1] !== "" || pathArray !== "") {
+    if (pathArray[1].toLowerCase() !== "" || pathArray !== "") {
       setSelectedItem(pathArray[1]);
       let findPhotoInArray;
       navLinks.forEach((item, index) => {

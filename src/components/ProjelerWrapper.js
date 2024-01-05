@@ -76,7 +76,7 @@ const allProjects = [
     imageUrl: "/arissaincek.png",
     id: "arissalitaastoria",
     text:`Hayallerin hayata dönüştüğü muhteşem bir mimari İncek’in en gözde lokasyonunda avantajlı koşullarla sizleri bekliyor.Arissa Lita Astoria, şehrin orta yerinde, şehir karmaşasının uzağında, tatil tadında bir yaşam sunuyor!`,
-    companyImageUrl:"/arissa-logo.png",
+    companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArissaLogo.webp",
     projectUrl: "https://www.arissainsaat.com/arissa-incek/",
   },
   {
@@ -162,7 +162,7 @@ export default function ProjelerWrapper() {
             projectUrl={project.projectUrl}
           />
         ))}
-      </div>
+      </div> 
     </section>
   );
 }

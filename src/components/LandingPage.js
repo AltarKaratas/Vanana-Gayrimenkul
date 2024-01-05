@@ -33,15 +33,18 @@ export default function LandingPage(props) {
               className="absolute z-0  2xl:-translate-x-4 -translate-y-0 md:-translate-y-12 lg:-translate-y-12  min-[2560px]:-translate-y-56"
               priority={true}
               alt="Vanana Gayrimenkul"
+              
             />
           </div>
-          <div className="relative z-20 w-2/3 h-32 ">
+          <div className="relative z-20 w-[360px] md:w-[720px] xl:w-[800px] h-32 ">
             <Image
-              src="/Gayrimenkul.svg"
-              fill
-              className="absolute translate-x-12 xl:translate-x-[240px] -translate-y-[60px] md:-translate-y-20 lg:-translate-y-8  min-[2560px]:-translate-y-56 opacity-[95%]"
-              priority={true}
+              src="/gayrimenkul.png"
+              width={800}
+              height={640}
+              className="absolute scale-50 translate-x-20 md:translate-x-24 xl:translate-x-[320px] -translate-y-12 md:-translate-y-24 lg:-translate-y-32  min-[2560px]:-translate-y-56 opacity-[100%]"
               alt="Vanana Gayrimenkul"
+              
+              
             />
           </div>
         </div>
@@ -55,7 +58,7 @@ export default function LandingPage(props) {
               fill
               objectFit="contain"
               fetchPriority="high"
-              className="brightness-[90%]"
+              className="brightness-[70%]"
               loading="eager"
             />
           </div>
@@ -85,18 +88,18 @@ export default function LandingPage(props) {
                 />
               </Link>
             </div>
-            <h1 className="text-right text-4xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
+            <h1 className="text-right text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#949494] via-[#949494] to-gold_200">
               Konut ve Kurumsal
               <br /> Emlak Satışında
               <br />
-              <span className="relative z-20 text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
+              <span className="relative z-20 text-transparent bg-clip-text bg-gradient-to-r from-[#949494] via-[#949494] to-gold_200">
                 Uzman İsim
               </span>
             </h1>
           </div>
         ) : (
           <div className="w-full h-min p-6 md:my-4">
-            <h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
+            <h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#949494] via-[#949494] to-gold_200">
               Konut ve Kurumsal Emlak Satışında Uzman İsim
             </h1>
           </div>

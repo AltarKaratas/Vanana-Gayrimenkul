@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRef, useState, useLayoutEffect } from "react";
 
 import AboutContainer from "./AboutContainer";
-import { useIsVisible } from "@/utils/hooks/useIsVisible";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const sloganArray = ["Satış Gücü", "Deneyim", "Profesyonellik"];
@@ -16,8 +15,6 @@ const WORD_CHANGE_INTERVAL_MS = FADE_INTERVAL_MS * 2;
 const About = () => {
   const [sloganArrayIndex, setSloganArrayIndex] = useState(0);
   const [fadeProp, setFadeProp] = useState("opacity-100");
-  const visibilityRef = useRef();
-  const isVisible = useIsVisible(visibilityRef);
 
   const screenSize = useScreenSize();
 
@@ -32,7 +29,7 @@ const About = () => {
   }, [fadeProp]);
 
   useLayoutEffect(() => {
-    const wordTimeout = setInterval(() => {
+    const wordTimeout = setInterval(() => { 
       setSloganArrayIndex(
         (prevWordOrder) => (prevWordOrder + 1) % sloganArray.length
       );
@@ -44,9 +41,7 @@ const About = () => {
   return (
     <section
       id="scrollPoint"
-      className={`relative transition-all duration-[3500ms] ease-in-out ${
-        isVisible ? "bg-black_000" : "bg-black_200"
-      } `}
+      className={`relative transition-all duration-[3500ms] ease-in-out bg-black_000 `}
     >
       <div
         className={`relative z-10 flex h-[480px] md:h-[720px] px-6 xl:px-20 py-16 lg:py-32  transition-all duration-[3500ms] ease-in-out`}
@@ -75,7 +70,6 @@ const About = () => {
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
           <div
             className="relative w-32 h-32 sm:w-48 sm:h-48 xl:w-[320px] xl:h-[360px]"
-            ref={visibilityRef}
           >
             <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Vectorhouse.svg" fill alt="" objectFit="contain" />
           </div>

@@ -26,15 +26,15 @@ export default function GridItem(props) {
             <Link
               href={`${props.projectUrl}`}
               target="_blank"
-              className="bg-black_100 flex items-center  h-10 rounded-sm text-white  lg:text-xl p-2 transition-all duration-300 ease-in-out hover:scale-110"
+              className="bg-black_100 flex items-center  h-10 rounded-sm text-white  p-2 transition-all duration-300 ease-in-out hover:scale-110"
             >
               Projeyi ziyaret et
             </Link>
           </div>
         </div>
         <div className="relative h-full w-full">
-        <div className="absolute z-20 bottom-0 right-0 p-4 bg-gradient-to-r from-gold_100 to-beige">
-          Satışı Devam Etmekte
+        <div className="absolute z-20 bottom-3  -right-0 backdrop-blur-[2px]">
+          <Image src="/satis.webp" alt="satış" width={240} height={80} />
         </div>
           <Image
             src={`${props.imageUrl}`}

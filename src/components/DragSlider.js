@@ -60,7 +60,7 @@ export const featuredProjects = [
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Ottoville.webp",
     id: "Ottoville",
     text: "2731. Sokak No:23 Prof Dr Ahmet Taner Kışlalı Mah, Çayyolu, Ankara​.",
-    companyImageUrl: "/İMYYapıLogo.webp",
+    companyImageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IMYYapiLogo.webp",
     projectUrl: "https://www.imyyapi.com/tamamlanan-projeler",
   },
   {

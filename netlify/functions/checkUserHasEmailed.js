@@ -23,11 +23,13 @@ exports.handler = async function (request, context) {
     const msg = {
       to: "altar.karatas@gmail.com", // Change to your recipient
       from: "karatasaltar@gmail.com", // Change to your verified sender
-      subject: `${emailObject.firstName} adlı müşterinin mesajı`,
-      html: `<html><body><strong>Müşteri Tel No:</strong> ${emailObject.telephone} <br/>
-      <strong>Email:</strong> ${emailObject.email} <br/>
-      <strong>Mesajı:</strong> ${emailObject.userMessage}</body>
-      </html>`,
+      template_id:"d-762ae0db22f44e9eba11552fa11550e4",
+      dynamic_template_data: {
+        userName: `${emailObject.firstName}`,
+        userEmail: `${emailObject.email}`,
+        userNum: `${emailObject.telephone}`,
+        text: `${emailObject.userMessage}`
+      }
     };
 
     try {
