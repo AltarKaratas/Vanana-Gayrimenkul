@@ -56,9 +56,9 @@ const About = () => {
       className={`relative transition-all duration-[3500ms] ease-in-out bg-black_000 `}
     >
       <div
-        className={`relative z-10 flex h-[640px] md:h-[720px] px-6 xl:px-20 py-16 lg:py-32  transition-all duration-[3500ms] ease-in-out`}
+        className={`relative z-10 flex h-[720px] px-6 xl:px-20 py-16 lg:py-32  transition-all duration-[3500ms] ease-in-out`}
       >
-        <div className="flex flex-col gap-4 xl:gap-16 justify-start items-start xl:justify-between">
+        <div className="flex flex-col gap-12 xl:gap-16 justify-start items-start xl:justify-between">
           <h2
             className={`relative text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200`}
           >
