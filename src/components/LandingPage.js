@@ -38,7 +38,7 @@ export default function LandingPage(props) {
           </div>
           <div className="relative z-20 w-[360px] md:w-[720px] xl:w-[800px] h-32 ">
             <Image
-              src="/gayrimenkul.png"
+              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/gayrimenkul.png"
               width={800}
               height={640}
               className="absolute scale-50 translate-x-20 md:translate-x-24 xl:translate-x-[320px] -translate-y-12 md:-translate-y-24 lg:-translate-y-32  min-[2560px]:-translate-y-56 opacity-[100%]"

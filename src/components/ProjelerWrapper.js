@@ -139,7 +139,7 @@ export default function ProjelerWrapper() {
           <h1 className="text-white text-5xl md:text-7xl lg:text-8xl mb-4 lg:mb-8">
             Tüm Satış Projeleri
           </h1>
-          <p className=" text-white text-xl md:text-2xl leading-loose pr-6 md:pr-12 xl:pr-20 ">
+          <p className=" text-white font-light text-xl md:text-2xl leading-relaxed pr-6 md:pr-12 xl:pr-20 ">
             Satışını yaptığımız projelere göz atın.
           </p>
         </div>

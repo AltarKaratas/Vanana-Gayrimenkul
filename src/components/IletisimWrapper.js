@@ -236,15 +236,15 @@ export default function IletisimWrapper(props) {
             </div>
             <div className="flex flex-col gap-2 w-full">
               <div className="relative w-full flex justify-between items-start gap-4 ">
-                <div className="relative w-5 h-5 bg-white">
+                <div className="relative w-5 h-5 bg-white rounded-md">
                   <Switch
                     checked={isAccepted}
                     onClick={() => setIsAccepted((prevState) => !prevState)}
-                    className="relative w-5 h-5  z-10"
+                    className="relative w-5 h-5 z-10"
                   >
                     {isAccepted && (
                       <Image
-                        src="./done.svg"
+                        src="./success.svg"
                         alt=""
                         width={20}
                         height={20}

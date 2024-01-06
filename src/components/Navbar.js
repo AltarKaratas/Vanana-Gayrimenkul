@@ -60,25 +60,29 @@ const Navbar = () => {
           .classList.toggle("overflow-hidden");
   }, [isNavOpen]);
 
-  useEffect(() => {
-    document.getElementById("main-html").classList.remove("overflow-hidden");
-
-    if (pathArray[1].toLowerCase() !== "" || pathArray !== "") {
-      setSelectedItem(pathArray[1]);
+  useLayoutEffect(() => {
+    document.getElementById("main-html").classList.remove("overflow-hidden"); //navbar scroll kapatma
+    if (pathArray[1].toLowerCase() !== "" || pathArray[1] !== "") {
       let findPhotoInArray;
       navLinks.forEach((item, index) => {
         if (item.link.toLowerCase() === pathArray[1].toLowerCase()) {
           findPhotoInArray = index;
+          setSelectedItem(navLinks[index].link)
         }
       });
-
-      (findPhotoInArray || findPhotoInArray === 0) &&
+      (findPhotoInArray || findPhotoInArray !== 0) &&
         setPhotoUrlIndicator(findPhotoInArray);
+        setShowAnim(true)
     } else {
-      setSelectedItem("/");
+      setSelectedItem("");
+      setShowAnim(false)
       setPhotoUrlIndicator(-1);
     }
+    
+
   }, [pathname]);
+
+  console.log(selectedItem)
   return (
     <nav
       id="nav"
@@ -140,8 +144,8 @@ const Navbar = () => {
                               setShowAnim(false);
                               navLinks.forEach((item, index) => {
                                 if (
-                                  item.link.toLowerCase() ===
-                                  selectedItem.toLowerCase()
+                                  item.link ===
+                                  selectedItem
                                 ) {
                                   let timeout = setTimeout(() => {
                                     setPhotoUrlIndicator(index);
@@ -163,7 +167,7 @@ const Navbar = () => {
                                 <Link
                                   href={`/${item.link}`}
                                   className={`text-3xl  ${
-                                    selectedItem.toLowerCase() === item.link.toLowerCase() || active
+                                    selectedItem === item.link || active
                                       ? "text-beige"
                                       : "text-white"
                                   }
@@ -190,7 +194,7 @@ const Navbar = () => {
                               <Link
                                 href={`/${item.link}`}
                                 className={`text-3xl  ${
-                                  selectedItem === item.link || active
+                                  selectedItem.toLowerCase() === item.link.toLowerCase() || active
                                     ? "text-beige"
                                     : "text-white"
                                 }

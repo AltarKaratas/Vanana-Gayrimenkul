@@ -46,7 +46,7 @@ export default function Page() {
       </div>
       <HakkımızdaWrapper />
       <section className="relative flex flex-col justify-center items-center mb-40">
-        <div className="relative w-[290px] sm:w-[320px] md:w-[420px] lg:w-[600px] xl:w-[800px] min-[1900px]:w-[1150px]  h-[54px] sm:h-[100px] md:h-[120px] lg:h-[150px] min-[1900px]:h-[216px] ">
+        <div className="relative w-[290px] sm:w-[320px] md:w-[420px] lg:w-[600px] xl:w-[960px] min-[1900px]:w-[1150px]  h-[54px] sm:h-[100px] md:h-[120px] lg:h-[170px] min-[1900px]:h-[216px] ">
           <Image
             src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
             alt=""
@@ -55,6 +55,15 @@ export default function Page() {
           />
         </div>
         <HakkımızdaSlider />
+        <div className="relative w-[300px] md:w-[540px] lg:w-[720px] h-[76px] md:h-[136px] lg:h-[182.5px]">
+        <Image
+              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/gayrimenkul.png"
+              fill
+              alt="Vanana Gayrimenkul"
+              
+            />
+        </div>
+        
       </section>
       <section className="px-6 xl:px-20 py-8 lg:py-16">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_100 text-4xl md:text-5xl">

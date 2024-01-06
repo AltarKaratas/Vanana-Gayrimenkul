@@ -2,41 +2,53 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useRef, useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 import AboutContainer from "./AboutContainer";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 
 const sloganArray = ["Satış Gücü", "Deneyim", "Profesyonellik"];
-const FADE_INTERVAL_MS = 1800;
-const WORD_CHANGE_INTERVAL_MS = FADE_INTERVAL_MS * 2;
+const time_between_text = 2;
+
+const transition_duration = 0.5;
 
 
 const About = () => {
-  const [sloganArrayIndex, setSloganArrayIndex] = useState(0);
-  const [fadeProp, setFadeProp] = useState("opacity-100");
-
+  const [fadeProp, setFadeProp] = useState(0);
   const screenSize = useScreenSize();
 
-  useLayoutEffect(() => {
-    const fadeTimeout = setInterval(() => {
-      fadeProp === "opacity-100"
-        ? setFadeProp("opacity-0")
-        : setFadeProp("opacity-100");
-    }, FADE_INTERVAL_MS);
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setFadeProp(p => {
+        if (p === sloganArray.length - 1) p = -transition_duration;
+        else p = p + transition_duration;
+        return p;
+      });
+    }, time_between_text * 1000)
 
-    return () => clearInterval(fadeTimeout);
-  }, [fadeProp]);
+    return () => clearInterval(timerId);
+  }, [])
 
-  useLayoutEffect(() => {
-    const wordTimeout = setInterval(() => { 
-      setSloganArrayIndex(
-        (prevWordOrder) => (prevWordOrder + 1) % sloganArray.length
-      );
-    }, WORD_CHANGE_INTERVAL_MS);
 
-    return () => clearInterval(wordTimeout);
-  }, []);
+  // useEffect(() => {
+  //   const fadeTimeout = setInterval(() => {
+  //     fadeProp === "opacity-100"
+  //       ? setFadeProp("opacity-0")
+  //       : setFadeProp("opacity-100");
+  //   }, FADE_INTERVAL_MS);
+
+  //   return () => clearInterval(fadeTimeout);
+  // }, [fadeProp]);
+
+  // useEffect(() => {
+  //   const wordTimeout = setInterval(() => { 
+  //     setSloganArrayIndex(
+  //       (prevWordOrder) => (prevWordOrder + 1) % sloganArray.length
+  //     );
+  //   }, WORD_CHANGE_INTERVAL_MS);
+
+  //   return () => clearInterval(wordTimeout);
+  // }, []);
 
   return (
     <section
@@ -44,9 +56,9 @@ const About = () => {
       className={`relative transition-all duration-[3500ms] ease-in-out bg-black_000 `}
     >
       <div
-        className={`relative z-10 flex h-[480px] md:h-[720px] px-6 xl:px-20 py-16 lg:py-32  transition-all duration-[3500ms] ease-in-out`}
+        className={`relative z-10 flex h-[640px] md:h-[720px] px-6 xl:px-20 py-16 lg:py-32  transition-all duration-[3500ms] ease-in-out`}
       >
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col gap-4 xl:gap-16 justify-start items-start xl:justify-between">
           <h2
             className={`relative text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200`}
           >
@@ -54,9 +66,9 @@ const About = () => {
             <br />
             {
               <span
-                className={`${fadeProp} relative text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200 transition-all duration-1000 ease-in-out`}
+                className={`relative w-full text-left text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200 transition-all duration-1000 ease-in-out`}
               >
-                {sloganArray[sloganArrayIndex]}
+                {sloganArray.map((t, i) => <p key={i} style={{ opacity: `${fadeProp === i ? 1 : 0}`, transitionDuration: `${time_between_text + transition_duration}s` }} className={`absolute top-0 left-0 w-[320px] xl:w-[720px] text-white_100`} >{t}</p>)}
               </span>
             }
             <br />
@@ -65,7 +77,11 @@ const About = () => {
               <Image src="line.svg" alt="" fill />
             </div>
           </h2>
-          
+          <div className="w-2/3">
+            <p className="  text-transparent bg-clip-text bg-gradient-to-r from-gold_200 via-gray to-gray font-archivo xl:font-semibold  xl:text-xl leading-relaxed text-left">Yeni sitesiyle Vanana sizlerle.<br /></p>
+            <span className="w-3/4 text-white_100 font-light text-sm">Müteahhit ve inşaat firmalarına <span className="text-white font-semibold">müşteri desteği</span>,<span className="text-white font-bold"> satış planlaması</span> gibi satış öncesi ve sonrası hizmetler sunan <span className="text-gold_200 font-semibold ">Vanana</span>, konut ve kurumsal projelerinizin değerini arttırmak için burada.</span>
+          </div>
+
         </div>
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
           <div
@@ -107,11 +123,10 @@ const About = () => {
           <div className="w-3/5 lg:h-[360px] bg-gradient-to-r from-beige to-transparent" />
         )}
         <div
-          className={`flex flex-col lg:justify-center gap-4 lg:gap-8 lg:w-2/5 h-[180px] md:h-[240px] lg:h-[360px] font-inter py-12 px-6 xl:px-20 ${
-            screenSize.width < 1024
-              ? "bg-gradient-to-t from-beige to-black_200"
-              : "bg-gradient-to-r from-transparent to-transparent"
-          } `}
+          className={`flex flex-col lg:justify-center gap-4 lg:gap-8 lg:w-2/5 h-[180px] md:h-[240px] lg:h-[360px] font-inter py-12 px-6 xl:px-20 ${screenSize.width < 1024
+            ? "bg-gradient-to-t from-beige to-black_200"
+            : "bg-gradient-to-r from-transparent to-transparent"
+            } `}
         >
           <h3 className="inline text-right text-xl text-gold_100">
             Daha fazla bilgi almak ister misiniz?
@@ -122,7 +137,7 @@ const About = () => {
               href="/Hakkimizda"
               className="inline text-white text-right text-base md:text-2xl  relative border-b border-white border-spacing-4"
             >
-                Hakkımızda bilgi alın
+              Hakkımızda bilgi alın
             </Link>
             <Link
               href="/Hakkimizda"
