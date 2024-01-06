@@ -128,10 +128,10 @@ const About = () => {
             : "bg-gradient-to-r from-transparent to-transparent"
             } `}
         >
-          <h3 className="inline text-right text-xl text-gold_100">
+          <h3 className="inline xl:text-right text-xl text-gold_100">
             Daha fazla bilgi almak ister misiniz?
           </h3>
-          <div className="flex flex-row items-center justify-end
+          <div className="flex flex-row items-center xl:justify-end
            gap-4">
             <Link
               href="/Hakkimizda"

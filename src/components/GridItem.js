@@ -5,10 +5,10 @@ export default function GridItem(props) {
   return (
     <div
       id={props.id}
-      className="relative h-[600px] md:h-[600px] min-[1900px]:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.5)]  rounded-xl"
+      className="relative h-[600px] md:h-[600px] min-[1900px]:h-[720px] flex flex-col justify-center items-end bg-gradient-to-br from-gold_100 via-black_200 to-black_200 shadow-[0px_32px_145px_10px_rgba(64,64,64,0.5)] transition-all duration-300 ease-in-out hover:scale-110"
     >
       <div className="absolute top-0 left-0 h-0" />
-      <div className="h-full w-full ">
+      <div className="h-full w-full rounded-b-xl">
 
 
         <div className="absolute w-full h-min z-10 px-3 lg:px-6 py-6 flex justify-between">
@@ -43,7 +43,7 @@ export default function GridItem(props) {
             fill={true}
             objectFit="cover"
             alt=""
-            className="brightness-75 relative"
+            className="brightness-75 xl:saturate-[60%] relative hover:saturate-[100%]"
           />
         </div>
       </div>

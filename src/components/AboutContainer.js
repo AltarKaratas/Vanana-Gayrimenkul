@@ -17,7 +17,7 @@ const AboutContainer = (props) => {
             : "xl:order-1 xl:w-1/2"
           }`}
       >
-        <div className="relative w-full h-[200px] md:w-[640px] lg:w-full md:h-[400px] lg:h-[450px] 2xl:h-[545px]">
+        <div className="relative w-full h-[200px]  md:h-[400px] lg:h-[450px] 2xl:h-[545px]">
           <Image
             src={props.source}
             alt="bg"
@@ -33,7 +33,7 @@ const AboutContainer = (props) => {
           } `}
       >
         <div
-          className={`w-full md:w-[640px] xl:w-full h-min xl:pt-32 md:mx-auto lg:mx-0 `}
+          className={`w-full  xl:w-full h-min xl:pt-32  `}
         >
           <h1
             className={`inline z-10 text-gold text-2xl md:text-4xl text-left mb-4 transition-opacity ease-in 
