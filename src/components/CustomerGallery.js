@@ -21,15 +21,14 @@ const CustomerGallery = () => {
       </div>
       {screenSize.width < 1024 ? (
         <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-30% via-black_100 to-black_000">
-          <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp" width={screenSize.width / 1.6} height={1} />
+          <Image src="/customer.jpg" width={screenSize.width / 1.6} height={1} />
           <div className="px-8 sm:px-12">
             <h1 className="mb-4 text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 to-gray  border-b-4 border-gold_100">
               Müşteri odaklı çalışıyoruz
             </h1>
             <p className="flex justify-center text-white font-light mb-8">
               Önceki satışlarımız ve memnun müşterilerimiz, işimizin temelini
-              oluşturan referanslarımızdır. Siz de bu memnuniyete şahit olmak
-              ister misiniz?
+              oluşturan referanslarımızdır. Müşterilerimiz ile kareler için galeriyi ziyaret edin.
             </p>
             <div className="flex">
               <Link
@@ -46,7 +45,7 @@ const CustomerGallery = () => {
           <div className="w-1/2 flex justify-end items-center relative">
             <div className={`absolute top-4 right-0 shadow-xl`}>
               <Image
-                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
+                src="/customer.jpg"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -54,7 +53,7 @@ const CustomerGallery = () => {
             </div>
             <div className={`absolute top-12 right-8 shadow-xl`}>
               <Image
-                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings1.webp"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -62,7 +61,7 @@ const CustomerGallery = () => {
             </div>
             <div className={`absolute top-20 right-16 shadow-xl`}>
               <Image
-                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings1.webp"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -70,7 +69,7 @@ const CustomerGallery = () => {
             </div>
             <div className={`absolute top-28 right-24 shadow-xl`}>
               <Image
-                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
+                src="/customer.jpg"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -85,10 +84,9 @@ const CustomerGallery = () => {
               <br />
               çalışıyoruz
             </h1>
-            <p className="font-light  text-white">
+            <p className="font-light  text-white xl:text-xl">
               Önceki satışlarımız ve memnun müşterilerimiz, işimizin temelini
-              oluşturan referanslarımızdır. Siz de bu memnuniyete şahit olmak
-              ister misiniz?
+              oluşturan referanslarımızdır. Müşterilerimiz ile kareler için galeriye gidin.
             </p>
             <div className="flex justify-end">
               <Link

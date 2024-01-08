@@ -30,25 +30,6 @@ const About = () => {
   }, [])
 
 
-  // useEffect(() => {
-  //   const fadeTimeout = setInterval(() => {
-  //     fadeProp === "opacity-100"
-  //       ? setFadeProp("opacity-0")
-  //       : setFadeProp("opacity-100");
-  //   }, FADE_INTERVAL_MS);
-
-  //   return () => clearInterval(fadeTimeout);
-  // }, [fadeProp]);
-
-  // useEffect(() => {
-  //   const wordTimeout = setInterval(() => { 
-  //     setSloganArrayIndex(
-  //       (prevWordOrder) => (prevWordOrder + 1) % sloganArray.length
-  //     );
-  //   }, WORD_CHANGE_INTERVAL_MS);
-
-  //   return () => clearInterval(wordTimeout);
-  // }, []);
 
   return (
     <section
@@ -77,15 +58,15 @@ const About = () => {
               <Image src="line.svg" alt="" fill />
             </div>
           </h2>
-          <div className="w-2/3">
-            <p className="  text-transparent bg-clip-text bg-gradient-to-r from-gold_200 via-gray to-gray font-archivo xl:font-semibold  xl:text-xl leading-relaxed text-left">Yeni sitesiyle Vanana sizlerle.<br /></p>
-            <span className="w-3/4 text-white_100 font-light text-sm">Müteahhit ve inşaat firmalarına <span className="text-white font-semibold">müşteri desteği</span>,<span className="text-white font-bold"> satış planlaması</span> gibi satış öncesi ve sonrası hizmetler sunan <span className="text-gold_200 font-semibold ">Vanana</span>, konut ve kurumsal projelerinizin değerini arttırmak için burada.</span>
+          <div className="w-2/3 pr-2">
+            <p className="mb-2 text-transparent bg-clip-text bg-gradient-to-r from-gold_200 via-gray to-gray font-archivo xl:font-semibold  xl:text-2xl leading-relaxed text-left">İnşaat projenizin satışında profesyonel destek mi arıyorsunuz? <br /></p>
+            <span className="w-3/4 text-white_100 font-light xl:text-xl">Ankara'da faaliyet gösteren <span className="text-white font-semibold ">gayrimenkul satış danışmanlığı firması olarak</span>, müteahhit ve inşaat firmalarına yönelik <span className="text-white font-semibold">müşteri yönetimi</span>,<span className="text-white font-bold"> satış planlaması</span> gibi satış öncesi ve sonrası hizmetler ile konut ve kurumsal projelerinizin değerini arttırmak için buradayız.</span>
           </div>
 
         </div>
         <div className="absolute right-6 xl:right-20 bottom-16 lg:bottom-32 ">
           <div
-            className="relative w-32 h-32 sm:w-48 sm:h-48 xl:w-[320px] xl:h-[360px]"
+            className="relative w-24 h-24 sm:w-48 sm:h-48 xl:w-[308px] xl:h-[328px]"
           >
             <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Vectorhouse.svg" fill alt="" objectFit="contain" />
           </div>
@@ -93,29 +74,38 @@ const About = () => {
       </div>
       <div className="">
         <AboutContainer
-          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AboutPlan.webp"
+          source="/plan.jpg"
           h1={"Satış Öncesi Planınız "}
           keyword={"Bizimle Hazır"}
           text={
-            "A’dan Z’ ye Planlama. Müşterilerin karşılanmasından etkili satış yöntemlerine kadar tüm detayları sizin için hazırlıyoruz. Konut ve ofis projelerinizin satışını istikrarlı bir şekilde  gerçekleştiriyoruz."
+            `A’dan Z’ ye Planlama. Müşterilerin karşılanmasından etkili satış yöntemlerine kadar tüm detayları sizin için hazırlıyoruz. Konut ve ofis projelerinizin satışını istikrarlı bir şekilde  gerçekleştiriyoruz.`
           }
+          dangerousHTML = {true}
+          text2 ={"Gayrimenkul sektöründeki saygın firmalarla iş birliği yapan <b>Vanana Gayrimenkul</b>, bu tecrübeler ışığında müşterilerine profesyonel çözümler ve kanıtlanmış bir \"<b>yol haritası</b>\" sunmaktadır."}
+          link ={"/Hakkimizda?id=referanslar"}
+          linkText = {"Referanslarımız"} 
         />
         <AboutContainer
           source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VananaReklam.jpg"
           h1={"Hedef Kitleye "}
-          keyword={"Doğru Reklam "}
+          keyword={"Doğru Reklam"}
           direction="right"
           text={
-            "İnşaat sektöründe tecrübeli reklam ajanslarıyla çalışarak hedef müşteri kitlenize  hitap ediyoruz. Projenizi sosyal medyada da tanıtıyoruz."
+            "İnşaat projenize ve müşteri kitlenize uygun, \"etkili\" sosyal medya reklamları ve ve fiziksel reklamlar veriyoruz."
           }
+          dangerousHTML = {true}
+          text2 ={"Özellikle <b>inşaat konusunda uzman reklam ajanslarıyla çalışarak, profesyonel satış ekibimizle</b> koordineli bir şekilde satış reklam çalışmaları yapıyoruz. Billboardlar ve broşürler ile markanızın bilinirliğini arttırıyoruz."}
         />
         <AboutContainer
           source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AboutHandshake.webp"
           h1={"Müşterilerinize Farklı"}
           keyword={"Satış Deneyimleri Sunun."}
           text={
-            "Örnek dairenin hazırlanmasından, satış ofisinin düzenine kadar , akılda kalıcı, eşsiz bir deneyim sunuyoruz. "
+            "Örnek dairenin hazırlanmasından, satış ofisinin düzenine kadar, akılda kalıcı, eşsiz bir deneyim sunuyoruz."
           }
+          dangerousHTML = {true}
+          text2={"Sadece satış yaptığımız müşteriler değil aynı zamanda inşaat firmalarının ihtiyaçlarına yönelik hizmetler de sunuyoruz. İnşaat projenizde <b>çevre proje analizi, fiyatlandırma, hedef müşteri analizi</b> gibi raporlar düzenli olarak elinizde olsun."}
+          
         />
       </div>
       <div className="flex flex-col-reverse lg:flex-row">

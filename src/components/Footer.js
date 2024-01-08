@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="flex justify-between w-full md:w-[160px]">
             <p className="mt-4 text-xs text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
               Konut ve Kurumsal
-              <br /> Emlak Satışında Uzman
+              <br /> Emlak Satışında Uzman İsim
             </p>
           </div>
           <ul className="flex flex-col justify-between items-start mt-8 text-white">
@@ -80,7 +80,7 @@ const Footer = () => {
           <div className="flex justify-between w-full md:w-[160px] xl:w-[320px]">
             <p className="mt-4 xl:pl-2 text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
               Konut ve Kurumsal
-              <br /> Emlak Satışında Uzman
+              <br /> Emlak Satışında Uzman İsim
             </p>
           </div>
 

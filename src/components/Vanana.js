@@ -14,8 +14,8 @@ const Vanana = (props) => {
       />
       <div className="relative z-40 flex flex-col items-center justify-center  text-center sm:text-center  h-[480px] lg:h-[480px] min-[1900px]:h-[540px] mx-6 xl:mx-20 lg:px-6 py-8  text-2xl md:text-4xl  leading-relaxed overflow-visible  rounded-sm ">
         <span className="relative z-40 px-12 xl:px-40 text-white ">
-          Vanana Gayrimenkul Danışmanlık olarak profesyonel ekibimizle, inşaat
-          firmalaranın ve müteahhitlerin hedeflerini anlayarak, gayrimenkul
+          Vanana Gayrimenkul olarak profesyonel ekibimizle, inşaat
+          firmalarının ve müteahhitlerin hedeflerini anlayarak, gayrimenkul
           satışında her aşamada yardımcı olmak için buradayız.
         </span>
         <div className="absolute z-30 flex justify-end items-end -bottom-16 md:-bottom-20 xl:-bottom-24 w-full px-8 sm:px-32 md:px-40 lg:px-60 xl:px-80">

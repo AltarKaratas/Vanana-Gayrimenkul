@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import useScreenSize from "@/utils/hooks/useScreenSize";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import {Switch } from "@headlessui/react";
+import { Switch } from "@headlessui/react";
 import Link from "next/link";
 import DisclaimerDialog from "@/components/DisclaimerDialog";
 
@@ -27,15 +27,15 @@ export default function IletisimWrapper(props) {
   if (emailSent === "error") {
     warningText = "Mesajınız iletilemedi.";
     infoText = "Lütfen tekrar deneyin!";
-    imageURL= "/unsuccessful.svg"
+    imageURL = "/unsuccessful.svg"
   } else if (emailSent === "forbidden") {
     warningText = "Günde 1 mail atma hakkınız bulunmaktadır.";
     infoText = "Teşekkür ederiz.";
-    imageURL= "/unsuccessful.svg"
+    imageURL = "/unsuccessful.svg"
   } else {
     warningText = "Mesajınız iletildi.";
     infoText = "Teşekkür ederiz.";
-    imageURL= "/success.svg"
+    imageURL = "/success.svg"
   }
 
   useEffect(() => {
@@ -106,10 +106,13 @@ export default function IletisimWrapper(props) {
     /^(?:\+90.?5|0090.?5|905|0?5)(?:[01345][0-9])\s?(?:[0-9]{3})\s?(?:[0-9]{2})\s?(?:[0-9]{2})$/
   );
 
+  const validMessage = new RegExp(/^.{5,150}$/gm)
+
+
   return (
     <>
       <div className="overflow-x-hidden bg-black_200">
-        <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
+        {/* <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
           <Image
             src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"
             alt=""
@@ -117,13 +120,35 @@ export default function IletisimWrapper(props) {
             objectFit="cover"
             className="brightness-50 saturate-50 absolute z-0"
           />
-          <div className="relative w-full px-6 xl:px-20 pt-16 sm:py-0">
-            <h1 className="text-white text-5xl md:text-7xl self-start">
+          <div className="relative flex flex-col  px-6 xl:px-20 pt-8  md:pt-0 w-full px-6 xl:px-20 pt-16 sm:py-0">
+            <h1 className="text-white text-5xl md:text-7xl mb-4 lg:mb-8 self-start">
               Bize Ulaşın
             </h1>
+            <p className="text-white text-xl md:text-2xl  leading-relaxed font-light pr-6 md:pr-12 xl:pr-20 ">
+            <b>Vanana Gayrimenkul</b> olarak müteahhitlerin ve inşaat firmalarının projelerinin satışını
+            kapsayan bir süreci yönetiyoruz. İnşaat projelerinin başlangıcından satış
+            sonrası hizmetlere kadar her adımda sizin yanınızdayız.
+          </p>
           </div>
+        </div> */}
+         <div className="relative flex justify-start md:items-center h-[540px] md:h-[480px]  pt-16 lg:pt-20">
+        <Image
+          src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"
+          alt=""
+          fill
+          objectFit="cover"
+          className="brightness-[0.25] saturate-50"
+        />
+        <div className="relative flex flex-col  px-6 xl:px-20 pt-8  md:pt-0">
+          
+          <h1 className="text-white text-5xl md:text-7xl mb-4 lg:mb-8">
+            Bize Ulaşın
+          </h1>
+          <p className="text-white text-xl md:text-2xl  leading-relaxed font-light pr-6 md:pr-12 xl:pr-20 ">
+            Aklınıza gelen tüm sorular için bize telefon veya e-posta adresimizden ulaşabilirsiniz.
+          </p>
         </div>
-
+      </div>
         <div className="px-6 sm:px-8 xl:px-20 py-20 lg:py-40 flex flex-col justify-center lg:gap-8 2xl:gap-0 lg:flex-row xl:items-center bg-gradient-to-t from-[#736d5c] to-[#0d0d0d]">
           <div className="w-full ">
             <Maps
@@ -142,7 +167,7 @@ export default function IletisimWrapper(props) {
             </div>
             <div className="flex flex-col gap-4">
               <h1 className="text-white font-bold text-2xl 2xl:text-4xl">
-                E-Mail
+                E-Posta
               </h1>
               <p className="text-white text-xl">turgay@vanana.com.tr</p>
             </div>
@@ -175,8 +200,8 @@ export default function IletisimWrapper(props) {
               </label>
               {errors.firstName && (
                 <p className="text-neutral-400 text-sm" role="alert">
-                  Ad ve soyad alanı <i>Adınız Soyadınız</i> şeklinde ve 30
-                  harften kısa olmalıdır
+                  Lütfen <i>Adınız Soyadınız</i> arasında boşluk ve 30
+                  harften kısa olacak şekilde alanı doldurun.
                 </p>
               )}
               <input
@@ -185,16 +210,15 @@ export default function IletisimWrapper(props) {
                     validName.test(value) && value.length < 30,
                   required: true,
                 })}
-                className={`mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md bg-white ${
-                  errors.firstName ? "border-[3px] border-red-700" : ""
-                }`}
+                className={`mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md bg-white ${errors.firstName ? "border-[3px] border-red-700" : ""
+                  }`}
               />
             </div>
             <div className="w-full flex flex-col ">
               <label className="after:content-['*'] text-white ">E-mail </label>
               {errors.email && (
                 <p className="text-neutral-400 text-sm" role="alert">
-                  Email adresinizi <i>örnekEmail@alanAdı.com</i> şeklinde olmalıdır
+                  Lütfen Email adresinizi <i>örnekEmail@alanAdı.com</i> olacak şekilde doldurun.
                 </p>
               )}
 
@@ -203,16 +227,15 @@ export default function IletisimWrapper(props) {
                   validate: (value) =>
                     validEmail.test(value) && value.length < 100,
                 })}
-                className={`mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md bg-white ${
-                  errors.email ? "border-[3px] border-red-700" : ""
-                }`}
+                className={`mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md bg-white ${errors.email ? "border-[3px] border-red-700" : ""
+                  }`}
               />
             </div>
             <div className="w-full flex flex-col ">
               <label className="after:content-['*'] text-white">Telefon</label>
               {errors.telephone && (
                 <p className="text-neutral-400 text-sm" role="alert">
-                  Örnek numara:<i>555 444 55 55</i> şeklinde olmalıdır
+                  Lütfen telefon numaranızı <i>555 555 55 55</i> olacak şekilde doldurun.
                 </p>
               )}
 
@@ -220,18 +243,25 @@ export default function IletisimWrapper(props) {
                 {...register("telephone", {
                   validate: (value) => validTelephone.test(value),
                 })}
-                className={`mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md bg-white ${
-                  errors.telephone ? "border-[3px] border-red-700" : ""
-                }`}
+                className={`mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md bg-white ${errors.telephone ? "border-[3px] border-red-700" : ""
+                  }`}
               />
             </div>
 
             <div className="w-full flex flex-col ">
               <label className="text-white">Mesajınız</label>
+              {errors.userMessage && (
+                <p className="text-neutral-400 text-sm" role="alert">
+                  Lütfen mesajınızı <i>10</i> harften kısa veya <i>150</i> harften uzun olmayacak şekilde doldurun.
+                </p>
+              )}
 
               <input
-                {...register("userMessage")}
-                className="mb-5 px-2 pt-4 pb-10 rounded-md bg-white"
+                {...register("userMessage", { validate: (value) =>  validMessage.test(value)})
+
+                }
+                className={`mb-5 px-2 pt-4 pb-10 rounded-md bg-white ${errors.userMessage ? "border-[3px] border-red-700" : ""
+              }`}
               />
             </div>
             <div className="flex flex-col gap-2 w-full">
@@ -266,14 +296,12 @@ export default function IletisimWrapper(props) {
                 </label>
               </div>
               <input
-                value={`${
-                  emailSent === "successful" ? "Gönderildi" : "Gönder"
-                }`}
+                value={`${emailSent === "successful" ? "Gönderildi" : "Gönder"
+                  }`}
                 type="submit"
                 disabled={emailSent === "successful" || emailSent === "error"}
-                className={`text-white w-1/2 mx-auto text-xl mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md ${
-                  emailSent === "successful" ? "bg-gold_200" : "bg-gold_100"
-                } transition-all duration-500 ease-in-out hover:scale-110`}
+                className={`text-white w-1/2 mx-auto text-xl mb-5 px-2 py-2 min-[1900px]:py-4 rounded-md ${emailSent === "successful" ? "bg-gold_200" : "bg-gold_100"
+                  } transition-all duration-500 ease-in-out hover:scale-110`}
               />
             </div>
             {showPopUp && (

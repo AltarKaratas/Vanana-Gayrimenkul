@@ -29,12 +29,8 @@ export default function PhotoGallery(props) {
           </h1>
         </div>
       </div>
-      <div className={"px-6 xl:px-20 py-20 md:py-40"}>
-        <h3 className="text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-          İnşaat projenizi taçlandırın
-          <br />
-          Adımlarınızı bizimle atın
-        </h3>
+      <div id="spacer" className={"px-6 xl:px-20 py-20"}>
+  
       </div>
       <Splide
         className="z-10 px-6 xl:px-20 pb-8 md:pb-16 mx-auto overflow-visible"

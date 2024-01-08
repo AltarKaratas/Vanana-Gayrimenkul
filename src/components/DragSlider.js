@@ -7,7 +7,7 @@ import useScreenSize from "@/utils/hooks/useScreenSize";
 
 export const featuredProjects = [
   {
-    title: "HighHill",
+    title: "High Hill",
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasHighHill.webp",
     id: "FarasHighHill",

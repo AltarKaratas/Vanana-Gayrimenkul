@@ -1,9 +1,11 @@
 import Image from "next/image";
 
-import GridElement from "@/components/GridElement";
 
 import HakkımızdaSlider from "@/components/HakkımızdaSlider";
 import HakkımızdaWrapper from "@/components/HakkımızdaWrapper";
+import References from "@/components/References";
+
+
 
 export const metadata = {
   title: "Hakkımızda",
@@ -11,9 +13,9 @@ export const metadata = {
     "Vanana Gayrimenkul, Türkiye'nin Konut ve Kurumsal  Gayrimenkul Danışmanlığı",
 };
 
-const referenceArray = [{ imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IMYYapiLogo.webp", title: "İMY Yapı Mühendislik" }, { imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp", title: "Gözüm İnşaat" }, { imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png", title: "Deso İnşaat" }, { imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArissaLogo.webp", title: "Arissa İnşaat" },{ imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasLogo.webp", title: "Faras İnşaat" }, ]
 
 export default function Page() {
+
   return (
     <main className="overflow-x-hidden bg-black_200">
       <div className="relative flex justify-center md:items-center h-[540px] md:h-[480px]  pt-16 lg:pt-20">
@@ -30,8 +32,8 @@ export default function Page() {
             Biz Kimiz ?
           </h1>
           <p className="text-white text-xl md:text-2xl  leading-relaxed font-light pr-6 md:pr-12 xl:pr-20 ">
-            <b>Vanana Gayrimenkul</b> olarak müteahhitlere ve inşaat firmalarının projelerinin satışını
-            kapsayan bir süreci yönetiyoruz. İnşaatın başlangıcından satış
+            <b>Vanana Gayrimenkul</b> olarak müteahhitlerin ve inşaat firmalarının projelerinin satışını
+            kapsayan bir süreci yönetiyoruz. İnşaat projelerinin başlangıcından satış
             sonrası hizmetlere kadar her adımda sizin yanınızdayız.
           </p>
         </div>
@@ -39,7 +41,7 @@ export default function Page() {
 
       <div className={"px-6 xl:px-20 py-20 md:py-40"}>
         <h3 className="text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-          İnşaat projenizi taçlandırın
+          İnşaat projenize değer katın
           <br />
           Adımlarınızı bizimle atın
         </h3>
@@ -65,18 +67,7 @@ export default function Page() {
         </div>
         
       </section>
-      <section className="px-6 xl:px-20 py-8 lg:py-16">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_100 text-4xl md:text-5xl">
-          Referanslarımız
-        </h1>
-
-        <div className=" grid grid-flow-row  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative  py-8 md:py-16">
-          {referenceArray.map((item) => {
-            return <GridElement imageUrl={item.imageUrl} title={item.title} />
-          })}
-
-        </div>
-      </section>
+      <References />
     </main>
   );
 }

@@ -6,7 +6,7 @@ import GridItem from "@/components/GridItem";
 
 const allProjects = [
   {
-    title: "HighHill",
+    title: "High Hill",
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasHighHill.webp",
     id: "FarasHighHill",
@@ -83,7 +83,7 @@ const allProjects = [
     title: "Deso Plaza",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/DenizPlaza.webp",
     id: "desoplaza",
-    text:`DESO PLAZA Şehir merkezi Mustafa Kemal Mahallesin de Mimari yapısı ve Yüksek Güvenlikli iş yaşamı sürdürmesi amaçlı olarak inşa edilmiştir. DESO PLAZA da sadece iş hayatı düşünülmemiştir, Yeşile ve Peyzaj alanına verilen önemle huzurlu iş hayatı benimsenmiştir.`,
+    text:`DESO PLAZA şehir merkezi Mustafa Kemal Mahallesi'nde mimari yapısı ve yüksek güvenlikli iş yaşamı sürdürmesi amaçlı olarak inşa edilmiştir. DESO PLAZA'da sadece iş hayatı düşünülmemiştir, yeşile ve peyzaj alanına verilen önemle huzurlu iş hayatı benimsenmiştir.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
     projectUrl: "https://www.deso.com.tr/projelerimiz/deso-plaza-aselsannet",
   },
@@ -91,7 +91,7 @@ const allProjects = [
     title: "Başkent Loft",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/BaskentLoft.webp",
     id: "baskentloft",
-    text:`Gözüm İnşaat tarafından hayata geçirilen Başkent Loft projesi zemin+16 katlı tek bloktan oluşuyor. Projede toplam 51 daire yer alıyor. Dairelerin tamamı 4 oda 1 salon tipinde. Net kullanım alanları ise 220 metrekare.`,
+    text:`Gözüm İnşaat tarafından hayata geçirilen Başkent Loft projesi 17 katlı tek bloktan oluşuyor. Projede toplam 51 daire yer alıyor. Dairelerin tamamı 4 oda 1 salon tipinde. Net kullanım alanları ise 220 metrekare.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
   },
@@ -99,7 +99,7 @@ const allProjects = [
     title: "Arp Kule",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleProjesi.webp",
     id: "arpkule",
-    text:`Gözüm İnşaat tarafından hayata geçirilen ARP Kule projesi 5 bin 40 metrekarelik arsa üzerine kuruluyor. 2 bin 300 metrekare bina oturuma sahip olan proje 21 kattan oluşuyor. 42 ofislik projede ofisler 250 metrekare olarak tasarlandı.`,
+    text:`Gözüm İnşaat tarafından hayata geçirilen ARP Kule projesi 5 bin 40 metrekarelik arsa üzerine kuruluyor. 2 bin 300 metrekare bina oturumuna sahip olan proje 21 kattan oluşuyor. 42 ofislik projede ofisler 250 metrekare olarak tasarlandı.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
   },
@@ -140,17 +140,11 @@ export default function ProjelerWrapper() {
             Tüm Satış Projeleri
           </h1>
           <p className=" text-white font-light text-xl md:text-2xl leading-relaxed pr-6 md:pr-12 xl:pr-20 ">
-            Satışını yaptığımız projelere göz atın.
+            Satışını gerçekleştirdiğimiz ve hala satışta olan projelerimize göz atın.
           </p>
         </div>
       </div>
-      <div className="px-6 xl:px-20 pt-20 md:pt-40">
-        <h3 className="text-4xl md:text-5xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 via-gray to-gold_200">
-          İnşaat projenizi taçlandırın
-          <br />
-          Adımlarınızı bizimle atın
-        </h3>
-      </div>
+      
       <div className="w-full pb-10 lg:pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-x-12 gap-y-16 px-6 xl:px-20 py-20 lg:py-40">
         {allProjects.map((project) => (
           <GridItem
