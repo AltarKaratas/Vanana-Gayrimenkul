@@ -20,11 +20,11 @@ export const inter = Inter({
 
 export const metadata = {
   title: {
-    default: "Vanana Gayrimenkul | Emlak ve Konut Satışında Uzman İsim",
-    template: "%s | Vanana Gayrimenkul | Emlak ve Konut Satışında Uzman İsim",
+    default: "Vanana | Emlak ve Konut Satışında Uzman İsim",
+    template: "%s | Vanana | Emlak ve Konut Satışında Uzman İsim",
   },
   description:
-    "Vanana Gayrimenkul, Emlak,Ankara,İstanbul, Türkiye, Gayrimenkul, Gayrimenkul Danışmanlığı",
+    "Vanana, Emlak,Ankara,İstanbul, Türkiye, Gayrimenkul, Gayrimenkul Danışmanlığı",
   verification: { google: "ZjP3cc8OgDi8MAKv1-9V3t88Rpyohzi7YZx7Db0XvFM" },
   themeColor: "#121212",
 };
