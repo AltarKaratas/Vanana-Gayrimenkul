@@ -10,7 +10,7 @@ import References from "@/components/References";
 export const metadata = {
   title: "Hakkımızda",
   description:
-    "Vanana Gayrimenkul, Türkiye'nin Konut ve Kurumsal  Gayrimenkul Danışmanlığı",
+    "Vanana, Türkiye'nin Konut ve Kurumsal  Gayrimenkul Danışmanlığı",
 };
 
 
@@ -32,7 +32,7 @@ export default function Page() {
             Biz Kimiz ?
           </h1>
           <p className="text-white text-xl md:text-2xl  leading-relaxed font-light pr-6 md:pr-12 xl:pr-20 ">
-            <b>Vanana Gayrimenkul</b> olarak müteahhitlerin ve inşaat firmalarının projelerinin satışını
+            <b>Vanana A.Ş</b> olarak müteahhitlerin ve inşaat firmalarının projelerinin satışını
             kapsayan bir süreci yönetiyoruz. İnşaat projelerinin başlangıcından satış
             sonrası hizmetlere kadar her adımda sizin yanınızdayız.
           </p>
@@ -57,14 +57,7 @@ export default function Page() {
           />
         </div>
         <HakkımızdaSlider />
-        <div className="relative w-[300px] md:w-[540px] lg:w-[720px] h-[76px] md:h-[136px] lg:h-[182.5px]">
-        <Image
-              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/gayrimenkul.png"
-              fill
-              alt="Vanana Gayrimenkul"
-              
-            />
-        </div>
+        
         
       </section>
       <References />

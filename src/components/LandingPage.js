@@ -32,21 +32,11 @@ export default function LandingPage(props) {
               fill
               className="absolute z-0  2xl:-translate-x-4 -translate-y-0 md:-translate-y-12 lg:-translate-y-12  min-[2560px]:-translate-y-56"
               priority={true}
-              alt="Vanana Gayrimenkul"
+              alt="Vanana"
               
             />
           </div>
-          <div className="relative z-20 w-[360px] md:w-[720px] xl:w-[800px] h-32 ">
-            <Image
-              src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/gayrimenkul.png"
-              width={800}
-              height={640}
-              className="absolute scale-50 translate-x-20 md:translate-x-24 xl:translate-x-[320px] -translate-y-12 md:-translate-y-24 lg:-translate-y-32  min-[2560px]:-translate-y-56 opacity-[100%]"
-              alt="Vanana Gayrimenkul"
-              
-              
-            />
-          </div>
+          
         </div>
       </div>
       <div className="relative flex flex-col h-full">

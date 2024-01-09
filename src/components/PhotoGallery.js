@@ -18,7 +18,7 @@ export default function PhotoGallery(props) {
       <div className="relative flex justify-center  items-center h-[540px] md:h-[480px] ">
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GalleryBg.webp"
-          alt="Vanana Gayrimenkul Tüm Medyalar"
+          alt="Vanana Tüm Medyalar"
           fill={true}
           objectFit="cover"
           className="brightness-[0.25] saturate-50"

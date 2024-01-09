@@ -112,25 +112,7 @@ export default function IletisimWrapper(props) {
   return (
     <>
       <div className="overflow-x-hidden bg-black_200">
-        {/* <div className="relative h-[540px] md:h-[480px]  w-full bg-black flex justify-center items-center">
-          <Image
-            src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"
-            alt=""
-            fill={true}
-            objectFit="cover"
-            className="brightness-50 saturate-50 absolute z-0"
-          />
-          <div className="relative flex flex-col  px-6 xl:px-20 pt-8  md:pt-0 w-full px-6 xl:px-20 pt-16 sm:py-0">
-            <h1 className="text-white text-5xl md:text-7xl mb-4 lg:mb-8 self-start">
-              Bize Ulaşın
-            </h1>
-            <p className="text-white text-xl md:text-2xl  leading-relaxed font-light pr-6 md:pr-12 xl:pr-20 ">
-            <b>Vanana Gayrimenkul</b> olarak müteahhitlerin ve inşaat firmalarının projelerinin satışını
-            kapsayan bir süreci yönetiyoruz. İnşaat projelerinin başlangıcından satış
-            sonrası hizmetlere kadar her adımda sizin yanınızdayız.
-          </p>
-          </div>
-        </div> */}
+    
          <div className="relative flex justify-start md:items-center h-[540px] md:h-[480px]  pt-16 lg:pt-20">
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"

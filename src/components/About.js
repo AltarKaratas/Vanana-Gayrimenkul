@@ -53,7 +53,7 @@ const About = () => {
               </span>
             }
             <br />
-            Vanana Gayrimenkulde.
+            Vanana'da.
             <div className="relative w-[240px] md:w-[480px] xl:w-[720px] 2xl:w-[960px] h-[48px]">
               <Image src="line.svg" alt="" fill />
             </div>
@@ -81,7 +81,7 @@ const About = () => {
             `A’dan Z’ ye Planlama. Müşterilerin karşılanmasından etkili satış yöntemlerine kadar tüm detayları sizin için hazırlıyoruz. Konut ve ofis projelerinizin satışını istikrarlı bir şekilde  gerçekleştiriyoruz.`
           }
           dangerousHTML = {true}
-          text2 ={"Gayrimenkul sektöründeki saygın firmalarla iş birliği yapan <b>Vanana Gayrimenkul</b>, bu tecrübeler ışığında müşterilerine profesyonel çözümler ve kanıtlanmış bir \"<b>yol haritası</b>\" sunmaktadır."}
+          text2 ={"Gayrimenkul sektöründeki saygın firmalarla iş birliği yapan <b>Vanana</b>, bu tecrübeler ışığında müşterilerine profesyonel çözümler ve kanıtlanmış bir \"<b>yol haritası</b>\" sunmaktadır."}
           link ={"/Hakkimizda?id=referanslar"}
           linkText = {"Referanslarımız"} 
         />
