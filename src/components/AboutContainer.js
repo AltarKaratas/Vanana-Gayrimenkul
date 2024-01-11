@@ -57,7 +57,7 @@ const AboutContainer = (props) => {
          {!props.dangerousHTML && <p className="mt-4 font-light xl:text-xl text-white ">
             {props.text2}
           </p>}
-          {props.link && <div className="mt-4 xl:pr-8 xl:text-2xl text-right text-white underline"><Link href={props.link}>{props.linkText}</Link></div>}
+          {props.link && <div className="mt-4 xl:pr-8 text-xl xl:text-2xl text-right text-white underline"><Link href={props.link}>{props.linkText}</Link></div>}
         </div>
       </div>
     </div>

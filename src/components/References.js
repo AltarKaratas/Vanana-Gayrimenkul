@@ -17,8 +17,8 @@ const params = useSearchParams();
         const element = document.getElementById(params.get("id"));
         element.scrollIntoView({
           behavior: "smooth",
-          block: "end",
-          inline: "end",
+          block: "center",
+          inline: "center",
         });
       }, 300);
     }

@@ -23,7 +23,7 @@ const Footer = () => {
           <Link href="/">
             <Image
               src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
-              alt="V"
+              alt="Vanana"
               width={180}
               height={64}
             />
@@ -46,10 +46,14 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <div className="flex mt-4 border-t border-dark_gray">
-            <p className="mt-4 text-gray text-[10px]">
+          <div className="flex justify-between mt-4 border-t border-dark_gray">
+          <Link href="/aydinlatmametni" className="text-white text-[10px] mt-4 ">
+                Aydınlatma Metni
+            </Link>
+          <p className="text-gray text-[10px] mt-4 w-1/2">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>
+            
           </div>
         </div>
       ) : (
@@ -58,7 +62,7 @@ const Footer = () => {
             <Link href="/">
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
-                alt="V"
+                alt="Vanana"
                 width={screenSize.width < 1280 ? 160 : 240}
                 height={64}
                 className="lg:pb-2"
@@ -84,10 +88,14 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex justify-end border-t border-dark_gray mt-16 lg:mt-24">
-            <p className="text-gray text-[10px] mt-4 ">
+          <div className="flex justify-between border-t border-dark_gray mt-16 lg:mt-24">
+          <p className="text-gray text-[10px] mt-4 ">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>
+            <Link href="/aydinlatmametni" className="text-white text-sm mt-4 ">
+                Aydınlatma Metni
+            </Link>
+            
           </div>
         </>
       )}

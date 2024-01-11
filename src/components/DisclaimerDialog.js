@@ -33,7 +33,7 @@ export default function DisclaimerDialog(props) {
             >
               <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white  p-6 text-left align-middle shadow-xl transition-all">
                 <div className='p-4 border-2 border-slate-900 flex justify-center items.center mb-4 w-20 h-20 mx-auto rounded-md'>
-                  <Image src={props.imageURL} width={64} height={64} className='' />
+                  <Image src={props.imageURL} width={64} height={64} alt="warning" className='' />
                 </div>
                 <Dialog.Title
                   as="h3"

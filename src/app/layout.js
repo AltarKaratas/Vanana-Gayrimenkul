@@ -2,7 +2,6 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 
-import Script from "next/script";
 
 import { Archivo } from "next/font/google";
 import { Inter } from "next/font/google";
@@ -32,19 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html id="main-html">
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link
-        rel="icon"
-        href="/icon.ico"
-        type="image/ico"
-        sizes="any"
-      />
-      <link
-        rel="apple-touch-icon"
-        href="/favicon.png"
-        type="image/png"
-        sizes="48x48"
-      />
+     
       <body
         id="body"
         className={`relative ${archivo.variable}  font-sans ${inter.variable} overflow-y-visible overflow-x-clip `}

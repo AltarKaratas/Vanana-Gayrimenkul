@@ -34,7 +34,7 @@ export default function GridItem(props) {
         <div className="relative h-full w-full">
           <div className="absolute z-20 bottom-3  left-3 lg:left-6">
             <div className="w-[200px] xl:w-60 h-6  xl:h-7 shadow-[4px_0px_32px_4px_rgba(32  ,32 ,32  ,0.35)] md:shadow-[0px_8px_48px_10px_rgba(32  ,32 ,32  ,0.65)]  xl:shadow-[0px_16px_100px_10px_rgba(32 ,32  ,32 ,0.85)]">
-              <Image src="/satis.png" alt="satış" fill />
+              <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/satis.png" alt="satış" fill />
 
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function GridItem(props) {
             src={`${props.imageUrl}`}
             fill={true}
             objectFit="cover"
-            alt=""
+            alt={props.alt}
             className="brightness-75 xl:saturate-[60%] relative hover:saturate-[100%]"
           />
         </div>

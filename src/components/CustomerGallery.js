@@ -12,7 +12,7 @@ const CustomerGallery = () => {
         <div className="relative w-full flex justify-end items-end  h-[180px] sm:h-[200px] md:h-[240px] lg:h-[400px] p-10 md:p-20 bg-gradient-to-b from-transparent to-beige">
           <Image
             src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/skyline1.svg"
-            alt=""
+            alt="bg-skyline"
             fill
             objectFit="contain"
             objectPosition="bottom"
@@ -21,7 +21,7 @@ const CustomerGallery = () => {
       </div>
       {screenSize.width < 1024 ? (
         <section className="px-6 py-40 flex flex-col items-center gap-8 relative bg-gradient-to-t from-beige via-30% via-black_100 to-black_000">
-          <Image src="/customer.jpg" width={screenSize.width / 1.6} height={1} />
+          <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/customer.webp" width={screenSize.width / 1.6} height={1} alt="Gayrimenkul Müşteri Memnuniyeti" />
           <div className="px-8 sm:px-12">
             <h1 className="mb-4 text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white_200 to-gray  border-b-4 border-gold_100">
               Müşteri odaklı çalışıyoruz
@@ -45,7 +45,8 @@ const CustomerGallery = () => {
           <div className="w-1/2 flex justify-end items-center relative">
             <div className={`absolute top-4 right-0 shadow-xl`}>
               <Image
-                src="/customer.jpg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/customer.webp"
+                alt="Gayrimenkul Müşteri Memnuniyeti"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -54,6 +55,7 @@ const CustomerGallery = () => {
             <div className={`absolute top-12 right-8 shadow-xl`}>
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
+                alt="Gayrimenkul Müşteri Memnuniyeti"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -62,6 +64,7 @@ const CustomerGallery = () => {
             <div className={`absolute top-20 right-16 shadow-xl`}>
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IletisimNavigation.webp"
+                alt="Gayrimenkul Müşteri Memnuniyeti"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"
@@ -69,7 +72,8 @@ const CustomerGallery = () => {
             </div>
             <div className={`absolute top-28 right-24 shadow-xl`}>
               <Image
-                src="/customer.jpg"
+                src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/customer.webp"
+                alt="Gayrimenkul Müşteri Memnuniyeti"
                 width={screenSize.width / 3}
                 height={1}
                 objectFit="cover"

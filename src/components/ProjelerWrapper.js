@@ -10,6 +10,7 @@ const allProjects = [
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasHighHill.webp",
     id: "FarasHighHill",
+    alt:"Faras High Hill",
     text: "Tüm ayrıcalıklarıyla ultra lüks konseptli bir yaşamı tek bir merkezde bir araya getiren High Hill, Ankara’yı panoramik bir manzarayla ayaklarınızın altına seriyor. Size, her günü masal diyarına açılan bir pencereden hayatı seyretmek kalıyor.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasLogo.webp",
@@ -20,6 +21,7 @@ const allProjects = [
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings1.webp",
     id: "GoldWings1",
+    alt:"Deso Gold Wings 1",
     text: "Konforunuzu ve rahatlığınızı düşünen Gold Wings sizin için güvenlik sisteminde de aynı özeni göstermiştir. Özel korumalı duvarları 7/24 kamera sistemi her daireye özel şifreli giriş çıkış kontrolü, gaz ve su dedektörleri, özel yangın sistemi gibi özellikleriyle de sizi kanatlarının altına alacak.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
@@ -30,6 +32,7 @@ const allProjects = [
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GoldWings2.webp",
     id: "GoldWings2",
+    alt:"Deso Gold Wings 2",
     text: "Mutluluğunuzu en ince ayrıntısına kadar düşünen Gold Wings II, sizin için sosyal alanlarında doğayla barışık olarak basketbol-futbol-voleybol sahası, koşu yolu, açık ve kapalı çocuk oyun alanı, dinlenme teraslarının yanı sıra her daireye özel hobi bahçesi oluşturmuştur.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
@@ -40,6 +43,7 @@ const allProjects = [
     imageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasOfis.webp",
     id: "FarasOfis",
+    alt:"Faras Ofis",
     text: '50-60-80 m2 olmak üzere 320 adet ofisten oluşan ofis kompleksimiz aynı zamanda 18 dükkana ev sahipliği yapmaktadır. Açık ve kapalı otopark, dilediğiniz gibi yürüyüş yapabileceğiniz alanların yanı sıra, aradığınız her ihtiyacı karşılayabilecek "Faras Ofis" projesi sizlere.',
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasLogo.webp",
@@ -49,6 +53,7 @@ const allProjects = [
     title: "Deniz Life",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/DenizLife.webp",
     id: "DenizLife",
+    alt:"Deso Deniz Life",
     text: "DENİZ LIFE şehir merkezi Mustafa Kemal mahallesinde mimari yapısı, lüksü, konforu ve yüksek güvenlikli iş yaşamı sürdürmesi amaçlı olarak inşa edilmiştir.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
@@ -58,6 +63,7 @@ const allProjects = [
     title: "Otto Ville",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Ottoville.webp",
     id: "Ottoville",
+    alt:"IMY Yapı Otto Ville",
     text: "2731. Sokak No:23 Prof Dr Ahmet Taner Kışlalı Mah, Çayyolu, Ankara​.",
     companyImageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/IMYYapiLogo.webp",
     projectUrl: "https://www.imyyapi.com/tamamlanan-projeler",
@@ -66,6 +72,7 @@ const allProjects = [
     title: "Panorama",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Faraspanorama.webp",
     id: "Faraspanorama",
+    alt:"Faras Panorama",
     text: "Faras imzasıyla Ankara’nın en gözde lokasyonu İncek’te bölgesinde ayrıcalıklı donanımlarıyla güvenilir yatırım fırsatı sunan Faras Panorama, sakinleri için mutluluk, yatırımcısı için ‘kazanç’ sunuyor.",
     companyImageUrl:
       "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/FarasLogo.webp",
@@ -75,6 +82,7 @@ const allProjects = [
     title: "Lita Astoria",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Arissaincek.webp",
     id: "arissalitaastoria",
+    alt:"Arissa Lita Astoria",
     text:`Hayallerin hayata dönüştüğü muhteşem bir mimari İncek’in en gözde lokasyonunda avantajlı koşullarla sizleri bekliyor.Arissa Lita Astoria, şehrin orta yerinde, şehir karmaşasının uzağında, tatil tadında bir yaşam sunuyor!`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArissaLogo.webp",
     projectUrl: "https://www.arissainsaat.com/arissa-incek/",
@@ -83,6 +91,7 @@ const allProjects = [
     title: "Deso Plaza",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/DenizPlaza.webp",
     id: "desoplaza",
+    alt:"Deso Plaza",
     text:`DESO PLAZA şehir merkezi Mustafa Kemal Mahallesi'nde mimari yapısı ve yüksek güvenlikli iş yaşamı sürdürmesi amaçlı olarak inşa edilmiştir. DESO PLAZA'da sadece iş hayatı düşünülmemiştir, yeşile ve peyzaj alanına verilen önemle huzurlu iş hayatı benimsenmiştir.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/deso.png",
     projectUrl: "https://www.deso.com.tr/projelerimiz/deso-plaza-aselsannet",
@@ -91,6 +100,7 @@ const allProjects = [
     title: "Başkent Loft",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/BaskentLoft.webp",
     id: "baskentloft",
+    alt:"Gözüm Başkent Loft",
     text:`Gözüm İnşaat tarafından hayata geçirilen Başkent Loft projesi 17 katlı tek bloktan oluşuyor. Projede toplam 51 daire yer alıyor. Dairelerin tamamı 4 oda 1 salon tipinde. Net kullanım alanları ise 220 metrekare.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
@@ -99,6 +109,7 @@ const allProjects = [
     title: "Arp Kule",
     imageUrl: "https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ArpKuleProjesi.webp",
     id: "arpkule",
+    alt:"Gözüm Arp Kule",
     text:`Gözüm İnşaat tarafından hayata geçirilen ARP Kule projesi 5 bin 40 metrekarelik arsa üzerine kuruluyor. 2 bin 300 metrekare bina oturumuna sahip olan proje 21 kattan oluşuyor. 42 ofislik projede ofisler 250 metrekare olarak tasarlandı.`,
     companyImageUrl:"https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/GozumInsaat.webp",
     projectUrl: "",
@@ -130,12 +141,12 @@ export default function ProjelerWrapper() {
       <div className="relative flex justify-center min-[500px]:items-center h-[540px] md:h-[480px] ">
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/ProjelerBg.webp"
-          alt=""
+          alt="Tüm Projeler"
           fill={true}
           objectFit="cover"
           className="brightness-[0.25] saturate-50"
         />
-        <div className="relative w-full flex flex-col justify-center px-6 xl:px-20 pt-24  md:pt-32">
+        <div className="relative w-full flex flex-col md:justify-center px-6 xl:px-20 pt-32  md:pt-32">
           <h1 className="text-white text-5xl md:text-7xl lg:text-8xl mb-4 lg:mb-8">
             Tüm Satış Projeleri
           </h1>
@@ -154,6 +165,7 @@ export default function ProjelerWrapper() {
             text={project.text}
             companyImageUrl={project.companyImageUrl}
             projectUrl={project.projectUrl}
+            alt={project.alt}
           />
         ))}
       </div> 

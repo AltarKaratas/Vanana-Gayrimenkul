@@ -30,7 +30,7 @@ export default function LandingPage(props) {
             <Image
               src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/LandingVananaText.svg"
               fill
-              className="absolute z-0  2xl:-translate-x-4 -translate-y-0 md:-translate-y-12 lg:-translate-y-12  min-[2560px]:-translate-y-56"
+              className="absolute z-0  2xl:-translate-x-4 -translate-y-12 md:-translate-y-12 lg:-translate-y-12  min-[2560px]:-translate-y-56"
               priority={true}
               alt="Vanana"
               

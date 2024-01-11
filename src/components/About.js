@@ -55,7 +55,7 @@ const About = () => {
             <br />
             Vanana'da.
             <div className="relative w-[240px] md:w-[480px] xl:w-[720px] 2xl:w-[960px] h-[48px]">
-              <Image src="line.svg" alt="" fill />
+              <Image src="line.svg" alt="background" fill />
             </div>
           </h2>
           <div className="w-2/3 pr-2">
@@ -68,13 +68,13 @@ const About = () => {
           <div
             className="relative w-24 h-24 sm:w-48 sm:h-48 xl:w-[308px] xl:h-[328px]"
           >
-            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Vectorhouse.svg" fill alt="" objectFit="contain" />
+            <Image src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/Vectorhouse.svg" fill alt="Vanana Giriş Slogan Logo" objectFit="contain" />
           </div>
         </div>
       </div>
       <div className="">
         <AboutContainer
-          source="/plan.jpg"
+          source="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/plan.webp"
           h1={"Satış Öncesi Planınız "}
           keyword={"Bizimle Hazır"}
           text={
@@ -135,7 +135,7 @@ const About = () => {
             >
               <Image
                 src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/VectorArrowDown.svg"
-                alt="VANANA"
+                alt="Hakkımızda Sayfası"
                 fill
                 objectFit="contain"
                 className="relative z-20 -rotate-90 transition-all duration-200 ease-in-out hover:scale-110"

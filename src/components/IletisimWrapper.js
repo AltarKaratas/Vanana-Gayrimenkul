@@ -116,12 +116,12 @@ export default function IletisimWrapper(props) {
          <div className="relative flex justify-start md:items-center h-[540px] md:h-[480px]  pt-16 lg:pt-20">
         <Image
           src="https://vananagayrimenkul.s3.eu-west-2.amazonaws.com/AnkaraNavigation.webp"
-          alt=""
+          alt="Vanana İletişim"
           fill
           objectFit="cover"
           className="brightness-[0.25] saturate-50"
         />
-        <div className="relative flex flex-col  px-6 xl:px-20 pt-8  md:pt-0">
+        <div className="relative flex flex-col  px-6 xl:px-20 pt-12  md:pt-0">
           
           <h1 className="text-white text-5xl md:text-7xl mb-4 lg:mb-8">
             Bize Ulaşın
@@ -257,7 +257,7 @@ export default function IletisimWrapper(props) {
                     {isAccepted && (
                       <Image
                         src="./success.svg"
-                        alt=""
+                        alt="successful"
                         width={20}
                         height={20}
                         className="relative z-0"
@@ -266,15 +266,11 @@ export default function IletisimWrapper(props) {
                   </Switch>
                 </div>
                 <label className="text-xs text-white">
-                  Tarafıma sunulan Aydınlatma Metni kapsamında, VANANA DIŞ
+                  Tarafıma sunulan <Link href="/aydinlatmametni" className="underline">Aydınlatma Metni</Link> kapsamında, VANANA DIŞ
                   TİCARET A.Ş. tarafından yukarıda yer alan iletişim bilgilerime
                   reklam, promosyon gibi amaçlarla ticari elektronik ileti
                   gönderilmesine, kişisel verilerimin bu amaçla işlenmesine ve
-                  paylaşılmasına{" "}
-                  <Link href="/acikriza" className="underline">
-                    Açık Rıza
-                  </Link>{" "}
-                  veriyorum.
+                  paylaşılmasınI kabul ediyorum.
                 </label>
               </div>
               <input
