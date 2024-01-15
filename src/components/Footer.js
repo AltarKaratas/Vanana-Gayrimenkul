@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
 
           <div className="flex justify-between border-t border-dark_gray mt-16 lg:mt-24">
-          <p className="text-gray text-[10px] mt-4 ">
+          <p className="text-gray text-[10px] mt-4 text-right">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>
             <Link href="/aydinlatmametni" className="text-white text-sm mt-2 ">
