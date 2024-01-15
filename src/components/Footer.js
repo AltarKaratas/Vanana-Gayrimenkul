@@ -47,7 +47,7 @@ const Footer = () => {
             ))}
           </ul>
           <div className="flex justify-between mt-4 border-t border-dark_gray">
-          <Link href="/aydinlatmametni" className="text-white text-[10px] mt-4 ">
+          <Link href="/aydinlatmametni" className="text-white text-[10px] mt-2 ">
                 Aydınlatma Metni
             </Link>
           <p className="text-gray text-[10px] mt-4 w-1/2">
@@ -92,7 +92,7 @@ const Footer = () => {
           <p className="text-gray text-[10px] mt-4 ">
               Copyright(C) VANANA DIŞ TİCARET TURİZM A.Ş TÜM HAKLARI SAKLIDIR
             </p>
-            <Link href="/aydinlatmametni" className="text-white text-sm mt-4 ">
+            <Link href="/aydinlatmametni" className="text-white text-sm mt-2 ">
                 Aydınlatma Metni
             </Link>
             
