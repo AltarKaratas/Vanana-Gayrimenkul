@@ -157,7 +157,8 @@ export default function IletisimWrapper(props) {
               <h1 className="text-white font-bold text-2xl 2xl:text-4xl">
                 Telefon
               </h1>
-              <p className="text-white text-xl">+90 507 245 55 16</p>
+              <p className="text-white text-xl">+90 533 572 28 45</p>
+              <p className="text-white text-xl">+90 533 572 28 85</p>
             </div>
           </div>
         </div>
