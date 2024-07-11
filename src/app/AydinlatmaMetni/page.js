@@ -9,7 +9,7 @@ export default function Page() {
           <h2 className="text-white text-2xl mb-2">Veri Sorumlusu
           </h2>
           <p className="text-white font-light">
-            www.vanana.com.tr adlı internet sitesi (“WebSite”) Konutkent Mahallesi 3029. Cadde No:3/96 Çankaya - ANKARA adresinde faaliyette bulunan Vanana DIŞ TİCARET A.Ş. (“Şirket”) tarafından işletilmektedir. ŞİRKET, veri sorumlusu olarak, kişisel verilerin işleme amaçlarının ve vasıtalarının belirlenmesinden, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumludur.
+            www.vanana.com.tr adlı internet sitesi (“WebSite”) KMoment Beştepe Ofis Plaza Beştepe Mahallesi 32.Cadde No:1/92 Yenimahalle - ANKARA adresinde faaliyette bulunan Vanana DIŞ TİCARET A.Ş. (“Şirket”) tarafından işletilmektedir. ŞİRKET, veri sorumlusu olarak, kişisel verilerin işleme amaçlarının ve vasıtalarının belirlenmesinden, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumludur.
             Kişisel verilerinizin korunmasına önem vermekteyiz. Kişisel Verilerin Korunması Kanunu (‘’KVKK’’)’na uygun olarak, “Şirket Web Sitesi”ni kullanımınızla bağlantılı olarak elde edilen verilerin toplanması, saklanması, aktarılması da dâhil olmak üzere ancak bunlarla sınırlı olmaksızın işlenmesi ve söz konusu işlemenin amacı ile ilgili olarak sizi bilgilendirmek istiyoruz.
           </p>
         </div>

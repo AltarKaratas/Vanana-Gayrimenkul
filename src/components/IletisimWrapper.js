@@ -144,7 +144,7 @@ export default function IletisimWrapper(props) {
                 Adres
               </h1>
               <p className="text-white text-xl">
-                Konutkent Mahallesi 3029. Cadde No:3/96 Çankaya - ANKARA
+                Moment Beştepe Ofis Plaza Beştepe Mahallesi 32.Cadde No:1/92 Yenimahalle - ANKARA
               </p>
             </div>
             <div className="flex flex-col gap-4">
